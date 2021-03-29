@@ -1,7 +1,7 @@
 ##########################################
 # 站点配置
 
-publishDir = docs
+publishdir = "docs"
 
 baseURL = "https://example.com/"
 title = "Hugo 主题 MemE"
