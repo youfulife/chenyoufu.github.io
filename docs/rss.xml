@@ -7,8 +7,8 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Hugo 主题 MemE</title>
-        <link>https://example.com/</link>
+        <title>Youfu&#39;s Life</title>
+        <link>https://chenyoufu.github.io/</link>
         <description>人生笔记</description>
         <generator>Hugo 0.79.0 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 31 Mar 2021 16:54:21 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 31 Mar 2021 17:33:27 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://example.com/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="https://chenyoufu.github.io/rss.xml" />
         
         
             <item>
                 <title>Hello World</title>
-                <link>https://example.com/posts/hello-world/</link>
-                <guid isPermaLink="true">https://example.com/posts/hello-world/</guid>
+                <link>https://chenyoufu.github.io/posts/hello-world/</link>
+                <guid isPermaLink="true">https://chenyoufu.github.io/posts/hello-world/</guid>
                 <pubDate>Fri, 26 Mar 2021 17:44:14 &#43;0800</pubDate>
                 
                     <author>youfu.ok@163.com (youfu)</author>
