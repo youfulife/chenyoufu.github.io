@@ -3,16 +3,16 @@
 
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">Hugo 主题 MemE</title>
-    <subtitle type="html">MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</subtitle>
-    <updated>2021-03-29T11:19:49&#43;08:00</updated>
+    <subtitle type="html">人生笔记</subtitle>
+    <updated>2021-03-31T14:08:53&#43;08:00</updated>
     <id>https://example.com/</id>
     <link rel="alternate" type="text/html" href="https://example.com/" />
     <link rel="self" type="application/atom&#43;xml" href="https://example.com/atom.xml" />
     <author>
-            <name>reuixiy</name>
+            <name>youfu</name>
             <uri>https://example.com/</uri>
             
-                <email>reuixiy@gmail.com</email>
+                <email>youfu.ok@163.com</email>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.79.0">Hugo</generator>

@@ -9,21 +9,21 @@
     <channel>
         <title>Hugo 主题 MemE</title>
         <link>https://example.com/</link>
-        <description>MemE 是一个强大且可高度定制的 GoHugo 博客主题，专为个人博客设计。</description>
+        <description>人生笔记</description>
         <generator>Hugo 0.79.0 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
         
-            <managingEditor>reuixiy@gmail.com (reuixiy)</managingEditor>
+            <managingEditor>youfu.ok@163.com (youfu)</managingEditor>
         
         
-            <webMaster>reuixiy@gmail.com (reuixiy)</webMaster>
+            <webMaster>youfu.ok@163.com (youfu)</webMaster>
         
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Mon, 29 Mar 2021 11:19:49 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 31 Mar 2021 14:08:53 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://example.com/rss.xml" />
         
