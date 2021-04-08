@@ -4,7 +4,7 @@
 publishdir = "docs"
 
 baseURL = "https://chenyoufu.github.io/"
-title = "Youfu's Life"
+title = "通往止境之路"
 languageCode = "zh-CN"
 hasCJKLanguage = true
 # 版权信息（支持 Markdown）
