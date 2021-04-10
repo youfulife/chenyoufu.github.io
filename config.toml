@@ -3,7 +3,7 @@
 
 publishdir = "docs"
 
-baseURL = "https://chenyoufu.github.io/"
+baseURL = "https://youfu.life/"
 title = "通往止境之路"
 languageCode = "zh-CN"
 hasCJKLanguage = true

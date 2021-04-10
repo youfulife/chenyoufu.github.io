@@ -3,41 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://chenyoufu.github.io/posts/</loc>
+    <loc>https://youfu.life/posts/</loc>
+    <lastmod>2021-04-10T17:03:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://youfu.life/posts/leetcode239/</loc>
+    <lastmod>2021-04-10T17:03:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://youfu.life/</loc>
+    <lastmod>2021-04-10T17:03:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://youfu.life/posts/leetcode283/</loc>
     <lastmod>2021-04-09T23:05:44+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chenyoufu.github.io/posts/leetcode283/</loc>
-    <lastmod>2021-04-09T23:05:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chenyoufu.github.io/</loc>
-    <lastmod>2021-04-09T23:05:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chenyoufu.github.io/posts/leetcode70/</loc>
+    <loc>https://youfu.life/posts/leetcode70/</loc>
     <lastmod>2021-04-09T22:59:57+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chenyoufu.github.io/posts/leetcode-15/</loc>
+    <loc>https://youfu.life/posts/leetcode-15/</loc>
     <lastmod>2021-04-09T15:58:53+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chenyoufu.github.io/about/</loc>
+    <loc>https://youfu.life/about/</loc>
     <lastmod>2021-04-06T22:08:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://chenyoufu.github.io/categories/</loc>
+    <loc>https://youfu.life/categories/</loc>
   </url>
   
   <url>
-    <loc>https://chenyoufu.github.io/tags/</loc>
+    <loc>https://youfu.life/tags/</loc>
   </url>
   
 </urlset>
