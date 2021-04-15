@@ -4,13 +4,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">通往止境之路</title>
     <subtitle type="html">人生笔记</subtitle>
-    <updated>2021-04-15T22:37:02&#43;08:00</updated>
-    <id>http://youfu.life/</id>
-    <link rel="alternate" type="text/html" href="http://youfu.life/" />
-    <link rel="self" type="application/atom&#43;xml" href="http://youfu.life/atom.xml" />
+    <updated>2021-04-15T22:39:35&#43;08:00</updated>
+    <id>https://youfu.life/</id>
+    <link rel="alternate" type="text/html" href="https://youfu.life/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://youfu.life/atom.xml" />
     <author>
             <name>youfu</name>
-            <uri>http://youfu.life/</uri>
+            <uri>https://youfu.life/</uri>
             
                 <email>youfu.ok@163.com</email>
             </author>
@@ -18,13 +18,13 @@
     <generator uri="https://gohugo.io/" version="0.79.0">Hugo</generator>
         <entry>
             <title type="text">二叉树层序遍历</title>
-            <link rel="alternate" type="text/html" href="http://youfu.life/posts/leetcode102/" />
-            <id>http://youfu.life/posts/leetcode102/</id>
+            <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode102/" />
+            <id>https://youfu.life/posts/leetcode102/</id>
             <updated>2021-04-14T21:31:12&#43;08:00</updated>
             <published>2021-04-13T22:31:09&#43;08:00</published>
             <author>
                     <name>youfu</name>
-                    <uri>http://youfu.life/</uri>
+                    <uri>https://youfu.life/</uri>
                     <email>youfu.ok@163.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">题目 给你一个二叉树，请你返回其按 层序遍历 得到的节点值。 （即逐层地，从左到右访问所有节……</summary>
@@ -221,13 +221,13 @@
     
         <entry>
             <title type="text">树</title>
-            <link rel="alternate" type="text/html" href="http://youfu.life/posts/tree/" />
-            <id>http://youfu.life/posts/tree/</id>
+            <link rel="alternate" type="text/html" href="https://youfu.life/posts/tree/" />
+            <id>https://youfu.life/posts/tree/</id>
             <updated>2021-04-12T22:34:33&#43;08:00</updated>
             <published>2021-04-12T22:22:08&#43;08:00</published>
             <author>
                     <name>youfu</name>
-                    <uri>http://youfu.life/</uri>
+                    <uri>https://youfu.life/</uri>
                     <email>youfu.ok@163.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">一直对树有一种畏惧感，主要是平时用的不多，自己又学的不好，在这之前本身就有一种逃避的……</summary>
@@ -262,13 +262,13 @@
     
         <entry>
             <title type="text">相同的树</title>
-            <link rel="alternate" type="text/html" href="http://youfu.life/posts/leetcode100/" />
-            <id>http://youfu.life/posts/leetcode100/</id>
+            <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode100/" />
+            <id>https://youfu.life/posts/leetcode100/</id>
             <updated>2021-04-11T22:58:22&#43;08:00</updated>
             <published>2021-04-11T22:21:29&#43;08:00</published>
             <author>
                     <name>youfu</name>
-                    <uri>http://youfu.life/</uri>
+                    <uri>https://youfu.life/</uri>
                     <email>youfu.ok@163.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">题目 给你两棵二叉树的根节点 p 和 q ，编写一个函数来检验这两棵树是否相同。 如果两个树在结……</summary>
@@ -413,13 +413,13 @@
     
         <entry>
             <title type="text">字母异位词分组</title>
-            <link rel="alternate" type="text/html" href="http://youfu.life/posts/leetcode49/" />
-            <id>http://youfu.life/posts/leetcode49/</id>
+            <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode49/" />
+            <id>https://youfu.life/posts/leetcode49/</id>
             <updated>2021-04-10T21:36:50&#43;08:00</updated>
             <published>2021-04-10T21:17:14&#43;08:00</published>
             <author>
                     <name>youfu</name>
-                    <uri>http://youfu.life/</uri>
+                    <uri>https://youfu.life/</uri>
                     <email>youfu.ok@163.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">给定一个字符串数组，将字母异位词组合在一起。字母异位词指字母相同，但排列不同的字符串……</summary>
@@ -543,13 +543,13 @@
     
         <entry>
             <title type="text">滑动窗口最大值</title>
-            <link rel="alternate" type="text/html" href="http://youfu.life/posts/leetcode239/" />
-            <id>http://youfu.life/posts/leetcode239/</id>
+            <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode239/" />
+            <id>https://youfu.life/posts/leetcode239/</id>
             <updated>2021-04-10T17:03:25&#43;08:00</updated>
             <published>2021-04-10T16:28:40&#43;08:00</published>
             <author>
                     <name>youfu</name>
-                    <uri>http://youfu.life/</uri>
+                    <uri>https://youfu.life/</uri>
                     <email>youfu.ok@163.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">题目 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右……</summary>
@@ -666,13 +666,13 @@
     
         <entry>
             <title type="text">移动零</title>
-            <link rel="alternate" type="text/html" href="http://youfu.life/posts/leetcode283/" />
-            <id>http://youfu.life/posts/leetcode283/</id>
+            <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode283/" />
+            <id>https://youfu.life/posts/leetcode283/</id>
             <updated>2021-04-09T23:05:44&#43;08:00</updated>
             <published>2021-04-09T22:57:43&#43;08:00</published>
             <author>
                     <name>youfu</name>
-                    <uri>http://youfu.life/</uri>
+                    <uri>https://youfu.life/</uri>
                     <email>youfu.ok@163.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">题目 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相……</summary>
@@ -731,13 +731,13 @@
     
         <entry>
             <title type="text">爬楼梯</title>
-            <link rel="alternate" type="text/html" href="http://youfu.life/posts/leetcode70/" />
-            <id>http://youfu.life/posts/leetcode70/</id>
+            <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode70/" />
+            <id>https://youfu.life/posts/leetcode70/</id>
             <updated>2021-04-09T22:59:57&#43;08:00</updated>
             <published>2021-04-09T22:34:00&#43;08:00</published>
             <author>
                     <name>youfu</name>
-                    <uri>http://youfu.life/</uri>
+                    <uri>https://youfu.life/</uri>
                     <email>youfu.ok@163.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">题目 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。 每次你可以爬 1 或 2 个台阶。你有多少种不……</summary>
@@ -826,7 +826,7 @@
 &lt;/div&gt;&lt;p&gt;各种语言的短小代码。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://leetcode.com/problems/climbing-stairs/discuss/25296/3-4-short-lines-in-every-language&#34;&gt;https://leetcode.com/problems/climbing-stairs/discuss/25296/3-4-short-lines-in-every-language&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;提交记录&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://youfu.life/img/image-20210409224300797.png&#34; alt=&#34;image-20210409224300797&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youfu.life/img/image-20210409224300797.png&#34; alt=&#34;image-20210409224300797&#34;&gt;&lt;/p&gt;
 </content>
             
             
@@ -843,13 +843,13 @@
     
         <entry>
             <title type="text">三数之和</title>
-            <link rel="alternate" type="text/html" href="http://youfu.life/posts/leetcode-15/" />
-            <id>http://youfu.life/posts/leetcode-15/</id>
+            <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode-15/" />
+            <id>https://youfu.life/posts/leetcode-15/</id>
             <updated>2021-04-09T15:58:53&#43;08:00</updated>
             <published>2021-04-08T22:11:56&#43;08:00</published>
             <author>
                     <name>youfu</name>
-                    <uri>http://youfu.life/</uri>
+                    <uri>https://youfu.life/</uri>
                     <email>youfu.ok@163.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">题目：给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a……</summary>
@@ -963,7 +963,7 @@
 &lt;p&gt;第一次做是按照两个数之和的思路做的，先固定住一个数，然后将问题转变为2个数之和，用hash表的方法，但是在做的过程中发现去重很麻烦，直接看题解。&lt;/p&gt;
 &lt;p&gt;后来过了两个星期，发现再做又变陌生了，做不出来了，看了一下之前提交通过的答案，然后又自己写了一遍，今天又自己写了一遍。&lt;/p&gt;
 &lt;p&gt;目前这个题是第三遍了，感觉还是远远不够。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://youfu.life/img/1617893528206.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://youfu.life/img/1617893528206.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </content>
             
             
