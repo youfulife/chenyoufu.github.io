@@ -8,7 +8,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>通往止境之路</title>
-        <link>https://youfu.life/</link>
+        <link>http://youfu.life/</link>
         <description>人生笔记</description>
         <generator>Hugo 0.79.0 https://gohugo.io/</generator>
         
@@ -23,15 +23,15 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 13 Apr 2021 23:10:30 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 15 Apr 2021 22:37:02 &#43;0800</lastBuildDate>
         
-            <atom:link rel="self" type="application/rss&#43;xml" href="https://youfu.life/rss.xml" />
+            <atom:link rel="self" type="application/rss&#43;xml" href="http://youfu.life/rss.xml" />
         
         
             <item>
                 <title>二叉树层序遍历</title>
-                <link>https://youfu.life/posts/leetcode102/</link>
-                <guid isPermaLink="true">https://youfu.life/posts/leetcode102/</guid>
+                <link>http://youfu.life/posts/leetcode102/</link>
+                <guid isPermaLink="true">http://youfu.life/posts/leetcode102/</guid>
                 <pubDate>Tue, 13 Apr 2021 22:31:09 &#43;0800</pubDate>
                 
                     <author>youfu.ok@163.com (youfu)</author>
@@ -196,7 +196,25 @@
         &lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;helper&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;root&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;right&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;level&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;result&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;p&gt;关于层序遍历的题目&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;102.二叉树的层序遍历&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;107.二叉树的层次遍历II&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;199.二叉树的右视图&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;637.二叉树的层平均值&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;589.N叉树的前序遍历&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
                 
                 
                 
@@ -212,8 +230,8 @@
         
             <item>
                 <title>树</title>
-                <link>https://youfu.life/posts/tree/</link>
-                <guid isPermaLink="true">https://youfu.life/posts/tree/</guid>
+                <link>http://youfu.life/posts/tree/</link>
+                <guid isPermaLink="true">http://youfu.life/posts/tree/</guid>
                 <pubDate>Mon, 12 Apr 2021 22:22:08 &#43;0800</pubDate>
                 
                     <author>youfu.ok@163.com (youfu)</author>
@@ -250,8 +268,8 @@
         
             <item>
                 <title>相同的树</title>
-                <link>https://youfu.life/posts/leetcode100/</link>
-                <guid isPermaLink="true">https://youfu.life/posts/leetcode100/</guid>
+                <link>http://youfu.life/posts/leetcode100/</link>
+                <guid isPermaLink="true">http://youfu.life/posts/leetcode100/</guid>
                 <pubDate>Sun, 11 Apr 2021 22:21:29 &#43;0800</pubDate>
                 
                     <author>youfu.ok@163.com (youfu)</author>
@@ -398,8 +416,8 @@
         
             <item>
                 <title>字母异位词分组</title>
-                <link>https://youfu.life/posts/leetcode49/</link>
-                <guid isPermaLink="true">https://youfu.life/posts/leetcode49/</guid>
+                <link>http://youfu.life/posts/leetcode49/</link>
+                <guid isPermaLink="true">http://youfu.life/posts/leetcode49/</guid>
                 <pubDate>Sat, 10 Apr 2021 21:17:14 &#43;0800</pubDate>
                 
                     <author>youfu.ok@163.com (youfu)</author>
@@ -525,8 +543,8 @@
         
             <item>
                 <title>滑动窗口最大值</title>
-                <link>https://youfu.life/posts/leetcode239/</link>
-                <guid isPermaLink="true">https://youfu.life/posts/leetcode239/</guid>
+                <link>http://youfu.life/posts/leetcode239/</link>
+                <guid isPermaLink="true">http://youfu.life/posts/leetcode239/</guid>
                 <pubDate>Sat, 10 Apr 2021 16:28:40 &#43;0800</pubDate>
                 
                     <author>youfu.ok@163.com (youfu)</author>
@@ -645,8 +663,8 @@
         
             <item>
                 <title>移动零</title>
-                <link>https://youfu.life/posts/leetcode283/</link>
-                <guid isPermaLink="true">https://youfu.life/posts/leetcode283/</guid>
+                <link>http://youfu.life/posts/leetcode283/</link>
+                <guid isPermaLink="true">http://youfu.life/posts/leetcode283/</guid>
                 <pubDate>Fri, 09 Apr 2021 22:57:43 &#43;0800</pubDate>
                 
                     <author>youfu.ok@163.com (youfu)</author>
@@ -707,8 +725,8 @@
         
             <item>
                 <title>爬楼梯</title>
-                <link>https://youfu.life/posts/leetcode70/</link>
-                <guid isPermaLink="true">https://youfu.life/posts/leetcode70/</guid>
+                <link>http://youfu.life/posts/leetcode70/</link>
+                <guid isPermaLink="true">http://youfu.life/posts/leetcode70/</guid>
                 <pubDate>Fri, 09 Apr 2021 22:34:00 &#43;0800</pubDate>
                 
                     <author>youfu.ok@163.com (youfu)</author>
@@ -799,7 +817,7 @@
 &lt;/div&gt;&lt;p&gt;各种语言的短小代码。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://leetcode.com/problems/climbing-stairs/discuss/25296/3-4-short-lines-in-every-language&#34;&gt;https://leetcode.com/problems/climbing-stairs/discuss/25296/3-4-short-lines-in-every-language&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;提交记录&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youfu.life/img/image-20210409224300797.png&#34; alt=&#34;image-20210409224300797&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://youfu.life/img/image-20210409224300797.png&#34; alt=&#34;image-20210409224300797&#34;&gt;&lt;/p&gt;
 </description>
                 
                 
@@ -816,8 +834,8 @@
         
             <item>
                 <title>三数之和</title>
-                <link>https://youfu.life/posts/leetcode-15/</link>
-                <guid isPermaLink="true">https://youfu.life/posts/leetcode-15/</guid>
+                <link>http://youfu.life/posts/leetcode-15/</link>
+                <guid isPermaLink="true">http://youfu.life/posts/leetcode-15/</guid>
                 <pubDate>Thu, 08 Apr 2021 22:11:56 &#43;0800</pubDate>
                 
                     <author>youfu.ok@163.com (youfu)</author>
@@ -933,7 +951,7 @@
 &lt;p&gt;第一次做是按照两个数之和的思路做的，先固定住一个数，然后将问题转变为2个数之和，用hash表的方法，但是在做的过程中发现去重很麻烦，直接看题解。&lt;/p&gt;
 &lt;p&gt;后来过了两个星期，发现再做又变陌生了，做不出来了，看了一下之前提交通过的答案，然后又自己写了一遍，今天又自己写了一遍。&lt;/p&gt;
 &lt;p&gt;目前这个题是第三遍了，感觉还是远远不够。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://youfu.life/img/1617893528206.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://youfu.life/img/1617893528206.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 </description>
                 
                 
