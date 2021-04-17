@@ -2,6 +2,8 @@
 title: "二叉树层序遍历"
 date: 2021-04-13T22:31:09+08:00
 draft: false
+tags: ["算法", "树"]
+categories: ["技术"]
 ---
 
 **题目**

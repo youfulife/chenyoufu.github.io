@@ -1,7 +1,9 @@
 ---
-title: "爬楼梯"
+title: "70 爬楼梯"
 date: 2021-04-09T22:34:00+08:00
 draft: false
+tags: ["算法", "动态规划"]
+categories: ["技术"]
 ---
 **题目**
 

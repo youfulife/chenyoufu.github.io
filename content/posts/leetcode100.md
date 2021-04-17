@@ -1,7 +1,9 @@
 ---
-title: "相同的树"
+title: "100 相同的树"
 date: 2021-04-11T22:21:29+08:00
 draft: false
+tags: ["算法", "树"]
+categories: ["技术"]
 ---
 
 **题目**

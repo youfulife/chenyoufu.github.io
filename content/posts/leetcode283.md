@@ -1,7 +1,9 @@
 ---
-title: "移动零"
+title: "283 移动零"
 date: 2021-04-09T22:57:43+08:00
 draft: false
+tags: ["算法", "数组"]
+categories: ["技术"]
 ---
 
 **题目**

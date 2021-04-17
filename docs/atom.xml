@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">通往止境之路</title>
     <subtitle type="html">人生笔记</subtitle>
-    <updated>2021-04-17T23:09:19&#43;08:00</updated>
+    <updated>2021-04-17T23:24:35&#43;08:00</updated>
     <id>https://youfu.life/</id>
     <link rel="alternate" type="text/html" href="https://youfu.life/" />
     <link rel="self" type="application/atom&#43;xml" href="https://youfu.life/atom.xml" />
@@ -17,10 +17,10 @@
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.79.0">Hugo</generator>
         <entry>
-            <title type="text">对称二叉树  </title>
+            <title type="text">101 对称二叉树</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode101/" />
             <id>https://youfu.life/posts/leetcode101/</id>
-            <updated>2021-04-17T23:09:15&#43;08:00</updated>
+            <updated>2021-04-17T23:14:11&#43;08:00</updated>
             <published>2021-04-17T22:47:50&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -95,7 +95,29 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E6%8A%80%E6%9C%AF/" term="技术" label="技术" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E6%A0%91/" term="树" label="树" />
+                            
+                        
                     
                 
             
@@ -105,7 +127,7 @@
             <title type="text">513 找树左下角的值</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode513/" />
             <id>https://youfu.life/posts/leetcode513/</id>
-            <updated>2021-04-17T14:02:58&#43;08:00</updated>
+            <updated>2021-04-17T23:15:41&#43;08:00</updated>
             <published>2021-04-17T13:46:56&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -219,17 +241,39 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E6%8A%80%E6%9C%AF/" term="技术" label="技术" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E6%A0%91/" term="树" label="树" />
+                            
+                        
                     
                 
             
         </entry>
     
         <entry>
-            <title type="text">二叉树的所有路径</title>
+            <title type="text">257 二叉树的所有路径</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode257/" />
             <id>https://youfu.life/posts/leetcode257/</id>
-            <updated>2021-04-17T11:52:33&#43;08:00</updated>
+            <updated>2021-04-17T23:15:05&#43;08:00</updated>
             <published>2021-04-16T22:47:47&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -509,7 +553,29 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E6%8A%80%E6%9C%AF/" term="技术" label="技术" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E6%A0%91/" term="树" label="树" />
+                            
+                        
                     
                 
             
@@ -519,7 +585,7 @@
             <title type="text">二叉树层序遍历</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode102/" />
             <id>https://youfu.life/posts/leetcode102/</id>
-            <updated>2021-04-17T13:44:10&#43;08:00</updated>
+            <updated>2021-04-17T23:14:30&#43;08:00</updated>
             <published>2021-04-13T22:31:09&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -715,7 +781,29 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E6%8A%80%E6%9C%AF/" term="技术" label="技术" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E6%A0%91/" term="树" label="树" />
+                            
+                        
                     
                 
             
@@ -725,7 +813,7 @@
             <title type="text">树</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/tree/" />
             <id>https://youfu.life/posts/tree/</id>
-            <updated>2021-04-12T22:34:33&#43;08:00</updated>
+            <updated>2021-04-17T23:24:30&#43;08:00</updated>
             <published>2021-04-12T22:22:08&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -748,6 +836,8 @@
 &lt;p&gt;&lt;strong&gt;深度遍历（非递归）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;广度遍历（递归）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;广度遍历（非递归）&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;2021.4.17 更新 一周总结&lt;/p&gt;
 </content>
             
             
@@ -756,17 +846,39 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E6%8A%80%E6%9C%AF/" term="技术" label="技术" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E6%A0%91/" term="树" label="树" />
+                            
+                        
                     
                 
             
         </entry>
     
         <entry>
-            <title type="text">相同的树</title>
+            <title type="text">100 相同的树</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode100/" />
             <id>https://youfu.life/posts/leetcode100/</id>
-            <updated>2021-04-11T22:58:22&#43;08:00</updated>
+            <updated>2021-04-17T23:14:23&#43;08:00</updated>
             <published>2021-04-11T22:21:29&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -907,17 +1019,39 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E6%8A%80%E6%9C%AF/" term="技术" label="技术" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E6%A0%91/" term="树" label="树" />
+                            
+                        
                     
                 
             
         </entry>
     
         <entry>
-            <title type="text">字母异位词分组</title>
+            <title type="text">49 字母异位词分组</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode49/" />
             <id>https://youfu.life/posts/leetcode49/</id>
-            <updated>2021-04-10T21:36:50&#43;08:00</updated>
+            <updated>2021-04-17T23:21:29&#43;08:00</updated>
             <published>2021-04-10T21:17:14&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -1037,17 +1171,39 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E6%8A%80%E6%9C%AF/" term="技术" label="技术" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" term="哈希表" label="哈希表" />
+                            
+                        
                     
                 
             
         </entry>
     
         <entry>
-            <title type="text">滑动窗口最大值</title>
+            <title type="text">239 滑动窗口最大值</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode239/" />
             <id>https://youfu.life/posts/leetcode239/</id>
-            <updated>2021-04-10T17:03:25&#43;08:00</updated>
+            <updated>2021-04-17T23:14:51&#43;08:00</updated>
             <published>2021-04-10T16:28:40&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -1160,17 +1316,39 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E6%8A%80%E6%9C%AF/" term="技术" label="技术" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" term="栈和队列" label="栈和队列" />
+                            
+                        
                     
                 
             
         </entry>
     
         <entry>
-            <title type="text">移动零</title>
+            <title type="text">283 移动零</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode283/" />
             <id>https://youfu.life/posts/leetcode283/</id>
-            <updated>2021-04-09T23:05:44&#43;08:00</updated>
+            <updated>2021-04-17T23:15:33&#43;08:00</updated>
             <published>2021-04-09T22:57:43&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -1225,17 +1403,39 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E6%8A%80%E6%9C%AF/" term="技术" label="技术" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E6%95%B0%E7%BB%84/" term="数组" label="数组" />
+                            
+                        
                     
                 
             
         </entry>
     
         <entry>
-            <title type="text">爬楼梯</title>
+            <title type="text">70 爬楼梯</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode70/" />
             <id>https://youfu.life/posts/leetcode70/</id>
-            <updated>2021-04-09T22:59:57&#43;08:00</updated>
+            <updated>2021-04-17T23:17:23&#43;08:00</updated>
             <published>2021-04-09T22:34:00&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -1337,7 +1537,29 @@
             
                 
                     
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E6%8A%80%E6%9C%AF/" term="技术" label="技术" />
+                            
+                        
+                    
                 
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%AE%97%E6%B3%95/" term="算法" label="算法" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" term="动态规划" label="动态规划" />
+                            
+                        
                     
                 
             
