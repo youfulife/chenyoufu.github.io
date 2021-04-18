@@ -23,10 +23,58 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sat, 17 Apr 2021 23:24:35 &#43;0800</lastBuildDate>
+        <lastBuildDate>Sun, 18 Apr 2021 23:34:13 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://youfu.life/rss.xml" />
         
+        
+            <item>
+                <title>4月某天的下午</title>
+                <link>https://youfu.life/posts/fangfengzheng/</link>
+                <guid isPermaLink="true">https://youfu.life/posts/fangfengzheng/</guid>
+                <pubDate>Sun, 18 Apr 2021 22:21:23 &#43;0800</pubDate>
+                
+                    <author>youfu.ok@163.com (youfu)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;p&gt;天气晴朗，温度适宜，无风。&lt;/p&gt;
+&lt;p&gt;我尝试了四五次将风筝放上天，但是最终都会一头栽下来。&lt;/p&gt;
+&lt;p&gt;今天下午几乎没有风，树梢偶尔有一点微动，我拿着风筝等在一块空旷的草地上，等待着偶尔来到的微风。
+微风来了，我通过跑动和收放线让风筝飞到了十米左右的样子，前面就是一个池塘，没有办法继续跑动了，只能眼看着半空中的风筝转了几个不规则的圆圈后一头栽下来。&lt;/p&gt;
+&lt;p&gt;后来，我就把注意力放到了吃零食上，在吃完最后一块炸鸡之后，我开始关注起身边的风景。&lt;/p&gt;
+&lt;p&gt;这是一块水塘边的草地，周末天气好的日子会有很多的人来搭帐篷和烧烤，我们今天来的比较晚，下午3点多才带着风筝和毯子过来，找了一棵红叶子的树下，把毯子铺好，零食摆上。我们所在的位置的前面就是一颗颗独立的棕榈树，挺高的，棕榈树直接的位置正好可以搭建帐篷和烧烤的炉子，继续往前就是水塘了。水塘边上长满了绿色的芦苇，这个季节呈现出一片绿色。水塘里可以看见几只野鸭子，不久前的一个早上我在家里的阳台上看了十分钟两只野鸭戏水，那十分钟我没有去想别的事情，只是远远的看着。水塘的对岸就是一片香樟树林，香樟树林过去就是运河的大坝，沿着运河的一侧栽满了垂柳。春天的时候那个大坝上景色最美，杂草刚刚长出来，河边的杨柳也是那种嫩绿色，河里一直有不间断的船行过。&lt;/p&gt;
+&lt;p&gt;再后来，我就带着小孩去池塘中间的一座小石桥上看钓鱼。今天似乎鱼还挺多，一放下去就有鱼咬钩，不过个头倒是不大，我呆在那边观看的时间里，一直有鱼不停的被钓上来，有一次一个钓竿同时钓了两条鱼上来。有两个小孩子闲着无聊，开始数其中一个钓鱼者钓了多少鱼，我听到是说有18条。我已经好多年没有钓过鱼了，最近有记忆的一次钓鱼还是毕业后闲着无聊跑到大学去钓鱼，在二食堂的旁边钓到一条昂公鱼，也是唯一钓到的鱼，这已经是8年前的事情了，再往前数的话就要数到20年前了。&lt;/p&gt;
+&lt;p&gt;今天下午还有一个飞机飞的特别矮，在地面上看着特别大，赶紧拍下来。我想起李志的一首歌，《天空之城》，伤感的情绪弥漫开来。&lt;/p&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://youfu.life/categories/%E9%9D%9E%E6%8A%80%E6%9C%AF/">非技术</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://youfu.life/tags/%E7%A7%81%E7%94%9F%E6%B4%BB/">私生活</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>101 对称二叉树</title>
@@ -585,7 +633,7 @@
             </item>
         
             <item>
-                <title>二叉树层序遍历</title>
+                <title>102 二叉树层序遍历</title>
                 <link>https://youfu.life/posts/leetcode102/</link>
                 <guid isPermaLink="true">https://youfu.life/posts/leetcode102/</guid>
                 <pubDate>Tue, 13 Apr 2021 22:31:09 &#43;0800</pubDate>
