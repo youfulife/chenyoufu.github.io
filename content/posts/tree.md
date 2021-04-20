@@ -16,13 +16,109 @@ categories: ["技术"]
 
 **前序遍历（递归）**
 
+根 ➜ 左 ➜ 右
+
+```python
+class Solution(object):
+    def preorderTraversal(self, root):
+        ans = []
+        self.helper(root, ans)
+        return ans
+    
+    def helper(self, root, ans):
+        if not root:
+            return
+        ans.append(root.val)
+        self.helper(root.left, ans)
+        self.helper(root.right, ans)
+```
+
 **前序遍历（非递归）**
+
+先处理根节点，根据访问顺序根 ➜ 左 ➜ 右，先入栈的后访问，为了保持访问顺序（先入后出），⭐️先把右孩子入栈，再入栈左孩子。
+
+```python
+class Solution(object):
+    def preorderTraversal(self, root):
+        if not root:
+            return []
+        
+        ans = []
+        q = deque([root])
+        while q:
+            node = q.pop()
+            ans.append(node.val)
+            if node.right:
+                q.append(node.right)
+            if node.left:
+                q.append(node.left)
+
+        return ans
+```
 
 **中序遍历（递归）**
 
+```python
+class Solution(object):
+    def inorderTraversal(self, root):
+        ans = []
+        self.helper(root, ans)
+        return ans
+    
+    def helper(self, root, ans):
+        if root:
+            self.helper(root.left, ans)
+            ans.append(root.val)
+            self.helper(root.right, ans)
+```
+
 **中序遍历（非递归）**
 
+核心思路依旧是利用栈维护节点的访问顺序：左 ➜ 根 ➜ 右。使用一个p_node来指向当前访问节点，p是代表指针point，另外有一个变量cur_node表示当前正在操作节点（把出栈节点值加入输出数组中），算法步骤如下（可以对照代码注释）
+
+① 访问当前节点，如果当前节点有左孩子，则把它的左孩子都入栈，移动当前节点到左孩子，重复第一步直到当前节点没有左孩子
+
+② 当当前节点没有左孩子时，栈顶节点出栈，加入结果数组
+
+③ 当前节点指向栈顶节点的右节点
+
+```python
+class Solution(object):
+    def inorderTraversal(self, root):
+        if not root:
+            return []
+        
+        ans = []
+        q = deque()
+        
+        cur = root
+        while cur or q:
+            while cur: # 把所有当前访问节点的左孩子都入栈
+                q.append(cur)
+                cur = cur.left
+            
+            node = q.pop() # 操作栈顶节点，如果是第一次运行到这步，那么这是整棵树的最左节点
+            ans.append(node.val) # 因为已经保证没有左节点，可以访问根节点
+            if node.right:
+                cur = node.right # 将指针指向当前节点的右节点
+        return ans
+```
+
 **后序遍历（递归）**
+
+```python
+class Solution(object):
+    def postorderTraversal(self, root):
+        ans = []
+        self.helper(root, ans)
+        return ans
+    
+    def helper(self, root, ans):
+        if root:
+            self.helper(root.left, ans)
+            self.helper(root.right, ans)
+            ans.append(root.val)
+```
 
 **后序遍历（非递归）**
 
