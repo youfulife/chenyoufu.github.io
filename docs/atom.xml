@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">通往止境之路</title>
     <subtitle type="html">人生笔记</subtitle>
-    <updated>2021-04-21T22:49:36&#43;08:00</updated>
+    <updated>2021-04-22T22:10:59&#43;08:00</updated>
     <id>https://youfu.life/</id>
     <link rel="alternate" type="text/html" href="https://youfu.life/" />
     <link rel="self" type="application/atom&#43;xml" href="https://youfu.life/atom.xml" />
@@ -16,6 +16,54 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.79.0">Hugo</generator>
+        <entry>
+            <title type="text">2021没有白过</title>
+            <link rel="alternate" type="text/html" href="https://youfu.life/posts/2021bigevent/" />
+            <id>https://youfu.life/posts/2021bigevent/</id>
+            <updated>2021-04-22T22:10:58&#43;08:00</updated>
+            <published>2021-04-22T22:04:31&#43;08:00</published>
+            <author>
+                    <name>youfu</name>
+                    <uri>https://youfu.life/</uri>
+                    <email>youfu.ok@163.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">2021年4月11日 马拉松 无锡国际马拉松，半程，21公里，全程跑下来，2小时11分钟……</summary>
+            
+                <content type="html">&lt;h3 id=&#34;2021年4月11日-马拉松&#34;&gt;2021年4月11日 马拉松&lt;/h3&gt;
+&lt;p&gt;无锡国际马拉松，半程，21公里，全程跑下来，2小时11分钟，大大超出了自己的预期。&lt;/p&gt;
+&lt;p&gt;全程有点阴天，早上起来晚了，没有喝水和吃早饭，直接开跑。&lt;/p&gt;
+&lt;p&gt;路上有些孤独，脑子里不知道在想些什么，路上的风景也没有给我很大的触动。倒是跑完了回到家，看CCTV5全程的电视回放让我感觉这次马拉松特别好玩。&lt;/p&gt;
+&lt;hr&gt;
+</content>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/categories/%E9%9D%9E%E6%8A%80%E6%9C%AF/" term="非技术" label="非技术" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E7%A7%81%E7%94%9F%E6%B4%BB/" term="私生活" label="私生活" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">113 路径总和II</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode113/" />

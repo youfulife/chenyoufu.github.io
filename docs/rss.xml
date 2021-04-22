@@ -23,10 +23,55 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 21 Apr 2021 22:49:36 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 22 Apr 2021 22:10:59 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://youfu.life/rss.xml" />
         
+        
+            <item>
+                <title>2021没有白过</title>
+                <link>https://youfu.life/posts/2021bigevent/</link>
+                <guid isPermaLink="true">https://youfu.life/posts/2021bigevent/</guid>
+                <pubDate>Thu, 22 Apr 2021 22:04:31 &#43;0800</pubDate>
+                
+                    <author>youfu.ok@163.com (youfu)</author>
+                
+                <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
+                
+                    <description>&lt;h3 id=&#34;2021年4月11日-马拉松&#34;&gt;2021年4月11日 马拉松&lt;/h3&gt;
+&lt;p&gt;无锡国际马拉松，半程，21公里，全程跑下来，2小时11分钟，大大超出了自己的预期。&lt;/p&gt;
+&lt;p&gt;全程有点阴天，早上起来晚了，没有喝水和吃早饭，直接开跑。&lt;/p&gt;
+&lt;p&gt;路上有些孤独，脑子里不知道在想些什么，路上的风景也没有给我很大的触动。倒是跑完了回到家，看CCTV5全程的电视回放让我感觉这次马拉松特别好玩。&lt;/p&gt;
+&lt;hr&gt;
+</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://youfu.life/categories/%E9%9D%9E%E6%8A%80%E6%9C%AF/">非技术</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://youfu.life/tags/%E7%A7%81%E7%94%9F%E6%B4%BB/">私生活</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>113 路径总和II</title>
