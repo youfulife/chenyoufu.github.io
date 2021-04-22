@@ -53,7 +53,7 @@ uglyURLs = false
 
 # 类别
 [taxonomies]
-    category = "categories"
+    # category = "categories"
     tag = "tags"
 
 # 修改时间
@@ -98,7 +98,7 @@ uglyURLs = false
     # 邮箱
     email = "youfu.ok@163.com"
     # 座右铭或简介
-    motto = "自由人"
+    motto = "极简主义"
     # 头像
     avatar = "/icons/apple-touch-icon.png"
     # 网站（默认值：baseURL）
@@ -188,16 +188,22 @@ uglyURLs = false
         post = "home"
     [[menu.main]]
         url = "/posts/"
-        name = "文章"
+        name = "技术"
         weight = 2
         pre = "internal"
         post = "archive"
     [[menu.main]]
-        url = "/categories/"
-        name = "分类"
+        url = "/life/"
+        name = "生活"
         weight = 3
         pre = "internal"
-        post = "th"
+        post = "archive"
+    #[[menu.main]]
+    #    url = "/categories/"
+    #   name = "分类"
+    #    weight = 3
+    #    pre = "internal"
+    #    post = "th"
     [[menu.main]]
         url = "/tags/"
         name = "标签"
@@ -352,7 +358,7 @@ uglyURLs = false
     # 的树状分类，故如需保留树状分类，建议适应
     # Hugo 的设计理念——分区。
 
-    categoryBy = "categories"
+    categoryBy = "sections"
     # 注意：如果你设置为 `sections`，请务必将
     #      此配置文件中的类别（taxonomies）中
     #      的 `categories` 删除，不然分类页
