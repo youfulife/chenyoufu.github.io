@@ -44,3 +44,27 @@ class Solution(object):
         if root.right:
             self.helper(root.right, targetSum-root.val, path+[root.right.val], ans)
 ```
+
+---
+
+2021.04.26 更新 
+
+**剑指 Offer 34. 二叉树中和为某一值的路径**
+
+```python
+class Solution(object):
+    def pathSum(self, root, target):
+        if not root:
+            return []
+        ans = []
+        stack = [(root, root.val, [root.val])]
+        while stack:
+            node, pSum, path = stack.pop()
+            if not node.left and not node.right and pSum == target:
+                ans.append(path)
+            if node.right:
+                stack.append((node.right, pSum+node.right.val, path + [node.right.val]))
+            if node.left:
+                stack.append((node.left, pSum+node.left.val, path + [node.left.val]))
+        return ans
+```

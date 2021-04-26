@@ -4,7 +4,7 @@
 publishdir = "docs"
 
 baseURL = "https://youfu.life/"
-title = "通往止境之路"
+title = "空"
 languageCode = "zh-CN"
 hasCJKLanguage = true
 # 版权信息（支持 Markdown）
@@ -194,7 +194,7 @@ uglyURLs = false
         post = "archive"
     [[menu.main]]
         url = "/life/"
-        name = "生活"
+        name = "时间"
         weight = 3
         pre = "internal"
         post = "archive"

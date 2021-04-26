@@ -2,7 +2,7 @@
 title: "104 二叉树的最大深度"
 date: 2021-04-19T22:42:06+08:00
 draft: false
-tags: ["算法", "树"]
+tags: ["算法", "树", "剑指 Offer"]
 categories: ["技术"]
 ---
 
@@ -84,4 +84,29 @@ class Solution(object):
                     q.append(node.right)
             ans += 1
         return ans
+```
+
+---
+
+2021/04/26 更新
+
+**剑指 Offer 55 - I. 二叉树的深度** 
+
+深度优先 非递归
+
+```python
+class Solution(object):
+    def maxDepth(self, root):
+        if not root:
+            return 0
+        stack = [(root, 1)]
+        depth = 1
+        while stack:
+            node, v = stack.pop()
+            depth = max(depth, v)
+            if node.right:
+                stack.append((node.right, v+1))
+            if node.left:
+                stack.append((node.left, v+1))
+        return depth
 ```
