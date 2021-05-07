@@ -83,3 +83,17 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
     return p.Val == q.Val && isSameTree(p.Left, q.Left) && isSameTree(p.Right, q.Right)
 }
 ```
+
+-----
+
+2021.05.06 二刷
+
+递归
+
+```python
+class Solution(object):
+    def isSameTree(self, p, q):
+        if not p or not q:
+            return p == q
+        return p.val == q.val and self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+```

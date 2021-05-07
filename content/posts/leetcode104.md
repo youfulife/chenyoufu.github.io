@@ -110,3 +110,57 @@ class Solution(object):
                 stack.append((node.left, v+1))
         return depth
 ```
+
+----
+
+2021.05.06 二刷
+
+递归
+
+```python
+class Solution(object):
+    def maxDepth(self, root):
+        if not root:
+            return 0
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+```
+
+BFS
+
+```python
+class Solution(object):
+    def maxDepth(self, root):
+        if not root:
+            return 0
+        q = deque([root])
+        depth = 0
+        while q:
+            for _ in range(len(q)):
+                node = q.popleft()
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+            depth += 1
+        return depth
+```
+
+DFS
+
+```python
+class Solution(object):
+    def maxDepth(self, root):
+        if not root:
+            return 0
+        stack = [(root, 1)]
+        ret = 0
+        while stack:
+            node, depth = stack.pop()
+            ret = max(depth, ret)
+            if node.left:
+                stack.append((node.left, depth+1))
+            if node.right:
+                stack.append((node.right, depth+1))
+
+        return ret
+```

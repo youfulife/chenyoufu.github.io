@@ -54,3 +54,21 @@ class Solution(object):
         
         return self.isSameTree(p.left, q.right) and self.isSameTree(p.right, q.left)
 ```
+
+----
+
+2021.05.06 二刷
+
+```python
+class Solution(object):
+    def isSymmetric(self, root):
+        if not root:
+            return True
+        def helper(p, q):
+            if not p or not q:
+                return p == q
+            if p.val != q.val:
+                return False
+            return helper(p.left, q.right) and helper(p.right, q.left)
+        return helper(root.left, root.right)
+```
