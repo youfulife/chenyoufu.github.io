@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Fri, 07 May 2021 23:02:39 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 11 May 2021 23:02:44 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://youfu.life/rss.xml" />
         
@@ -160,7 +160,7 @@
             </item>
         
             <item>
-                <title>1720 解码异或后的数组</title>
+                <title>两道异或题</title>
                 <link>https://youfu.life/posts/leetcode1720/</link>
                 <guid isPermaLink="true">https://youfu.life/posts/leetcode1720/</guid>
                 <pubDate>Thu, 06 May 2021 22:27:32 &#43;0800</pubDate>
@@ -169,7 +169,8 @@
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description>&lt;p&gt;未知整数数组 arr 由 n 个非负整数组成。&lt;/p&gt;
+                    <description>&lt;p&gt;&lt;strong&gt;1720&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;未知整数数组 arr 由 n 个非负整数组成。&lt;/p&gt;
 &lt;p&gt;经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i + 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。&lt;/p&gt;
 &lt;p&gt;给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。&lt;/p&gt;
 &lt;p&gt;请解码返回原数组 arr 。可以证明答案存在并且是唯一的。&lt;/p&gt;
@@ -237,7 +238,64 @@
         &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ret&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;2021.05.11&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1734&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;给你一个整数数组 perm ，它是前 n 个正整数的排列，且 n 是个 奇数 。&lt;/p&gt;
+&lt;p&gt;它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i + 1] 。比方说，如果 perm = [1,3,2] ，那么 encoded = [2,1] 。&lt;/p&gt;
+&lt;p&gt;给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。&lt;/p&gt;
+&lt;p&gt; 
+示例 1：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;输入：encoded = [3,1]
+输出：[1,2,3]
+解释：如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;示例 2：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;输入：encoded = [6,5,4,6]
+输出：[2,4,1,5,3]
+ ```
+
+**提示：**
+
+3 &amp;lt;= n &amp;lt; 105
+n 是奇数。
+encoded.length == n - 1
+
+链接：https://leetcode-cn.com/problems/decode-xored-permutation
+
+**解题思路**
+
+这个题目和上一个的不同之处在于不知道first的值, 需要根据题目给出的限定条件首先算出来first的值。
+
+我们可以使用A, B, C, D, E代表整数数组perm，注意：它是前 n 个正整数的排列，且 n 是奇数。
+
+为了表达的方便，可以这么定义：将A XOR B（A和B进行异或运算）简写为AB。
+
+思路步骤：
+
+既然我们知道了perm = [A, B, C, D, E]，那么encoded = [AB, BC, CD, DE]；
+
+根据perm，我们可以得到ABCDE,根据encoded的BC和DE，我们可以得到BCDE；
+
+将ABCDE和BCDE进行异或运算，得到A，即perm的第一个元素。这时候，题目转换成上面的第一题。
+
+```python
+class Solution(object):
+    def decode(self, encoded):
+        x = 0
+        for i in range(1, len(encoded)+2):
+            x ^= i
+        
+        y = 0
+        for i in range(1, len(encoded), 2):
+            y ^= encoded[i]
+        
+        a1 = x ^ y
+        perm = [a1]
+        for n in encoded:
+            perm.append(perm[-1] ^ n)
+
+        return perm
+&lt;/code&gt;&lt;/pre&gt;</description>
                 
                 
                 
