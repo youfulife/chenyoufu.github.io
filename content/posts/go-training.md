@@ -78,3 +78,10 @@ grpc
 
 grpc
 
+服务发现
+
+service mesh 99%的公司不建议上，太复杂
+
+sidecar
+
+服务发现推荐 nacos
