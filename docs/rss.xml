@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 12 May 2021 20:02:55 &#43;0800</lastBuildDate>
+        <lastBuildDate>Wed, 12 May 2021 20:06:04 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://youfu.life/rss.xml" />
         
@@ -304,7 +304,7 @@
                 
                 <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
                 
-                    <description>&lt;p&gt;&lt;strong&gt;1720&lt;/strong&gt;&lt;/p&gt;
+                    <description>&lt;p&gt;&lt;strong&gt;1720 解码异或后的数组&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;未知整数数组 arr 由 n 个非负整数组成。&lt;/p&gt;
 &lt;p&gt;经编码后变为长度为 n - 1 的另一个整数数组 encoded ，其中 encoded[i] = arr[i] XOR arr[i + 1] 。例如，arr = [1,0,2,1] 经编码后得到 encoded = [1,2,3] 。&lt;/p&gt;
 &lt;p&gt;给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。&lt;/p&gt;
@@ -375,7 +375,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
 &lt;p&gt;2021.05.11&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1734&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1734  解码异或后的排列&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;给你一个整数数组 perm ，它是前 n 个正整数的排列，且 n 是个 奇数 。&lt;/p&gt;
 &lt;p&gt;它被加密成另一个长度为 n - 1 的整数数组 encoded ，满足 encoded[i] = perm[i] XOR perm[i + 1] 。比方说，如果 perm = [1,3,2] ，那么 encoded = [2,1] 。&lt;/p&gt;
 &lt;p&gt;给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。&lt;/p&gt;
@@ -387,50 +387,58 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;示例 2：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;输入：encoded = [6,5,4,6]
 输出：[2,4,1,5,3]
- ```
-
-**提示：**
-
-3 &amp;lt;= n &amp;lt; 105
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;提示：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;3 &amp;lt;= n &amp;lt; 105
 n 是奇数。
-encoded.length == n - 1
-
-链接：https://leetcode-cn.com/problems/decode-xored-permutation
-
-**解题思路**
-
-这个题目和上一个的不同之处在于不知道first的值, 需要根据题目给出的限定条件首先算出来first的值。
-
-我们可以使用A, B, C, D, E代表整数数组perm，注意：它是前 n 个正整数的排列，且 n 是奇数。
-
-为了表达的方便，可以这么定义：将A XOR B（A和B进行异或运算）简写为AB。
-
-思路步骤：
-
-既然我们知道了perm = [A, B, C, D, E]，那么encoded = [AB, BC, CD, DE]；
-
-根据perm，我们可以得到ABCDE,根据encoded的BC和DE，我们可以得到BCDE；
-
-将ABCDE和BCDE进行异或运算，得到A，即perm的第一个元素。这时候，题目转换成上面的第一题。
-
-```python
-class Solution(object):
-    def decode(self, encoded):
-        x = 0
-        for i in range(1, len(encoded)+2):
-            x ^= i
+encoded.length == n - 1&lt;/p&gt;
+&lt;p&gt;链接：https://leetcode-cn.com/problems/decode-xored-permutation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解题思路&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这个题目和上一个的不同之处在于不知道first的值, 需要根据题目给出的限定条件首先算出来first的值。&lt;/p&gt;
+&lt;p&gt;我们可以使用A, B, C, D, E代表整数数组perm，注意：它是前 n 个正整数的排列，且 n 是奇数。&lt;/p&gt;
+&lt;p&gt;为了表达的方便，可以这么定义：将A XOR B（A和B进行异或运算）简写为AB。&lt;/p&gt;
+&lt;p&gt;思路步骤：&lt;/p&gt;
+&lt;p&gt;既然我们知道了perm = [A, B, C, D, E]，那么encoded = [AB, BC, CD, DE]；&lt;/p&gt;
+&lt;p&gt;根据perm，我们可以得到ABCDE,根据encoded的BC和DE，我们可以得到BCDE；&lt;/p&gt;
+&lt;p&gt;将ABCDE和BCDE进行异或运算，得到A，即perm的第一个元素。这时候，题目转换成上面的第一题。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Solution&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;decode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;bp&#34;&gt;self&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;encoded&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;encoded&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;^=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;
         
-        y = 0
-        for i in range(1, len(encoded), 2):
-            y ^= encoded[i]
+        &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;encoded&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;^=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;encoded&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
         
-        a1 = x ^ y
-        perm = [a1]
-        for n in encoded:
-            perm.append(perm[-1] ^ n)
+        &lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;^&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;perm&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;encoded&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;perm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;append&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;perm&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;^&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 
-        return perm
-&lt;/code&gt;&lt;/pre&gt;</description>
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;perm&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
                 
                 
                 
