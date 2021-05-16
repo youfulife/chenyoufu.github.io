@@ -2,6 +2,8 @@
 title: "108 将有序数组转换为二叉搜索树"
 date: 2021-05-12T22:34:24+08:00
 draft: false
+tags: ["算法", "树"]
+categories: ["技术"]
 ---
 
 **题目**
@@ -22,3 +24,39 @@ draft: false
 
 **解题思路**
 
+```python
+class Solution(object):
+    def sortedArrayToBST(self, nums):
+        
+        def helper(nums, left, right):
+            
+            if left > right:
+                return None
+            
+            mid = (left + right) / 2
+            root = TreeNode(nums[mid])
+            
+            root.left = helper(nums, left, mid-1)
+            root.right = helper(nums, mid+1, right)
+            return root
+        
+        return helper(nums, 0, len(nums) - 1)
+```
+
+简单优化后：
+
+```python
+class Solution(object):
+    def sortedArrayToBST(self, nums):
+        if not nums:
+            return None
+        
+        mid = len(nums)/2
+        
+        root = TreeNode(nums[mid])
+        
+        root.left = self.sortedArrayToBST(nums[:mid])
+        root.right = self.sortedArrayToBST(nums[mid+1:])
+        
+        return root
+```
