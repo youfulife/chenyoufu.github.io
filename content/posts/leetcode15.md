@@ -2,8 +2,8 @@
 title: "三数之和"
 date: 2021-04-08T22:11:56+08:00
 draft: false
-category: 算法
-tag: leetcode
+tags: ["算法", "数组"]
+categories: ["技术"]
 ---
 
 题目：给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。

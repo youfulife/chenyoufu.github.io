@@ -60,3 +60,10 @@ class Solution(object):
       
         return max(leftH, rightH) + 1
 ```
+
+---------
+
+二刷 2021.05.23
+
+只是记得思路，自底向上，但是完全写不出代码来了。
+

@@ -117,3 +117,30 @@ class Solution(object):
 
 
 
+-------
+
+三刷：2021.05.23
+
+递归方式写对了，但是非递归方式，第一次提交还是忘记了一个条件。
+
+```python
+class Solution(object):
+    def hasPathSum(self, root, targetSum):
+        if  not root:
+            return False
+        
+        stack = [(root, root.val)]
+        
+        while stack:
+            node, v = stack.pop()
+            # 这里第一次提交只判断了v==targetSum, 而忘记了判断是不是叶子结点。
+            if not node.right and not node.left and v == targetSum:
+                return True
+            
+            if node.right:
+                stack.append((node.right, node.right.val+v))
+            
+            if node.left:
+                stack.append((node.left, node.left.val+v))
+        return False
+```
