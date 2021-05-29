@@ -68,3 +68,33 @@ class Solution(object):
                 stack.append((node.left, pSum+node.left.val, path + [node.left.val]))
         return ans
 ```
+
+------
+
+2021.5.27 更新
+
+```python
+class Solution(object):
+    def pathSum(self, root, targetSum):
+        
+        def helper(root, path, ans, targetSum):
+            
+            if not root:
+                return
+            
+            if not root.left and not root.right and targetSum == root.val:
+                path += [root.val]
+                ans.append(path[:])
+                return
+            
+            if root.left:
+                helper(root.left, path+[root.val], ans, targetSum-root.val)
+                
+            if root.right:
+                helper(root.right, path+[root.val], ans, targetSum-root.val)
+        
+        ans = []
+        helper(root, [], ans, targetSum)
+        return ans
+        
+```
