@@ -1,5 +1,5 @@
 ---
-title: "Leetcode268"
+title: "268 丢失的数字"
 date: 2021-05-31T17:31:34+08:00
 draft: false
 tags: ["算法", "数组"]
