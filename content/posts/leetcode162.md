@@ -36,41 +36,37 @@ categories: ["技术"]
 
 **解题思路**
 
-野路子，暴力东拼西凑
+**线性搜索**
 
 ```python
 class Solution(object):
     def findPeakElement(self, nums):
-        if not nums:
-            return None
-        if len(nums) == 1:
-            return 0
-        
-        for i in range(len(nums)):
-            if i > 0 and i < len(nums)-1 and nums[i] > nums[i-1] and nums[i] > nums[i+1]:
+        #if not nums: # 这几个边界都可以省略
+        #    return -1
+        #if len(nums) == 1:
+        #    return 0
+        for i in range(len(nums)-1):
+            if nums[i] > nums[i+1]:
                 return i
-        
-        if nums[0] > nums[1]:
-            return 0
-        
-        if nums[-2] < nums[-1]:
-            return len(nums)-1
-        return None
+        return len(nums) - 1
 ```
 
-优化代码的判断边界
+**二分搜索**
 
 ```python
 class Solution(object):
     def findPeakElement(self, nums):
         if not nums:
-            return None
-        nums = [nums[0]-1] + nums + [nums[-1]-1]
-        
-        for i in range(1, len(nums)-1):
-            if nums[i-1]< nums[i] and nums[i] > nums[i+1]:
-                return i-1
-
-        return None
+            return -1
+        left = 0
+        right = len(nums) - 1
+        while left < right:
+            mid = left + (right-left)/2
+            if nums[mid] > nums[mid+1]:
+                right = mid
+            elif nums[mid] < nums[mid+1]:
+                left = mid + 1
+            elif nums[mid] == nums[mid+1]:
+                right = mid
+        return left
 ```
-

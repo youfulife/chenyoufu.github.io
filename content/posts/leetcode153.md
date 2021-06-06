@@ -26,3 +26,70 @@ categories: ["技术"]
 
 **解题思路**
 
+**线性搜索**
+
+各种边界一定要考虑清楚：
+
+* 旋转0次
+* 旋转n次
+* 空数组
+* 只有一个元素的数组
+
+```python
+class Solution(object):
+    def findMin(self, nums):
+        if not nums:
+            return None
+        for i in range(len(nums)-1):
+            if nums[i] > nums[i+1]:
+                return nums[i+1]
+        return nums[0]
+```
+
+**优化 二分查找**
+
+```python
+class Solution(object):
+    def findMin(self, nums):
+        if not nums:
+            return None
+        left = 0
+        right = len(nums)-1
+        mid = left
+        while nums[left] > nums[right]:
+            if right-left == 1:
+                mid = right
+                break
+            mid = left + (right-left)/2
+            if nums[mid] > nums[left]:
+                left = mid
+            elif nums[mid] < nums[right]:
+                right = mid 
+        return nums[mid]
+```
+
+**更加精简的版本**
+
+用二分法查找，需要始终将目标值（这里是最小值）套住，并不断收缩左边界或右边界。
+
+```python
+class Solution(object):
+    def findMin(self, nums):
+        # [1]
+        # []
+        # [1,2,3]
+        # [2,3,1]
+        # [5,1,2,3,4]
+        if not nums:
+            return None
+        left = 0
+        right = len(nums)-1
+        while left < right: # 退出循环 left == right
+            mid = left + (right-left)/2
+            if nums[mid] > nums[right]: # mid肯定不会是目标值，所以可以跨过
+                left = mid + 1
+            else:
+                right = mid # mid 可能是目标值，所以right 要指向mid
+        return nums[right]
+```
+
