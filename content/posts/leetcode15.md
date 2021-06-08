@@ -103,3 +103,36 @@ func threeSum(nums []int) [][]int {
 目前这个题是第三遍了，感觉还是远远不够。
 
 ![](/img/1617893528206.jpg)
+
+
+----
+
+2021.06.07
+
+```python
+def threeSum(self, nums):
+        ans = []
+        nums = sorted(nums)
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+            
+            k = i+1
+            j = len(nums) - 1
+            while k<j:
+                if k > i+1 and nums[k] == nums[k-1]:
+                    k += 1
+                    continue
+                if j < len(nums) - 1 and nums[j] == nums[j+1]:
+                    j -= 1
+                    continue
+                if nums[i] + nums[k] + nums[j] == 0:
+                    ans.append([nums[i], nums[k], nums[j]])
+                    k += 1 # 这里总是忘记
+                    j -= 1
+                elif nums[i] + nums[k] + nums[j] > 0:
+                    j -= 1
+                else:
+                    k += 1
+        return ans
+```

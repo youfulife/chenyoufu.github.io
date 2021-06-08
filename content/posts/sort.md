@@ -18,13 +18,13 @@ func selectSort(a []int) {
 
   l := len(arr)
   for i:=0; i<l; i++ {
-    min = a[i]
+    min = i
     for j:=i+1; j<l; j++ {
-      if a[j] < min {
-        min = a[j]
+      if a[j] < a[min] {
+        min = j
       }
     }
-    a[i], a[j] = a[j], a[i]
+    a[i], a[min] = a[min], a[i]
   }
 
   return
@@ -37,28 +37,27 @@ func selectSort(a []int) {
 
 和选择排序不同的是，插入排序所需的时间取决于输入中元素的初始顺序。例如，对一个很大 且其中的元素已经有序(或接近有序)的数组进行排序将会比对随机顺序的数组或是逆序数组进行 排序要快得多。
 
-```golang
+插入排序不会访问索引 右侧的元素，而选择排序不会访问索引左侧的 元素。
 
-func insertSort(a []int) {
-  if a == nil {
+```go
+
+func insertSort(nums []int) {
+  if nums == nil {
     return
   }
 
-  l := len(a)
-
-  for i:=1; i<l; i++ {
-    for j:=i-1; j >= 0 && a[i] < a[j]; j-- {
-      a[j+1] = a[j] 
-      a[j] = a[i]
+  for i:= 1; i < len(nums); i++ {
+        for j:=i; j > 0 && nums[j] > nums[j-1]; j-- {
+            nums[j], nums[j-1] = nums[j-1], nums[j]
+        }
     }
-  }
   return
 }
 ```
 
 **冒泡排序**
 
-```golang
+```go
 
 func bubbleSort(arr []int) {
 
@@ -80,6 +79,44 @@ func bubbleSort(arr []int) {
   }
   return
 }
-
 ```
+
+**快速排序**
+
+```go
+func quickSort(nums []int, left, right int) {
+
+    if left >= right {
+        return
+    }
+
+    pivot := nums[left]
+
+    i := left
+    j := right
+
+    for i < j {
+        for i < j && nums[j] >= pivot {
+            j--
+        }
+        nums[i] = nums[j]
+
+        for i < j && nums[i] <= pivot {
+            i++
+        } 
+        nums[j] = nums[i]
+    }
+    nums[i] = pivot
+    quickSort(nums, left, i-1)
+    quickSort(nums, i+1, right)
+}
+```
+
+**希尔排序**
+
+
+**归并排序**
+
+
+**堆排序**
 
