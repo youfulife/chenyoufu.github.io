@@ -41,3 +41,50 @@ class Solution(object):
         helper(nums, path, ans)
         return ans
 ```
+
+**字典序算法**
+
+```python
+class Solution(object):
+    def permute(self, s):
+        def next(s):
+            n = len(s)
+
+            # 第一个比右边小的数
+            i = n - 2
+            while i >= 0 and s[i] > s[i+1]:
+                i -= 1
+            
+            if i == -1:
+                return s, False
+            
+            # i右侧比i小的最小值
+            j = i + 1
+            while j < n:
+                if s[j] > s[i]:
+                    j += 1
+                else:
+                    break
+            j -= 1
+            # 交换
+            s[i], s[j] = s[j], s[i]
+            # i 后面逆序
+            left = i + 1
+            right = n-1
+            while left < right:
+                s[left], s[right] = s[right], s[left]
+                left+=1
+                right-=1
+            
+            return s, True
+
+        p = sorted(s)
+        ans = [p[::]]
+        
+        while True:
+            p, ok = next(p)
+            if not ok:
+                break
+            ans.append(p[::])
+        return ans
+```
