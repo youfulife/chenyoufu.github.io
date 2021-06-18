@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">空</title>
     <subtitle type="html">人生笔记</subtitle>
-    <updated>2021-06-18T23:34:45&#43;08:00</updated>
+    <updated>2021-06-19T06:35:54&#43;08:00</updated>
     <id>https://youfu.life/</id>
     <link rel="alternate" type="text/html" href="https://youfu.life/" />
     <link rel="self" type="application/atom&#43;xml" href="https://youfu.life/atom.xml" />
@@ -6202,16 +6202,25 @@ s = &amp;quot;&amp;quot;
             <title type="text">书到用时方恨少</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/short/" />
             <id>https://youfu.life/posts/short/</id>
-            <updated>2021-05-17T18:05:33&#43;08:00</updated>
+            <updated>2021-06-19T06:35:49&#43;08:00</updated>
             <published>2021-05-17T13:47:53&#43;08:00</published>
             <author>
                     <name>youfu</name>
                     <uri>https://youfu.life/</uri>
                     <email>youfu.ok@163.com</email>
                     </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">java 英语 算法 设计模式 分布式系统知识 数据库 消息队列 微服务 golang优秀开源项目 编程语言……</summary>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">2021.06.19 更新。 做了一个梦。 梦见自己去面试google，第一轮是一个女士面试，英语自我介绍就……</summary>
             
-                <content type="html">&lt;ul&gt;
+                <content type="html">&lt;p&gt;2021.06.19 更新。&lt;/p&gt;
+&lt;p&gt;做了一个梦。&lt;/p&gt;
+&lt;p&gt;梦见自己去面试google，第一轮是一个女士面试，英语自我介绍就各种紧张，磕绊，听不懂提问的问题。&lt;/p&gt;
+&lt;p&gt;然后就醒了，睡不着了。&lt;/p&gt;
+&lt;p&gt;我又记起来写过的这个文章，一翻，又过去了一个月了。但是除了刷了一些leetcode的题，别的纹丝未动。&lt;/p&gt;
+&lt;p&gt;过去的几年基本都是这个状态，想的太多，做的太少，缺少一股子进取精神。&lt;/p&gt;
+&lt;p&gt;自身短缺的事情发生后，第一时间想着怎么回避，绕过，假装看不见，安慰，而不是迎难而上，把所有恐惧的事情全部干掉，让自己变得更有信心。&lt;/p&gt;
+&lt;p&gt;上一次非常自信还是5年前的事情了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
 &lt;li&gt;java&lt;/li&gt;
 &lt;li&gt;英语&lt;/li&gt;
 &lt;li&gt;算法&lt;/li&gt;
