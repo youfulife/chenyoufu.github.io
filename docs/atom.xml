@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">空</title>
     <subtitle type="html">人生笔记</subtitle>
-    <updated>2021-06-24T08:42:40&#43;08:00</updated>
+    <updated>2021-06-24T08:55:43&#43;08:00</updated>
     <id>https://youfu.life/</id>
     <link rel="alternate" type="text/html" href="https://youfu.life/" />
     <link rel="self" type="application/atom&#43;xml" href="https://youfu.life/atom.xml" />
@@ -7484,84 +7484,6 @@ s = &amp;quot;&amp;quot;
                                 <category scheme="https://youfu.life/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" term="设计模式" label="设计模式" />
                             
                         
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">书到用时方恨少</title>
-            <link rel="alternate" type="text/html" href="https://youfu.life/posts/short/" />
-            <id>https://youfu.life/posts/short/</id>
-            <updated>2021-06-24T08:42:36&#43;08:00</updated>
-            <published>2021-05-17T13:47:53&#43;08:00</published>
-            <author>
-                    <name>youfu</name>
-                    <uri>https://youfu.life/</uri>
-                    <email>youfu.ok@163.com</email>
-                    </author>
-            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">2021.06.19 更新。 做了一个梦。 梦见自己去面试google，第一轮是一个女士面试，英语自我介绍就……</summary>
-            
-                <content type="html">&lt;p&gt;2021.06.19 更新。&lt;/p&gt;
-&lt;p&gt;做了一个梦。&lt;/p&gt;
-&lt;p&gt;梦见自己去面试google，第一轮是一个女士面试，英语自我介绍就各种紧张，磕绊，听不懂提问的问题。&lt;/p&gt;
-&lt;p&gt;然后就醒了，睡不着了。&lt;/p&gt;
-&lt;p&gt;我又记起来写过的这个文章，一翻，又过去了一个月了。但是除了刷了一些leetcode的题，别的纹丝未动。&lt;/p&gt;
-&lt;p&gt;过去的几年基本都是这个状态，想的太多，做的太少，缺少一股子进取精神。&lt;/p&gt;
-&lt;p&gt;自身短缺的事情发生后，第一时间想着怎么回避，绕过，假装看不见，安慰，而不是迎难而上，把所有恐惧的事情全部干掉，让自己变得更有信心。&lt;/p&gt;
-&lt;p&gt;上一次非常自信还是5年前的事情了。&lt;/p&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;java&lt;/li&gt;
-&lt;li&gt;英语&lt;/li&gt;
-&lt;li&gt;算法&lt;/li&gt;
-&lt;li&gt;设计模式&lt;/li&gt;
-&lt;li&gt;分布式系统知识&lt;/li&gt;
-&lt;li&gt;数据库&lt;/li&gt;
-&lt;li&gt;消息队列&lt;/li&gt;
-&lt;li&gt;微服务&lt;/li&gt;
-&lt;li&gt;golang优秀开源项目&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;编程语言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;最近几年（2018年有过2个月，2020年12月份持续了1个月）中间断断续续的自己摸索过一段时间java，但是都没有坚持下来，很多时候都是听别人说不如深入的把golang学好，结果把持续了一个月的java又停了，但是中间也没有把golang学好。&lt;/p&gt;
-&lt;p&gt;目前来看，又过去5个月了，如果这五个月一直持续的投入，现在也不存在这个问题了。&lt;/p&gt;
-&lt;p&gt;这种错误已经不是第一次了，而是一次又一次的去犯，几乎不可原谅。&lt;/p&gt;
-&lt;p&gt;从目前的招聘市场和供需市场，甚至整个大环境的高质量软件来看，java还是占据了半壁江山，整个生态非常丰富，哪一个层面都有很多优秀的软件，包括前两天听golang高级进阶里提到的一个服务发现的开源项目也是java的。&lt;/p&gt;
-&lt;p&gt;很多适合java的语言特性来写一些业务代码确实会非常容易扩展和维护，当然golang我了解的不是太深，也没有仔细研究过优秀开源软件的代码，所以不清楚怎么写好golang代码，虽然目前的项目也一直用golang，但是写出来的代码基本还是面向过程的思路，可扩展性很差。&lt;/p&gt;
-&lt;p&gt;当我发现准备投简历时，面对招聘要求是java的，就会很不自信，原因就在于对java的不熟练，对spring的不熟练。正好现在有项目可以实战，虽然会多花很多的精力，但是这次要借助这个项目来彻底掌握java的一系列的技术栈。&lt;/p&gt;
-&lt;p&gt;其实工程师不应该局限于语言，每个语言都有自己擅长的一方面，会的语言多了，在面对需求的时候才能选择好一个合适的语言。&lt;/p&gt;
-&lt;p&gt;目前我的认知就是java适合一些业务逻辑相关的代码，需要用到语言本身的抽象类，继承，多态等属性。golang适合业务无关的中间件功能，需要golang的简洁，高性能，低内存，二进制编译部署。&lt;/p&gt;
-&lt;p&gt;目测在最近的10年内，也就是我的个人程序员生涯内，java和golang应该都还会大行其道，这两个是基础中的基础，不应该再去逃避或者喜欢哪个不喜欢哪个，都必须精通。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;设计模式&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;工作10年了，写出来的高质量代码几乎没有，都是凭借自己当前的认知来写一些流水账代码，虽然看了下《代码重构》中提到的各种点自己写代码的过程中也注意到了，但是基本还是函数级别的优化，但是还没有上升到设计模式层面。&lt;/p&gt;
-&lt;p&gt;个人感觉设计模式属于一个指导思想，是理论指导实践的非常好的标准，虽然有的时候滥用可能会导致过度设计，但是在重构的时候如果能够理解其中的一些设计奥妙，将会写出非常优雅的代码。&lt;/p&gt;
-&lt;p&gt;几年前（应该是2018年）自己曾经看过《图解设计模式》，更早的同时还看过一本《大话设计模式》，印象中看了大概有2/3吧，后来就中断了。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;算法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;算法这个就更加平时用不到了，10年都没有去认真对待过。&lt;/p&gt;
-&lt;p&gt;目前所有的面试都需要刷题，现在也已经做了差不多60道题目了，慢慢的找到了一些感觉，有了入门的感觉。&lt;/p&gt;
-&lt;p&gt;但是每次遇到新的题目都会打击自信心，只有不断地持续的坚持搞下去，把刷题作为自己的日常例行任务，让自己的水平时刻保持在巅峰状态，时刻可以出去面试，随时默写各种常见的算法代码。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;英语&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;书到用时方恨少。&lt;/p&gt;
-&lt;p&gt;从单词，句子，一点点的开始积累吧，不要怕山高水长，每一天都有进步，战胜昨天的自己，发现新的惊喜。&lt;/p&gt;
-</content>
-            
-            
-            
-                
-                
-                
-                    
-                    
-                    
-                        
-                            <category scheme="https://youfu.life/posts/" term="posts" label="posts" />
-                        
-                    
-                
-            
-            
-            
-                
                     
                 
             
