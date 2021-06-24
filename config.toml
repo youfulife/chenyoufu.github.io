@@ -194,13 +194,13 @@ uglyURLs = false
         post = "archive"
     [[menu.main]]
         url = "/life/"
-        name = "生活"
+        name = "随想"
         weight = 3
         pre = "internal"
         post = "archive"
     [[menu.main]]
         url = "/share/"
-        name = "分享"
+        name = "工具"
         weight = 3
         pre = "internal"
         post = "archive"

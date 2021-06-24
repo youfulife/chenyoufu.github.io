@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">空</title>
     <subtitle type="html">人生笔记</subtitle>
-    <updated>2021-06-20T22:59:36&#43;08:00</updated>
+    <updated>2021-06-24T08:42:40&#43;08:00</updated>
     <id>https://youfu.life/</id>
     <link rel="alternate" type="text/html" href="https://youfu.life/" />
     <link rel="self" type="application/atom&#43;xml" href="https://youfu.life/atom.xml" />
@@ -16,6 +16,79 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.79.0">Hugo</generator>
+        <entry>
+            <title type="text">数据库内核杂谈 系列笔记</title>
+            <link rel="alternate" type="text/html" href="https://youfu.life/posts/db-01/" />
+            <id>https://youfu.life/posts/db-01/</id>
+            <updated>2021-06-23T19:39:22&#43;08:00</updated>
+            <published>2021-06-23T15:54:03&#43;08:00</published>
+            <author>
+                    <name>youfu</name>
+                    <uri>https://youfu.life/</uri>
+                    <email>youfu.ok@163.com</email>
+                    </author>
+            <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">最近在看《数据库内核杂谈》系列。 读取数据优化 列式存储 每个字段单独的文件来存储，读取需……</summary>
+            
+                <content type="html">&lt;p&gt;最近在看《数据库内核杂谈》系列。&lt;/p&gt;
+&lt;h4 id=&#34;读取数据优化&#34;&gt;读取数据优化&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;列式存储&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;每个字段单独的文件来存储，读取需要的字段的时候就不需要加载不想干的数据到内存中，目前数据仓库基本都是列式存储。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;哈希索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;读取数据时，先根据索引列的键值找到需要读取的数据的位置，然后读取相应数据。&lt;/p&gt;
+&lt;p&gt;哈希索引针对范围过滤查询就无能为力了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;B树索引，B+树索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;查找快，插入删除操作复杂，要加锁和合并节点&lt;/p&gt;
+&lt;p&gt;基数小的列没有优势&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;跳表索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;高并发，内存友好&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;位图索引&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;位图索引专门针对基数很小的列来做索引。不适用于高并发环境，因为任何修改和添加，都需要对索引文件进行加锁。&lt;/p&gt;
+&lt;p&gt;1） 引入哈希索引用来提高点查询效率&lt;/p&gt;
+&lt;p&gt;2） 引入 B 树索引用来提高范围查询&lt;/p&gt;
+&lt;p&gt;3） 针对 B 树索引对高并发支持的诟病，引入跳表索引&lt;/p&gt;
+&lt;p&gt;4） 针对基数较小的列，引入位图索引&lt;/p&gt;
+</content>
+            
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                        
+                            <category scheme="https://youfu.life/posts/" term="posts" label="posts" />
+                        
+                    
+                
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://youfu.life/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" term="数据库" label="数据库" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">28 实现 strStr()</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/leetcode28/" />
@@ -7420,7 +7493,7 @@ s = &amp;quot;&amp;quot;
             <title type="text">书到用时方恨少</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/short/" />
             <id>https://youfu.life/posts/short/</id>
-            <updated>2021-06-19T06:35:49&#43;08:00</updated>
+            <updated>2021-06-24T08:42:36&#43;08:00</updated>
             <published>2021-05-17T13:47:53&#43;08:00</published>
             <author>
                     <name>youfu</name>

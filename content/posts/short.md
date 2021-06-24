@@ -2,7 +2,7 @@
 title: "书到用时方恨少"
 date: 2021-05-17T13:47:53+08:00
 draft: false
-categories: ["技术"]
+categories: ["随想"]
 ---
 
 2021.06.19 更新。
