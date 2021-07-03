@@ -60,3 +60,23 @@ class Solution(object):
         
         return root
 ```
+
+-----
+
+2021.07.03 二刷 已经完全不记得之前的解题思路了，就像新的题目一样
+
+```python
+class Solution(object):
+    def sortedArrayToBST(self, nums):
+        def helper(nums, left, right):
+            if left > right:
+                return None
+
+            mid = left + (right-left)/2
+            root = TreeNode(nums[mid])
+            root.left = helper(nums, left, mid-1)
+            root.right = helper(nums, mid+1, right)
+            return root
+        
+        return helper(nums, 0, len(nums)-1)
+```

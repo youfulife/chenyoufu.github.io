@@ -2,7 +2,7 @@
 title: "88 合并两个有序数组"
 date: 2021-06-03T22:06:22+08:00
 draft: false
-tags: ["算法", "数组"]
+tags: ["算法", "数组", "双指针"]
 categories: ["技术"]
 ---
 
@@ -45,3 +45,7 @@ class Solution(object):
             n -= 1
         return
 ```
+
+-----
+
+2021.07.03 二刷 思路记忆犹新
