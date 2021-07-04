@@ -33,3 +33,46 @@ class Solution(object):
                 maxP = max(maxP, x-minPrice)
         return maxP
 ```
+
+----
+
+2021.07.04 二刷
+
+**单调栈**
+
+* 在 pricesprices 数组的末尾加上一个 哨兵👨‍✈️(也就是一个很小的元素，这里设为 0))，就相当于作为股市收盘的标记(后面就清楚他的作用了)
+* 假如栈空或者入栈元素大于栈顶元素，直接入栈
+* 假如入栈元素小于栈顶元素则循环弹栈，直到入栈元素大于栈顶元素或者栈空
+* 在每次弹出的时候，我们拿他与买入的值(也就是栈底)做差，维护一个最大值。
+
+```python
+class Solution(object):
+    def maxProfit(self, prices):
+        stack = []
+        prices.append(0)
+        ans = 0
+        for x in prices:
+            while stack and stack[-1] > x:
+                ans = max(ans, stack[-1]-stack[0])
+                stack.pop()
+            stack.append(x)
+        return ans
+```
+
+**动态规划**
+
+* dp[i] = max(dp[i-1], price[i]-minPrice)
+* 优化后就可以得到最上面第一种方法
+
+```python
+class Solution(object):
+    def maxProfit(self, prices):
+        # dp[i] = max(dp[i-1], price[i]-minPrice)
+        minPrice = prices[0]
+        n = len(prices)
+        dp = [0] * n
+        for i in range(1, n):
+            minPrice = min(minPrice, prices[i])
+            dp[i] = max(dp[i-1], prices[i]-minPrice)
+        return max(dp)
+```
