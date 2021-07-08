@@ -1,10 +1,12 @@
 ---
-title: "排序"
+title: "912 排序数组"
 date: 2021-05-29T11:21:01+08:00
 draft: false
-tags: ["算法", "排序"]
+tags: ["算法", "排序", "再刷"]
 categories: ["技术"]
 ---
+
+https://leetcode-cn.com/problems/sort-an-array/
 
 **选择排序**
 最容易理解。
@@ -119,4 +121,191 @@ func quickSort(nums []int, left, right int) {
 
 
 **堆排序**
+
+
+-----
+
+2021.7.7
+
+选择排序
+
+```python
+class Solution(object):
+    def sortArray(self, nums):
+        n = len(nums)
+        for i in range(n):
+            minIndex = i
+            for j in range(i, n):
+                if nums[j] < nums[minIndex]:
+                    minIndex = j
+            nums[i], nums[minIndex] = nums[minIndex], nums[i]
+        return nums
+```
+
+
+2021.7.8
+
+冒泡排序
+
+```python
+class Solution(object):
+    def sortArray(self, nums):
+        n = len(nums)
+        for i in range(n):
+            for j in range(n-1-i):
+                if nums[j+1] < nums[j]:
+                    nums[j], nums[j+1] = nums[j+1], nums[j]
+        return nums
+```
+
+快速排序
+
+```python
+class Solution(object):
+    def sortArray(self, nums):
+        def quickSort(nums, left, right):
+            if left >= right:
+                return 0
+            i = partition(nums, left, right)
+            quickSort(nums, left, i-1)
+            quickSort(nums, i+1, right)
+
+        def partition(nums, left, right):
+            pivot = nums[left]
+            i = left
+            j = right
+            while i < j:
+                while i<j and nums[j]>=pivot:
+                    j-=1
+                nums[i] = nums[j]
+                while i<j and nums[i]<=pivot:
+                    i+=1
+                nums[j] = nums[i]
+            nums[i] = pivot
+            return i
+        quickSort(nums, 0, len(nums)-1)
+        return nums
+
+class Solution(object):
+    def sortArray(self, nums):
+        def quickSort(nums, left, right):
+            if left >= right:
+                return
+            
+            pivot = nums[left]
+            i = left
+            j = right
+            while i < j:
+                while i<j and nums[j]>= pivot:
+                    j -= 1
+                nums[i] = nums[j]
+                while i<j and nums[i] <= pivot:
+                    i += 1
+                nums[j] = nums[i]
+            nums[i] = pivot
+            quickSort(nums, left, i-1)
+            quickSort(nums, i+1, right)
+        quickSort(nums, 0, len(nums)-1)
+        return nums
+
+
+class Solution(object):
+    def sortArray(self, nums):
+        def quickSort(nums, left, right):
+            if left >= right:
+                return
+            
+            pivot = nums[left]
+            i = left + 1
+            j = i
+            while j <= right:
+                if nums[j] < pivot:
+                    nums[i], nums[j] = nums[j], nums[i]
+                    i+=1
+                j+=1
+            nums[left], nums[i-1] = nums[i-1], nums[left]
+            i -= 1
+            quickSort(nums, left, i-1)
+            quickSort(nums, i+1, right)
+        quickSort(nums, 0, len(nums)-1)
+        return nums
+
+
+class Solution(object):
+    def sortArray(self, nums):
+        def quickSort(nums, left, right):
+            if left >= right:
+                return
+            k = random.randint(left, right)
+            nums[left], nums[k] = nums[k], nums[left]
+            pivot = nums[left]
+            i = left + 1
+            j = left + 1
+            while j <= right:
+                if nums[j] < pivot:
+                    nums[i], nums[j] = nums[j], nums[i]
+                    i+=1
+                j+=1
+            nums[i-1], nums[left] = nums[left], nums[i-1]
+            i-=1
+
+            quickSort(nums, left, i-1)
+            quickSort(nums, i+1, right)
+        quickSort(nums, 0, len(nums)-1)
+        return nums
+```
+
+插入排序
+
+```python
+class Solution(object):
+    def sortArray(self, nums):
+            n = len(nums)
+            for i in range(1, n):
+                temp = nums[i]
+                j = i - 1
+                while j>=0 and nums[j]>temp:
+                    nums[j+1] = nums[j]
+                    j -= 1
+                nums[j+1] = temp
+            return nums
+```
+
+归并排序
+
+```python
+def mergeSort(nums):
+  temp = merge(nums, 0, len(nums)-1)
+  for i in range(len(temp)):
+    nums[i] = temp[i]
+  return 
+
+def merge(nums, left, right):
+  if left >= right:
+    return nums[left]
+  
+  mid = left + (right-left)/2
+  arr1 = merge(nums, left, mid)
+  arr2 = merge(nums, mid+1, right)
+
+  temp = []
+  i = 0
+  j = 0
+  while i < len(arr1) and j< len(arr2):
+    if arr1[i] < arr2[j]:
+      temp.append(arr1[i])
+      i+=1
+    else:
+      temp.append(arr2[j])
+      j+=1
+  while i < len(arr1):
+    temp.append(arr1[i])
+    i+=1
+  while j < len(arr2):
+    temp.append(arr2)
+    j+=1
+  return temp
+```
+
+堆排序
 
