@@ -1,7 +1,7 @@
 ---
 title: "Guitar 03"
 date: 2021-06-04T23:01:13+08:00
-draft: false
+draft: true
 tags: ["吉他"]
 categories: ["音乐"]
 ---

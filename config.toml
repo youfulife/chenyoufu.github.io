@@ -198,15 +198,15 @@ uglyURLs = false
         weight = 3
         pre = "internal"
         post = "archive"
-    [[menu.main]]
-        url = "/music/"
-        name = "音乐"
-        weight = 3
-        pre = "internal"
-        post = "archive"
+    #[[menu.main]]
+    #    url = "/music/"
+    #    name = "音乐"
+    #    weight = 3
+    #    pre = "internal"
+    #    post = "archive"
     #[[menu.main]]
     #    url = "/categories/"
-    #   name = "分类"
+    #    name = "分类"
     #    weight = 3
     #    pre = "internal"
     #    post = "th"

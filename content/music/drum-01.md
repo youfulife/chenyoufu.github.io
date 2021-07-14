@@ -1,7 +1,7 @@
 ---
 title: "架子鼓双击练习01"
 date: 2021-06-22T21:51:23+08:00
-draft: false
+draft: true
 tags: ["架子鼓"]
 categories: ["音乐"]
 ---

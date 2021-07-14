@@ -1,6 +1,7 @@
 ---
 title: "Guitar 05"
 date: 2021-06-14T22:43:41+08:00
+draft: true
 tags: ["吉他"]
 categories: ["音乐"]
 ---

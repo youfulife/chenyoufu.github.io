@@ -1,7 +1,7 @@
 ---
 title: "吉他系统学习第一周"
 date: 2021-05-13T22:34:41+08:00
-draft: false
+draft: true
 tags: ["吉他"]
 categories: ["音乐"]
 ---

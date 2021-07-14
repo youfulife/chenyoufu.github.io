@@ -1,7 +1,7 @@
 ---
 title: "Guitar 02"
 date: 2021-05-21T17:22:51+08:00
-draft: false
+draft: true
 tags: ["吉他"]
 categories: ["音乐"]
 ---
