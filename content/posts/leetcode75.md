@@ -32,6 +32,11 @@ categories: ["技术"]
 class Solution(object):
     def sortColors(self, nums):
         n = len(nums)
+        # 定义循环不变量
+        # all in [0, p0) == 0
+        # all in [p0, i) == 1
+        # all in (p2, len-1] == 2
+
         j = 0 # [0, j)
         k = n - 1 # (k, n-1]
         i = 0
