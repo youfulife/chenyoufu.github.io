@@ -2,7 +2,7 @@
 title: "两道异或题"
 date: 2021-05-06T22:27:32+08:00
 draft: false
-tags: ["算法", "数组"]
+tags: ["算法", "异或"]
 categories: ["技术"]
 ---
 
