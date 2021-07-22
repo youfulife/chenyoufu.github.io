@@ -309,3 +309,85 @@ def merge(nums, left, right):
 
 堆排序
 
+
+-----
+
+2021.7.22
+
+快速排序
+
+```python
+def quickSort(nums):
+  partition(nums, 0, len(nums))
+
+def partition(nums, left, right):
+  if left >= right:
+    return
+  
+  pivot = nums[left]
+  i = left + 1
+  j = left + 1
+  # [i, j)
+  while i < right:
+    if nums[i] < pivot:
+      nums[i], nums[j] = nums[j], nums[i]
+      j += 1
+    i += 1
+
+  nums[j-1], nums[left] = nums[left], nums[j-1]
+  # 前闭后开区间，所以右边界是j-1
+  partition(nums, left, j-1)
+  partition(nums, j, right)
+  return
+
+def partition2(nums, left, right):
+  if left >= right:
+    return
+  
+  # 随机pivot
+  x = random.randint(left, right-1)
+  nums[left], nums[x] = nums[x], nums[left]
+
+  pivot = nums[left]
+  i = left + 1
+  j = left + 1
+  # [i, j)
+  while i < right:
+    if nums[i] < pivot:
+      nums[i], nums[j] = nums[j], nums[i]
+      j += 1
+    i += 1
+
+  nums[j-1], nums[left] = nums[left], nums[j-1]
+
+  partition(nums, left, j-1)
+  partition(nums, j, right)
+  return
+
+def partition3(nums, left, right):
+  if left >= right:
+    return
+  
+  # 随机pivot
+  x = random.randint(left, right)
+  nums[left], nums[x] = nums[x], nums[left]
+
+  pivot = nums[left]
+  i = left
+  j = right
+  # [i, j]
+  while i < j:
+    # nums[j] >= pivot 和 nums[i] <= pivot 至少有一个=，否则可能会死循环
+    while i < j and nums[j] >= pivot:
+      j -= 1
+    nums[i] = nums[j]
+    
+    while i < j and nums[i] <= pivot:
+      i += 1
+
+    nums[j] = nums[i]
+  nums[j] = pivot
+  partition(nums, left, j-1)
+  partition(nums, j+1, right)
+  return
+```
