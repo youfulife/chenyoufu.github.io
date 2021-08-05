@@ -7,7 +7,7 @@
 
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>空</title>
+        <title>Leetnote</title>
         <link>https://youfu.life/</link>
         <description>人生笔记</description>
         <generator>Hugo 0.79.0 https://gohugo.io/</generator>
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Wed, 04 Aug 2021 23:36:24 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 05 Aug 2021 21:44:52 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://youfu.life/rss.xml" />
         
