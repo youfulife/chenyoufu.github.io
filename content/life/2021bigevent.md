@@ -1,7 +1,7 @@
 ---
 title: "2021没有白过"
 date: 2021-04-22T22:04:31+08:00
-draft: false
+draft: true
 tags: ["私生活"]
 categories: ["非技术"]
 ---

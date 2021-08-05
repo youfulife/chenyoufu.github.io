@@ -4,7 +4,7 @@
 publishdir = "docs"
 
 baseURL = "https://youfu.life/"
-title = "Leetnote"
+title = "leetnote"
 languageCode = "zh-CN"
 hasCJKLanguage = true
 # 版权信息（支持 Markdown）
