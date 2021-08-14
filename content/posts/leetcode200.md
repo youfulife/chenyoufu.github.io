@@ -41,6 +41,42 @@ categories: ["技术"]
 
 **BFS**
 
+```python
+class Solution(object):
+    def bfs(self, grid, i, j, m, n, visited):
+        # 入队列的是坐标
+        q = collections.deque([(i, j)])
+        # 这里不要忘记
+        visited[i][j] = 1
+
+        while q:
+            curi, curj = q.popleft()
+            for di, dj in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                x = curi + di
+                y = curj + dj
+                # 不要忘记判断边界
+                if 0 <= x < m and 0 <= y < n and grid[x][y] == '1' and visited[x][y] == 0:
+                    q.append((x, y))
+                    # 这里不要忘记标记为已经访问过
+                    visited[x][y] = 1
+        return
+
+    def numIslands(self, grid):
+        m = len(grid)
+        n = len(grid[0])
+        # 二维数组初始化方法
+        visited = [[0]* n for i in range(m)]
+
+        ans = 0
+        for i in range(m):
+            for j in range(n):
+                # 这里 '1' 是字符串, 不是整数 1
+                if grid[i][j] == '1' and visited[i][j] == 0:
+                    self.bfs(grid, i, j, m, n, visited)
+                    ans += 1
+        return ans
+```
+
 **并查集**
 
 ```python
