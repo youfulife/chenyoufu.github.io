@@ -1,5 +1,5 @@
 ---
-title: "剑指 Offer 22. 链表中倒数第k个节点"
+title: "剑指 Offer 22 链表中倒数第k个节点"
 date: 2021-05-30T08:08:11+08:00
 draft: false
 tags: ["算法", "链表"]
