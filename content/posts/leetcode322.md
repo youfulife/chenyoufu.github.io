@@ -2,7 +2,7 @@
 title: "322 零钱兑换"
 date: 2021-06-08T21:31:56+08:00
 draft: false
-tags: ["算法", "动态规划"]
+tags: ["算法", "动态规划", "BFS", "五星"]
 categories: ["技术"]
 ---
 
@@ -45,4 +45,33 @@ class Solution(object):
                     continue
                 dp[i] = min(dp[i], 1 + dp[i-coin])
         return dp[amount] if dp[amount] < amount+1 else -1
+```
+
+**BFS**
+
+
+```python
+class Solution(object):
+    def coinChange(self, coins, amount):
+        if amount == 0:
+            return 0
+        step = 0
+        visited = {}
+        q = deque([amount])
+        visited[amount] = True
+
+        while q:
+            qsize = len(q)
+            for _ in range(qsize):
+                remain = q.popleft()
+                if remain == 0:
+                    return step 
+                if remain > 0:
+                    for c in coins:
+                        x = remain - c
+                        if x not in visited:
+                            q.append(x)
+                            visited[x] = True
+            step += 1
+        return -1
 ```
