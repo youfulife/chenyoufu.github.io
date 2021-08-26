@@ -1,8 +1,8 @@
 ---
-title: "Leetcode1136"
+title: "1136 平行课程"
 date: 2021-08-24T23:17:19+08:00
 draft: false
-tags: ["算法", "图", "拓扑排序"]
+tags: ["算法", "图", "拓扑排序", "BFS"]
 categories: ["技术"]
 ---
 
