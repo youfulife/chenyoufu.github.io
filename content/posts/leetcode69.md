@@ -48,3 +48,29 @@ class Solution(object):
             else:
                 return int(mid)
 ```
+
+2021.08.31 二刷
+
+做了挺长时间又没做出来，边界老是报错，最终又是看了题解。
+
+步骤：
+
+1. 如果恰好找到一个数满足平方等于x，就返回这个数
+2. 如果平方小于x，说明这个数可能是答案，因为答案是下取整的，先做一个标记，然后对这个数的右侧去进行二分查找，如果有更接近这个x的平方根，这个标记就会被更新。
+3. 如果平方大于x，说明这个数不可能是答案，此时直接对该数的左侧进行二分查找。
+
+```python
+class Solution(object):
+    def mySqrt(self, x):
+        left, right = 0, x
+        ans = -1
+        
+        while left <= right:
+            mid = left + (right-left) / 2
+            if mid * mid > x:
+                right = mid-1
+            elif mid * mid <= x:
+                ans = mid
+                left = mid + 1
+        return ans
+```

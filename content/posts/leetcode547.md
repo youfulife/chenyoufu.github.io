@@ -57,3 +57,49 @@ class Solution(object):
 
 **BFS**
 
+
+-----------
+
+2021.08.31 二刷 一遍过 标准并查集模版
+
+```python
+class Solution(object):
+    class UFS():
+
+        def __init__(self, n):
+            self.count = n
+            self.p = [i for i in range(n)]
+        
+        def find(self, x):
+            if self.p[x] != x:
+                self.p[x] = self.find(self.p[x])
+            return self.p[x]
+        
+        def union(self, x, y):
+            rootx = self.find(x)
+            rooty = self.find(y)
+            if rootx == rooty:
+                return
+            self.p[rootx] = rooty
+            self.count -= 1
+            return
+        
+        def isConnected(self, x, y):
+            return self.find(x) == self.find(y)
+
+
+
+    def findCircleNum(self, isConnected):
+        """
+        :type isConnected: List[List[int]]
+        :rtype: int
+        """
+        n = len(isConnected)
+
+        ufs = Solution.UFS(n)
+        for i in range(n):
+            for j in range(n):
+                if isConnected[i][j] == 1:
+                    ufs.union(i, j)
+        return ufs.count
+```
