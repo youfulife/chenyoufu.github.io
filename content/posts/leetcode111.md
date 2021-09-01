@@ -2,7 +2,7 @@
 title: "111 二叉树的最小深度"
 date: 2021-05-07T20:13:01+08:00
 draft: false
-tags: ["算法", "树"]
+tags: ["算法", "树", "DFS", "BFS", "五星"]
 categories: ["技术"]
 ---
 
@@ -38,6 +38,24 @@ class Solution(object):
             return 1 + self.minDepth(root.left) + self.minDepth(root.right)
         
         return 1 + min(self.minDepth(root.left), self.minDepth(root.right))     
+```
+
+v2 
+
+```python
+class Solution(object):
+    def minDepth(self, root):
+        if not root:
+            return 0
+        if not root.left and not root.right:
+            return 1
+        
+        minD = float('+inf')
+        if root.left:
+            minD = min(self.minDepth(root.left), minD)
+        if root.right:
+            minD = min(self.minDepth(root.right), minD)
+        return minD + 1
 ```
 
 **BFS 层序遍历**
