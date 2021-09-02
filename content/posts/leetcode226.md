@@ -122,3 +122,37 @@ class Solution(object):
         return root
 ```
 
+-----
+
+2021.09.02 二刷
+
+DFS
+
+```python
+class Solution(object):
+    def invertTree(self, root):
+        if not root:
+            return
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        return root
+```
+
+BFS
+
+```python
+class Solution(object):
+    def invertTree(self, root):
+        if not root:
+            return
+
+        q = [root]
+        for node in q:
+            node.left, node.right = node.right, node.left
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+        return root
+```

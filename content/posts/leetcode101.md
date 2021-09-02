@@ -148,3 +148,24 @@ class Solution(object):
             stack.append((left.right, right.left))
         return True
 ```
+
+-----
+
+2021.09.02 再刷 非递归方式没做出来
+
+```python
+class Solution(object):
+    def isSymmetric(self, root):
+        stack = [(root, root)]
+        while stack:
+            left, right = stack.pop()
+            if not left and not right:
+                continue
+            if not left or not right:
+                return False
+            if left.val != right.val:
+                return False
+            stack.append((left.left, right.right))
+            stack.append((left.right, right.left))
+        return True
+```
