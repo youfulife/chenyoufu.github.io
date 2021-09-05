@@ -365,7 +365,8 @@ def partition2(nums, left, right):
   return
 
 def partition3(nums, left, right):
-  if left >= right:
+  # 闭区间, 这里不能>=
+  if left > right:
     return
   
   # 随机pivot

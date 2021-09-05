@@ -2,7 +2,7 @@
 title: "101 对称二叉树"
 date: 2021-04-17T22:47:50+08:00
 draft: false
-tags: ["算法", "树"]
+tags: ["算法", "树", "DFS", "BFS", "五星"]
 categories: ["技术"]
 ---
 

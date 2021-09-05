@@ -1,5 +1,5 @@
 ---
-title: "树"
+title: "树的遍历"
 date: 2021-04-12T22:22:08+08:00
 draft: false
 tags: ["算法", "树"]
@@ -138,3 +138,101 @@ class Solution(object):
 
 所以有两个题目必须写到肌肉记忆，就是输出二叉树每一层的节点和每一条路径的节点，每隔两天就要写一下递归和非递归的方法，防止遗忘。
 
+-----
+
+2021.09.05 DFS专题再刷
+
+前序 
+
+```python
+class Solution(object):
+    def preorderTraversal(self, root):
+        def dfs(root, ans):
+            if not root:
+                return
+            
+            ans.append(root.val)
+            dfs(root.left, ans)
+            dfs(root.right, ans)
+            return
+        ans = []
+        dfs(root, ans)
+        return ans
+```
+
+非递归
+
+```python
+class Solution(object):
+    def preorderTraversal(self, root):
+        if not root:
+            return []
+        ans = []
+        stack = [root]
+        while stack:
+            node = stack.pop()
+            ans.append(node.val)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+        return ans
+```
+
+非递归，统一的 前，中，后三种遍历方法，颜色标记法
+
+https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/yan-se-biao-ji-fa-yi-chong-tong-yong-qie-jian-ming/
+
+
+其核心思想如下：
+
+* 使用颜色标记节点的状态，新节点为白色，已访问的节点为灰色。
+* 如果遇到的节点为白色，则将其标记为灰色，然后将其右子节点、自身、左子节点依次入栈。
+* 如果遇到的节点为灰色，则将节点的值输出。
+
+```python
+class Solution:
+    def inorderTraversal(self, root: TreeNode) -> List[int]:
+        WHITE, GRAY = 0, 1
+        res = []
+        stack = [(WHITE, root)]
+        while stack:
+            color, node = stack.pop()
+            if node is None: continue
+            if color == WHITE:
+                stack.append((WHITE, node.right))
+                stack.append((GRAY, node))
+                stack.append((WHITE, node.left))
+            else:
+                res.append(node.val)
+        return res
+```
+
+如要实现前序、后序遍历，只需要调整左右子节点的入栈顺序即可。
+
+也可以基于visited来稍微改进。
+
+后序遍历
+
+```python
+class Solution(object):
+    def postorderTraversal(self, root):
+        if not root:
+            return []
+        ans = []
+        visited = []
+        stack = [root]
+        while stack:
+            node = stack.pop()
+            if not node:
+                continue
+            if node not in visited:
+                stack.append(node)
+                stack.append(node.right)
+                stack.append(node.left)
+                visited.append(node)
+            else:
+                ans.append(node.val)
+
+        return ans
+```
