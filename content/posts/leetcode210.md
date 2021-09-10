@@ -41,3 +41,13 @@ class Solution(object):
                     q.append(j)
         return ans if sum(d) == 0 else []
 ```
+
+为什么「拓扑排序」的「广度优先遍历」没有使用 visited 数组。这是因为 
+1. 「拓扑排序」需要在「有向无环图」的前提下才能得到拓扑排序的结果
+2. 而 visited 数组的作用正是因为图中有环，才需要使用它记住已经遍历过的顶点，但是「有向无环图」恰好是没有环的，因此无需使用 visited 数组；
+3. 入度数组恰好起到了 visited 数组的作用，如果在遍历完成以后，还存在入度不为 00 的顶点，则说明图中存在环，不能到拓扑序。
+
+作者：力扣 (LeetCode)
+链接：https://leetcode-cn.com/leetbook/read/bfs/ek9sl2/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

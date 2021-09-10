@@ -2,7 +2,7 @@
 title: "323 无向图中连通分量的数目"
 date: 2021-08-08T23:05:50+08:00
 draft: false
-tags: ["算法", "并查集", "BFS"]
+tags: ["算法", "并查集", "BFS", "DFS"]
 categories: ["技术"]
 ---
 **题目**
@@ -67,3 +67,60 @@ class Solution(object):
 ```
 
 **并查集**
+
+```python
+class Solution(object):
+    class UFS():
+        def __init__(self, n):
+            self.count = n
+            self.p = [i for i in range(n)]
+        
+        def find(self, x):
+            if self.p[x] != x:
+                self.p[x] = self.find(self.p[x])
+            return self.p[x]
+        
+        def union(self, x, y):
+            rootx = self.find(x)
+            rooty = self.find(y)
+            if rootx == rooty:
+                return
+            self.p[rootx] = rooty
+            self.count -= 1
+
+    def countComponents(self, n, edges):
+        ufs = Solution.UFS(n)
+        for x, y in edges:
+            ufs.union(x, y)
+        print(ufs.p)
+        return ufs.count
+```
+
+**DFS**
+
+```python
+class Solution(object):
+
+    def countComponents(self, n, edges):
+
+        def dfs(v, i, visited):
+            visited[i] = 1
+            for j in v[i]:
+                if visited[j] == 0:
+                    dfs(v, j, visited)
+            return
+
+        v = [[] for i in range(n)]
+        visited = [0] * n
+        for x, y in edges:
+            v[x].append(y)
+            v[y].append(x)
+
+        step = 0
+        for i in range(n):
+            if visited[i] == 0:
+                dfs(v, i, visited)
+                step += 1
+
+        return step
+```
