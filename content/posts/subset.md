@@ -16,8 +16,11 @@ categories: ["技术"]
 * [39 组合总和](https://leetcode-cn.com/problems/combination-sum)
 * [40 组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii)
 * [17 电话号码的字母组合](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number)
+* [1079 活字印刷](https://leetcode-cn.com/problems/letter-tile-possibilities/)
 
 ### 总结
+
+for循环横向遍历，递归纵向遍历，回溯不断调整结果集，这个理念贯穿整个回溯法系列
 
 ```python
 void backtracking(参数) {
@@ -187,49 +190,21 @@ class Solution(object):
 输出：[[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
 ```
 
-自己第一遍写的，东拼西凑的条件。。。
-
 ```python
 class Solution(object):
     def subsets(self, nums):
-
-        def dfs(nums, start, depth, path, ans):
+        path = []
+        ans = []
+        n = len(nums)
+        def dfs(start):
             ans.append(path[:])
-            if depth == len(nums):
-                return
-            
-            for i in range(start, len(nums)):
-                if len(path)>0 and nums[i] <= path[-1]:
-                    continue
+            for i in range(start, n):
                 path.append(nums[i])
-                dfs(nums, start+1, depth+1, path, ans)
+                dfs(i+1)
                 path.pop()
-
-        ans =[]
-        nums.sort()
-        dfs(nums, 0, 0, [], ans)
+        dfs(0)
         return ans
 ```
-
-优化
-
-```python
-class Solution(object):
-    def subsets(self, nums):
-
-        def dfs(nums, start, path, ans):
-            ans.append(path[:])
-            for i in range(start, len(nums)):
-                path.append(nums[i])
-                dfs(nums, i+1, path, ans)
-                path.pop()
-
-        ans =[]
-        nums.sort()
-        dfs(nums, 0, [], ans)
-        return ans
-```
-
 
 ### 90 子集 II
 
@@ -246,26 +221,77 @@ class Solution(object):
 ```python
 class Solution(object):
     def subsetsWithDup(self, nums):
-        def dfs(nums, start, path, ans, used):
+        n = len(nums)
+        path = []
+        ans = []
+        # 在子集的基础上处理重复, 排序 + 访问记录
+        used = [0] * n
+        nums.sort()
+        
+        def dfs(start):
             ans.append(path[:])
-
-            for i in range(start, len(nums)):
-                # 去重
+            for i in range(start, n):
+                # 去重的是同一树层上的“使用过”
                 if i > 0 and nums[i] == nums[i-1] and used[i-1] == 0:
                     continue
-                path.append(nums[i])
+                # 不要忘记标记
                 used[i] = 1
-                # 注意是i+1，不是start+1
-                dfs(nums, i+1, path, ans, used)
-                path.pop()
+                path.append(nums[i])
+                # 下一次的起始点 i+1
+                dfs(i+1)
                 used[i] = 0
-        ans = []
-        used = [0] * len(nums)
-        # 不要忘记排序
-        nums.sort()
-        dfs(nums, 0, [], ans, used)
+                path.pop()
+        dfs(0)
         return ans
 ```
+
+### 1079 活字印刷
+
+你有一套活字字模 tiles，其中每个字模上都刻有一个字母 tiles[i]。返回你可以印出的非空字母序列的数目。
+
+注意：本题中，每个活字字模只能使用一次。
+
+示例 1：
+```
+输入："AAB"
+输出：8
+解释：可能的序列为 "A", "B", "AA", "AB", "BA", "AAB", "ABA", "BAA"。
+```
+
+**解题思路**
+
+参考：https://leetcode-cn.com/problems/letter-tile-possibilities/solution/java-hui-su-suan-fa-jie-jue-by-sdwwld-5r4r/
+
+前面介绍的几个组合的回溯算法，因为结果不能有重复的（比如[1，3]和[3，1]被认为是重复的结果），所以每次选择的时候都只能从前往后选。但这题中子集[A，B]和[B，A]被认为是两种不同的结果，所以每次都要从头开始选择，因为每个字符只能被使用一次，所以如果使用之后下次就不能再使用了，这里可以使用一个数组visit来标记有没有被使用。
+
+```python
+class Solution(object):
+    def numTilePossibilities(self, tiles):
+        tiles = sorted(tiles)
+        n = len(tiles)
+        ans = []
+        used = [0] * n
+
+        def dfs(path):
+            if path != "":
+                ans.append(path)
+            if len(path) == len(tiles):
+                return
+            # 注意，这里的i每次都是从0开始的，不是从start开始
+            for i in range(n):
+                # 一个字符只能选择一次，如果当前字符已经选择了，就不能再选了。
+                if used[i] == 1:
+                    continue
+                # 过滤掉重复的结果
+                if i > 0 and tiles[i] == tiles[i-1] and used[i-1] == 0:
+                    continue
+                used[i] = 1
+                dfs(path + tiles[i])
+                used[i] = 0
+        dfs("")
+        return len(ans)
+```
+
 ### 39 组合总和
 
 给定一个无重复元素的正整数数组 candidates 和一个正整数 target ，找出 candidates 中所有可以使数字和为目标数 target 的唯一组合。
