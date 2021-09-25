@@ -39,6 +39,31 @@ categories: ["技术"]
 
 **DFS**
 
+```python
+class Solution(object):
+    def numIslands(self, grid):
+        m = len(grid)
+        n = len(grid[0])
+        visited = [[0] * n for _ in range(m)]
+
+        def dfs(i, j):
+            for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                newi = dx + i
+                newj = dy + j
+                if 0<=newi<m and 0<=newj<n and visited[newi][newj] == 0 and grid[newi][newj] == '1':
+                    visited[newi][newj] = 1
+                    dfs(newi, newj)
+        
+        ans = 0
+        for i in range(m):
+            for j in range(n):
+                if visited[i][j] == 0 and grid[i][j] == '1':
+                    visited[i][j] = 1
+                    dfs(i, j)
+                    ans += 1
+        return ans
+```
+
 **BFS**
 
 ```python
@@ -73,6 +98,35 @@ class Solution(object):
                 # 这里 '1' 是字符串, 不是整数 1
                 if grid[i][j] == '1' and visited[i][j] == 0:
                     self.bfs(grid, i, j, m, n, visited)
+                    ans += 1
+        return ans
+```
+
+2021.9.25 更新复习
+
+```python
+class Solution(object):
+    def numIslands(self, grid):
+        m = len(grid)
+        n = len(grid[0])
+        visited = [[0] * n for _ in range(m)]
+
+        def bfs(i, j):
+            q = [(i, j)]
+            for i, j in q:
+                for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+                    newi = dx + i
+                    newj = dy + j
+                    if 0<=newi<m and 0<=newj<n and visited[newi][newj] == 0 and grid[newi][newj] == '1':
+                        visited[newi][newj] = 1
+                        q.append((newi, newj))
+        
+        ans = 0
+        for i in range(m):
+            for j in range(n):
+                if visited[i][j] == 0 and grid[i][j] == '1':
+                    visited[i][j] = 1
+                    bfs(i, j)
                     ans += 1
         return ans
 ```
@@ -183,4 +237,44 @@ class Solution(object):
                     # 记住 水 的个数
                     zeros += 1
         return ufs.size() - zeros
+```
+
+2021.9.25 更新复习
+
+```python
+class Solution(object):
+    class UFS():
+        def __init__(self, n):
+            self.count = n
+            self.p = [i for i in range(n)]
+
+        def find(self, x):
+            if self.p[x] != x:
+                self.p[x] = self.find(self.p[x])
+            return self.p[x]
+        
+        def union(self, x, y):
+            rootx = self.find(x)
+            rooty = self.find(y)
+            if rootx == rooty:
+                return
+            self.p[rootx] = rooty
+            self.count -= 1
+
+    def numIslands(self, grid):
+        m = len(grid)
+        n = len(grid[0])        
+        zeros = 0
+        ans = 0
+        ufs = Solution.UFS(m * n)
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == '0':
+                    zeros += 1
+                else:
+                    for dx, dy in [(1, 0), (0, 1)]:
+                        newi, newj = i + dx, j + dy
+                        if 0 <= newi < m and 0<=newj<n and grid[newi][newj] == '1':
+                            ufs.union(i * n + j, newi * n + newj)
+        return ufs.count - zeros  
 ```
