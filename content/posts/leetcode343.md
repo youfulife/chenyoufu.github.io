@@ -1,5 +1,5 @@
 ---
-title: "Leetcode343"
+title: "343 整数拆分"
 date: 2021-09-27T22:19:31+08:00
 draft: false
 tags: ["算法", "数学", "动态规划"]
