@@ -1,6 +1,6 @@
 ---
 title: "动态规划 最长递增子序列"
-date: 2021-08-10T22:52:09+08:00
+date: 2021-10-02T22:52:09+08:00
 draft: false
 tags: ["算法", "动态规划", "套路模版", "五星", "子序列"]
 categories: ["技术"]
@@ -35,9 +35,7 @@ for i = 1, ..., n
         dp[i] = min(dp[i], f(dp[j])
 ```
 
-时间复杂度 O(n^{2}),空间复杂度 O(n)
-
-
+时间复杂度 O(n^2),空间复杂度 O(n)
 ### 题目
 
 [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
