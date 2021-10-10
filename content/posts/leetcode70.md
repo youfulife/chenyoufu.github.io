@@ -24,18 +24,6 @@ categories: ["技术"]
 2.  2 阶
 ```
 
-**示例 2：**
-
-```
-输入： 3
-输出： 3
-解释： 有三种方法可以爬到楼顶。
-
-1.  1 阶 + 1 阶 + 1 阶
-2.  1 阶 + 2 阶
-3.  2 阶 + 1 阶
-```
-
 **链接：** https://leetcode-cn.com/problems/climbing-stairs
 
 **解题思路**
@@ -80,6 +68,3 @@ func climbStairs(n int) int {
 
 https://leetcode.com/problems/climbing-stairs/discuss/25296/3-4-short-lines-in-every-language
 
-**提交记录**
-
-![image-20210409224300797](/img/image-20210409224300797.png)

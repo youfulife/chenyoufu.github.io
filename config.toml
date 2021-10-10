@@ -192,12 +192,12 @@ uglyURLs = false
         weight = 2
         pre = "internal"
         post = "archive"
-    #[[menu.main]]
-    #    url = "/life/"
-    #    name = "随想"
-    #    weight = 3
-    #    pre = "internal"
-    #    post = "archive"
+    [[menu.main]]
+        url = "/life/"
+        name = "生活录"
+        weight = 3
+        pre = "internal"
+        post = "archive"
     #[[menu.main]]
     #    url = "/music/"
     #    name = "音乐"
@@ -408,7 +408,7 @@ uglyURLs = false
     # 列表页面
 
     # 宽度
-    listWidth = 36
+    listWidth = ""
     # 说明：如果留空（""），则用 42 作为默认值
     #      单位：em
 
@@ -1108,7 +1108,7 @@ uglyURLs = false
     #      的优先级高于此处
 
     # 相关文章数
-    relatedPostsNumber = 5
+    relatedPostsNumber = 7
 
     # 相关文章标题右边的图标
     relatedPostsIcon = "plus-circle"

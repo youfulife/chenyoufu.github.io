@@ -1,9 +1,9 @@
 ---
 title: "2021 大事记"
 date: 2021-04-22T22:04:31+08:00
-draft: true
+draft: false
 tags: ["大事记"]
-categories: ["生命之旅"]
+categories: ["活着"]
 ---
 
 ### 2021年4月11日 马拉松
