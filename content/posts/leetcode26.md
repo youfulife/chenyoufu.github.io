@@ -24,6 +24,27 @@ categories: ["技术"]
 
 **解题思路**
 
+2021-11-16 二刷
+
+```python
+class Solution(object):
+    def removeDuplicates(self, nums):
+        n = len(nums)
+        if n == 0:
+            return 0
+        
+        j = 0
+        for i in range(n):
+            if nums[i] != nums[j]:
+                j += 1
+                nums[j] = nums[i]
+        return j + 1
+```
+
+没有在纸上画，一遍过。
+
+---
+
 双指针，定义两个指针 fast 和 slow 分别为快指针和慢指针，快指针表示遍历数组到达的下标位置，慢指针表示下一个不同元素要填入的下标位置，初始时两个指针都指向下标 1。
 
 

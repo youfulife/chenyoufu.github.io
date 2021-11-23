@@ -38,6 +38,8 @@ for i = 1, ..., n
 时间复杂度 O(n^2),空间复杂度 O(n)
 ### 题目
 
+[674. 最长连续递增序列](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/)
+
 [300. 最长递增子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
 
 [673. 最长递增子序列的个数](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/)
@@ -48,6 +50,26 @@ for i = 1, ..., n
 
 [1027. 最长等差数列](https://leetcode-cn.com/problems/longest-arithmetic-subsequence/)
 
+#### 674. 最长连续递增序列
+
+**题目**
+
+给定一个未经排序的整数数组，找到最长且 连续递增的子序列，并返回该序列的长度。
+
+**解题思路**
+
+```python
+class Solution(object):
+    def findLengthOfLCIS(self, nums):
+        n = len(nums)
+        dp = [1] * n
+
+        for i in range(1, n):
+            if nums[i] > nums[i-1]:
+                dp[i] = dp[i-1] + 1
+        
+        return max(dp)
+```
 #### 300 最长递增子序列
 
 **题目**
