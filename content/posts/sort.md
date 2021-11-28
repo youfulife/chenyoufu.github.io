@@ -1,5 +1,5 @@
 ---
-title: "912 排序数组"
+title: "排序"
 date: 2021-05-29T11:21:01+08:00
 draft: false
 tags: ["算法", "排序", "再刷"]
@@ -365,7 +365,7 @@ def partition2(nums, left, right):
   return
 
 def partition3(nums, left, right):
-  # 闭区间, 这里不能>=
+  # 闭区间, 这里不能>=, ？ > 和 >= 应该都可以。
   if left > right:
     return
   
@@ -391,4 +391,49 @@ def partition3(nums, left, right):
   partition(nums, left, j-1)
   partition(nums, j+1, right)
   return
+```
+
+---
+
+2021.11.27
+
+快速排序3种方法，1种前后指针，2种左右指针。
+
+这个左右指针法，和上面partition3 不太一样，这个更好理解。
+
+partition可以认为是挖坑法。
+
+```python
+class Solution(object):
+
+    def partition(self, nums, left, right):
+        if left >= right:
+            return
+
+        x = random.randint(left, right)
+        nums[left], nums[x] = nums[x], nums[left]
+        
+        pivot = nums[left]
+        i = left
+        j = right
+        while i < j:
+            while i < j and  nums[j] > pivot:
+                j -= 1
+            while i < j and nums[i] <= pivot:
+                i += 1
+            nums[i],nums[j] = nums[j], nums[i]
+        
+        nums[i],nums[left] = nums[left], nums[i]
+        self.partition(nums, left, j-1)
+        self.partition(nums, j+1, right)
+        return
+
+
+    def sortArray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        self.partition(nums, 0, len(nums)-1)
+        return nums
 ```

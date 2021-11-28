@@ -53,3 +53,61 @@ class Solution(object):
                 k -= 1
         return nums
 ```
+
+
+----
+
+2021-11-27 二刷
+
+想到用hash table，但是没记起来试用类似快速排序的partition思路。
+
+```python
+class Solution(object):
+    def sortColors(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        m = {0:0, 1:0, 2:0}
+        for x in nums:
+            m[x] += 1
+        
+        for i in range(len(nums)):
+            if i < m[0]:
+                nums[i] = 0
+            elif i < m[0] + m[1]:
+                nums[i] = 1
+            else:
+                nums[i] = 2
+        return  
+```
+
+
+partition思路
+
+```python
+class Solution(object):
+    def sortColors(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        # [0, left), (right, n]
+        n = len(nums)
+        left = 0
+        right = n
+        i = 0
+        while i < right:
+            if nums[i] == 0:
+                nums[left], nums[i] = nums[i], nums[left]
+                left += 1
+                i += 1
+            elif nums[i] == 1:
+                i += 1
+            else:
+                right -= 1
+                nums[right], nums[i] = nums[i], nums[right]
+                
+        return  
+```
+

@@ -2,7 +2,7 @@
 title: "Leetcode215"
 date: 2021-06-06T14:23:30+08:00
 draft: false
-tags: ["算法", "数组"]
+tags: ["算法", "数组", "快速排序", "排序"]
 categories: ["技术"]
 ---
 
@@ -110,4 +110,42 @@ class Solution(object):
                 heappush(l, nums[i])
         
         return l[0]
+```
+
+----
+
+2021.11.27
+
+快速排序
+
+```python
+class Solution(object):
+    
+    def findKthLargest(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        def partition(left, right):            
+            x = random.randint(left, right)
+            nums[left], nums[x] = nums[x], nums[left]
+
+            pivot = nums[left]
+            i = left
+            j = right
+            while i < j:
+                while i < j and nums[j] > pivot:
+                    j -= 1
+                while i < j and nums[i] <= pivot:
+                    i += 1
+                nums[i], nums[j] = nums[j], nums[i]
+            nums[i], nums[left] = nums[left], nums[i]
+            if i == len(nums) - k:
+                return pivot
+            elif i < len(nums) - k:
+                return partition(i+1, right)
+            else:
+                return partition(left, i-1)
+        return partition(0, len(nums) - 1)        
 ```
