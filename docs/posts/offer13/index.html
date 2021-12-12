@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.79.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.89.4" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -14,11 +14,11 @@
 
     <title>剑指 Offer 13 机器人的运动范围 | leetnote</title>
 
-    <link rel="stylesheet" href="/css/meme.min.d17d78fa0debaa397b4b703118b576d9e279807e6c93396d74c360ae59253f8e.css"/>
+    <link rel="stylesheet" href="/css/meme.min.dc6d51950cb519316bf28bf10c4fd188b752fca8e4338fc87b2d1f5f0918fc91.css"/>
 
     
     
-        <script src="/js/meme.min.dc5f06e091343e25ce96aab325d0ae445a2a6c77e33658dfb443924ce61b7608.js"></script>
+        <script src="/js/meme.min.883a355335df5c9f19d469cd25bb68215497fd354fb3a8699eaf851799c161a8.js"></script>
 
     
 
@@ -258,16 +258,16 @@
               <p><strong>题目</strong></p>
 <p>地上有一个m行n列的方格，从坐标 [0,0] 到坐标 [m-1,n-1] 。一个机器人从坐标 [0, 0] 的格子开始移动，它每次可以向左、右、上、下移动一格（不能移动到方格外），也不能进入行坐标和列坐标的数位之和大于k的格子。例如，当k为18时，机器人能够进入方格 [35, 37] ，因为3+5+3+7=18。但它不能进入方格 [35, 38]，因为3+5+3+8=19。请问该机器人能够到达多少个格子？</p>
 <p>示例 1：</p>
-<pre><code>输入：m = 2, n = 3, k = 1
+<pre tabindex="0"><code>输入：m = 2, n = 3, k = 1
 输出：3
 </code></pre><p>示例 2：</p>
-<pre><code>输入：m = 3, n = 1, k = 0
+<pre tabindex="0"><code>输入：m = 3, n = 1, k = 0
 输出：1
 </code></pre><p>链接：https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof</p>
 <p><strong>解题思路</strong></p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -295,7 +295,7 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">movingCount</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">bitSum</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">):</span>
             <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>

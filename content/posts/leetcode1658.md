@@ -86,3 +86,6 @@ class Solution(object):
                 maxs = max(maxs, right-left)
         return n - maxs if maxs > 0 else -1
 ```
+
+----
+

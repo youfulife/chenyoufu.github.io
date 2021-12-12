@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.79.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.89.4" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -14,11 +14,11 @@
 
     <title>1423 可获得的最大点数 | leetnote</title>
 
-    <link rel="stylesheet" href="/css/meme.min.d17d78fa0debaa397b4b703118b576d9e279807e6c93396d74c360ae59253f8e.css"/>
+    <link rel="stylesheet" href="/css/meme.min.dc6d51950cb519316bf28bf10c4fd188b752fca8e4338fc87b2d1f5f0918fc91.css"/>
 
     
     
-        <script src="/js/meme.min.dc5f06e091343e25ce96aab325d0ae445a2a6c77e33658dfb443924ce61b7608.js"></script>
+        <script src="/js/meme.min.883a355335df5c9f19d469cd25bb68215497fd354fb3a8699eaf851799c161a8.js"></script>
 
     
 
@@ -261,7 +261,7 @@
 <p>你的点数就是你拿到手中的所有卡牌的点数之和。</p>
 <p>给你一个整数数组 cardPoints 和整数 k，请你返回可以获得的最大点数。</p>
 <p>示例 1：</p>
-<pre><code>输入：cardPoints = [1,2,3,4,5,6,1], k = 3
+<pre tabindex="0"><code>输入：cardPoints = [1,2,3,4,5,6,1], k = 3
 输出：12
 解释：第一次行动，不管拿哪张牌，你的点数总是 1 。但是，先拿最右边的卡牌将会最大化你的可获得点数。最优策略是拿右边的三张牌，最终点数为 1 + 6 + 5 = 12 。
 </code></pre><p>链接：https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards</p>
@@ -276,7 +276,7 @@
 <p>继续滑动窗口，每往前滑动一次，需要删除一个和添加一个元素</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -293,7 +293,7 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">maxScore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cardPoints</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cardPoints</span><span class="p">)</span>
         <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
@@ -314,7 +314,7 @@
 <p>求 [n-k, n) .. [0, k) 这个范围内的k个数的最大的连续子序列和。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -328,7 +328,7 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">maxScore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cardPoints</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
         <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">cardPoints</span><span class="p">)</span>
         <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
@@ -471,6 +471,10 @@
                     </li>
                 
                     <li class="related-item">
+                        <a href="/posts/slidewindow/" class="related-link">滑动窗口</a>
+                    </li>
+                
+                    <li class="related-item">
                         <a href="/posts/leetcode1358/" class="related-link">1358 包含所有三种字符的子字符串数目</a>
                     </li>
                 
@@ -480,10 +484,6 @@
                 
                     <li class="related-item">
                         <a href="/posts/leetcode713/" class="related-link">713 乘积小于K的子数组</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/posts/leetcode992/" class="related-link">992 K 个不同整数的子数组</a>
                     </li>
                 
             </ul>

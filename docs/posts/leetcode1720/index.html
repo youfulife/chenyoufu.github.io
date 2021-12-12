@@ -3,7 +3,7 @@
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
     <meta charset="UTF-8" />
 
-    <meta name="generator" content="Hugo 0.79.0" /><meta name="theme-color" content="#fff" />
+    <meta name="generator" content="Hugo 0.89.4" /><meta name="theme-color" content="#fff" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no" />
@@ -14,11 +14,11 @@
 
     <title>两道异或题 | leetnote</title>
 
-    <link rel="stylesheet" href="/css/meme.min.d17d78fa0debaa397b4b703118b576d9e279807e6c93396d74c360ae59253f8e.css"/>
+    <link rel="stylesheet" href="/css/meme.min.dc6d51950cb519316bf28bf10c4fd188b752fca8e4338fc87b2d1f5f0918fc91.css"/>
 
     
     
-        <script src="/js/meme.min.dc5f06e091343e25ce96aab325d0ae445a2a6c77e33658dfb443924ce61b7608.js"></script>
+        <script src="/js/meme.min.883a355335df5c9f19d469cd25bb68215497fd354fb3a8699eaf851799c161a8.js"></script>
 
     
 
@@ -261,12 +261,12 @@
 <p>给你编码后的数组 encoded 和原数组 arr 的第一个元素 first（arr[0]）。</p>
 <p>请解码返回原数组 arr 。可以证明答案存在并且是唯一的。</p>
 <p>示例 1：</p>
-<pre><code>输入：encoded = [1,2,3], first = 1
+<pre tabindex="0"><code>输入：encoded = [1,2,3], first = 1
 输出：[1,0,2,1]
 解释：若 arr = [1,0,2,1] ，
 那么 first = 1 且 encoded = [1 XOR 0, 0 XOR 2, 2 XOR 1] = [1,2,3]
 </code></pre><p>示例 2：</p>
-<pre><code>输入：encoded = [6,2,7,3], first = 4
+<pre tabindex="0"><code>输入：encoded = [6,2,7,3], first = 4
 输出：[4,2,0,7,4]
 
 </code></pre><p>提示：</p>
@@ -283,7 +283,7 @@
 <p>自己写的代码</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -294,7 +294,7 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoded</span><span class="p">,</span> <span class="n">first</span><span class="p">):</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">first</span><span class="p">]</span>
         <span class="n">a</span> <span class="o">=</span> <span class="n">first</span>
@@ -308,7 +308,7 @@
 </div><p>看题解优化后的代码</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -316,7 +316,7 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoded</span><span class="p">,</span> <span class="n">first</span><span class="p">):</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">first</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">encoded</span><span class="p">:</span>
@@ -332,11 +332,11 @@
 <p>给你 encoded 数组，请你返回原始数组 perm 。题目保证答案存在且唯一。</p>
 <p> 
 示例 1：</p>
-<pre><code>输入：encoded = [3,1]
+<pre tabindex="0"><code>输入：encoded = [3,1]
 输出：[1,2,3]
 解释：如果 perm = [1,2,3] ，那么 encoded = [1 XOR 2,2 XOR 3] = [3,1]
 </code></pre><p>示例 2：</p>
-<pre><code>输入：encoded = [6,5,4,6]
+<pre tabindex="0"><code>输入：encoded = [6,5,4,6]
 输出：[2,4,1,5,3]
 </code></pre><p><strong>提示：</strong></p>
 <p>3 &lt;= n &lt; 105
@@ -353,7 +353,7 @@ encoded.length == n - 1</p>
 <p>将ABCDE和BCDE进行异或运算，得到A，即perm的第一个元素。这时候，题目转换成上面的第一题。</p>
 <div class="highlight"><div class="chroma">
 <div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -371,7 +371,7 @@ encoded.length == n - 1</p>
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">encoded</span><span class="p">):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="p">):</span>
@@ -506,6 +506,10 @@ encoded.length == n - 1</p>
             <ul class="related-list">
                 
                     <li class="related-item">
+                        <a href="/posts/slidewindow/" class="related-link">滑动窗口</a>
+                    </li>
+                
+                    <li class="related-item">
                         <a href="/posts/double-point/" class="related-link">双指针系列</a>
                     </li>
                 
@@ -527,10 +531,6 @@ encoded.length == n - 1</p>
                 
                     <li class="related-item">
                         <a href="/posts/leetcode343/" class="related-link">343 整数拆分</a>
-                    </li>
-                
-                    <li class="related-item">
-                        <a href="/posts/leetcode79/" class="related-link">79 单词搜索</a>
                     </li>
                 
             </ul>
