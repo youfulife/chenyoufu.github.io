@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">leetnote</title>
     <subtitle type="html">人生笔记</subtitle>
-    <updated>2021-12-15T23:23:11&#43;08:00</updated>
+    <updated>2021-12-25T22:49:16&#43;08:00</updated>
     <id>https://youfu.life/</id>
     <link rel="alternate" type="text/html" href="https://youfu.life/" />
     <link rel="self" type="application/atom&#43;xml" href="https://youfu.life/atom.xml" />
@@ -1516,7 +1516,7 @@
             <title type="text">回溯 排列组合题</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/subset/" />
             <id>https://youfu.life/posts/subset/</id>
-            <updated>2021-12-15T23:23:06&#43;08:00</updated>
+            <updated>2021-12-25T22:49:08&#43;08:00</updated>
             <published>2021-09-14T22:06:15&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -1548,6 +1548,14 @@
 &lt;ul&gt;
 &lt;li&gt;广度优先遍历每一层需要保存所有的「状态」，如果状态空间很大，需要占用很大的内存空间；&lt;/li&gt;
 &lt;li&gt;深度优先遍历只要有路径可以走，就继续尝试走新的路径，不同状态的差距只有一个操作，而广度优先遍历在不同的层之前，状态差异很大，就不能像深度优先遍历一样，可以 使用一份状态变量去遍历所有的状态空间，在合适的时候记录状态的值就能得到一个问题的所有的解。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;2021.12.25 更新&lt;/p&gt;
+&lt;p&gt;对于有重复元素的排练问题完全记不得思路了，比如题目 全排列 II。&lt;/p&gt;
+&lt;p&gt;要去重的是同一树层上的“使用过”，同一树枝上的都是一个组合里的元素，不用去重。&lt;/p&gt;
+&lt;p&gt;在candidates[i] == candidates[i - 1]相同的情况下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;used[i - 1] == true，说明同一树支candidates[i - 1]使用过&lt;/li&gt;
+&lt;li&gt;used[i - 1] == false，说明同一树层candidates[i - 1]使用过。（回溯的时候将used[i-1]从true又变回false了）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;题目&#34;&gt;题目&lt;/h3&gt;
@@ -1655,13 +1663,7 @@
 &lt;/div&gt;&lt;h3 id=&#34;47-全排列-ii&#34;&gt;47 全排列 II&lt;/h3&gt;
 &lt;p&gt;给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解题思路&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;考虑重复元素一定要优先排序，将重复的都放在一起，便于找到重复元素和剪枝。如果前一个重复元素没有使用过，那么在当前重复元素下一层的可选项中一定会存在。&lt;/p&gt;
-&lt;p&gt;要解决重复问题，我们只要设定一个规则，保证在填第 \textit{idx}idx 个数的时候重复数字只会被填入一次即可。而在本题解中，我们选择对原数组排序，保证相同的数字都相邻，然后每次填入的数一定是这个数所在重复数集合中「从左往右第一个未被填过的数字」。&lt;/p&gt;
-&lt;p&gt;剪枝条件&lt;/p&gt;
-&lt;p&gt;剪枝条件1：用过的元素不能再使用之外，又添加了一个新的剪枝条件，也就是我们考虑重复部分思考的结果。&lt;/p&gt;
-&lt;p&gt;剪枝条件2：当当前元素和前一个元素值相同（此处隐含这个元素的 index&amp;gt;0 ），并且前一个元素还没有被使用过的时候，我们要剪枝。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;参考：https://programmercarl.com/0040.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.html#%E5%9B%9E%E6%BA%AF%E4%B8%89%E9%83%A8%E6%9B%B2&lt;/p&gt;
+&lt;p&gt;参考: (组合总和II)[https://programmercarl.com/0040.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.html#%E5%9B%9E%E6%BA%AF%E4%B8%89%E9%83%A8%E6%9B%B2]&lt;/p&gt;
 &lt;p&gt;本题的难点在于区别2中：集合（数组candidates）有重复元素，但还不能有重复的组合。&lt;/p&gt;
 &lt;p&gt;一些同学可能想了：我把所有组合求出来，再用set或者map去重，这么做很容易超时！&lt;/p&gt;
 &lt;p&gt;所以要在搜索的过程中就去掉重复组合。&lt;/p&gt;
