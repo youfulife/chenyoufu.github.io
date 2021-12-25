@@ -29,7 +29,7 @@ categories: ["技术"]
 
 2021.12.25 更新
 
-对于有重复元素的排练问题完全记不得思路了，比如题目 全排列 II。
+对于有重复元素的排练组合问题完全记不得思路了，比如题目 全排列 II。
 
 要去重的是同一树层上的“使用过”，同一树枝上的都是一个组合里的元素，不用去重。
 
@@ -37,7 +37,6 @@ categories: ["技术"]
 
 * used[i - 1] == true，说明同一树支candidates[i - 1]使用过
 * used[i - 1] == false，说明同一树层candidates[i - 1]使用过。（回溯的时候将used[i-1]从true又变回false了）
-
 
 
 ----
@@ -122,7 +121,9 @@ class Solution(object):
 **解题思路**
 
 
-参考: (组合总和II)[https://programmercarl.com/0040.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.html#%E5%9B%9E%E6%BA%AF%E4%B8%89%E9%83%A8%E6%9B%B2]
+参考:
+
+[组合总和II](https://programmercarl.com/0040.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.html#%E5%9B%9E%E6%BA%AF%E4%B8%89%E9%83%A8%E6%9B%B2)
 
 本题的难点在于区别2中：集合（数组candidates）有重复元素，但还不能有重复的组合。
 

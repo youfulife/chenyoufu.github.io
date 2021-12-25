@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">leetnote</title>
     <subtitle type="html">人生笔记</subtitle>
-    <updated>2021-12-25T22:49:16&#43;08:00</updated>
+    <updated>2021-12-25T23:39:19&#43;08:00</updated>
     <id>https://youfu.life/</id>
     <link rel="alternate" type="text/html" href="https://youfu.life/" />
     <link rel="self" type="application/atom&#43;xml" href="https://youfu.life/atom.xml" />
@@ -1516,7 +1516,7 @@
             <title type="text">回溯 排列组合题</title>
             <link rel="alternate" type="text/html" href="https://youfu.life/posts/subset/" />
             <id>https://youfu.life/posts/subset/</id>
-            <updated>2021-12-25T22:49:08&#43;08:00</updated>
+            <updated>2021-12-25T23:39:16&#43;08:00</updated>
             <published>2021-09-14T22:06:15&#43;08:00</published>
             <author>
                     <name>youfu</name>
@@ -1550,7 +1550,7 @@
 &lt;li&gt;深度优先遍历只要有路径可以走，就继续尝试走新的路径，不同状态的差距只有一个操作，而广度优先遍历在不同的层之前，状态差异很大，就不能像深度优先遍历一样，可以 使用一份状态变量去遍历所有的状态空间，在合适的时候记录状态的值就能得到一个问题的所有的解。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;2021.12.25 更新&lt;/p&gt;
-&lt;p&gt;对于有重复元素的排练问题完全记不得思路了，比如题目 全排列 II。&lt;/p&gt;
+&lt;p&gt;对于有重复元素的排练组合问题完全记不得思路了，比如题目 全排列 II。&lt;/p&gt;
 &lt;p&gt;要去重的是同一树层上的“使用过”，同一树枝上的都是一个组合里的元素，不用去重。&lt;/p&gt;
 &lt;p&gt;在candidates[i] == candidates[i - 1]相同的情况下：&lt;/p&gt;
 &lt;ul&gt;
@@ -1663,7 +1663,8 @@
 &lt;/div&gt;&lt;h3 id=&#34;47-全排列-ii&#34;&gt;47 全排列 II&lt;/h3&gt;
 &lt;p&gt;给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解题思路&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;参考: (组合总和II)[https://programmercarl.com/0040.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.html#%E5%9B%9E%E6%BA%AF%E4%B8%89%E9%83%A8%E6%9B%B2]&lt;/p&gt;
+&lt;p&gt;参考:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://programmercarl.com/0040.%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8CII.html#%E5%9B%9E%E6%BA%AF%E4%B8%89%E9%83%A8%E6%9B%B2&#34;&gt;组合总和II&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;本题的难点在于区别2中：集合（数组candidates）有重复元素，但还不能有重复的组合。&lt;/p&gt;
 &lt;p&gt;一些同学可能想了：我把所有组合求出来，再用set或者map去重，这么做很容易超时！&lt;/p&gt;
 &lt;p&gt;所以要在搜索的过程中就去掉重复组合。&lt;/p&gt;
