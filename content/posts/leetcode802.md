@@ -27,30 +27,66 @@ categories: ["技术"]
 
 **拓扑排序**
 
-* 若一个节点没有出边，则该节点是安全的；若一个节点出边相连的点都是安全的，则该节点也是安全的。
-* 将图中所有边反向，得到一个反图，然后在反图上运行拓扑排序。
+* 若一个节点没有出边（走到了死胡同），则该节点是安全的；同时只指向这个节点的上游节点也是安全的。
+* 拓扑排序考虑的是入度为0的节点加入队列，然后BFS。这里考虑的是出度为0的节点加入对列，然后BFS。
+* 如何查找出度为0的节点的上游节点呢，可以将图中所有边反向，得到一个反图，然后在反图上运行拓扑排序。
+* 最终拓扑排序完成后，出度为0的节点，就是安全节点。
 
 ```python
 class Solution(object):
     def eventualSafeNodes(self, graph):
         n = len(graph)
-        ins = [[] for _ in range (n)] # 反向
-        q = []
+        rg = [[] for _ in range(n)]
+        out = [0] * n
         for i in range(n):
-            for v in graph[i]:
-                ins[v].append(i)
-            if len(graph[i]) == 0:
-                q.append(i)
+            for j in graph[i]:
+                rg[j].append(i)
+            out[i] = len(graph[i])
         
-        ans = []
+        q = [i for i in range(n) if out[i] == 0]
         for i in q:
-            ans.append(i)
-            for j in ins[i]:
-                graph[j].remove(i)
-                if len(graph[j]) == 0:
+            for j in rg[i]:
+                out[j] -= 1
+                if out[j] == 0:
                     q.append(j)
-        return sorted(ans)
+        return [i for i in range(n) if out[i] == 0]
 ```
 
 **深度优先搜索 + 三色标记法**
 
+我们可以使用深度优先搜索来找环，并在深度优先搜索时，用三种颜色对节点进行标记，标记的规则如下：
+
+* 白色（用 00 表示）：该节点尚未被访问；
+* 灰色（用 11 表示）：该节点位于递归栈中，或者在某个环上；
+* 黑色（用 22 表示）：该节点搜索完毕，是一个安全节点。
+
+当我们首次访问一个节点时，将其标记为灰色，并继续搜索与其相连的节点。
+
+如果在搜索过程中遇到了一个灰色节点，则说明找到了一个环，此时退出搜索，栈中的节点仍保持为灰色，这一做法可以将「找到了环」这一信息传递到栈中的所有节点上。
+
+如果搜索过程中没有遇到灰色节点，则说明没有遇到环，那么递归返回前，我们将其标记由灰色改为黑色，即表示它是一个安全的节点。
+
+作者：LeetCode-Solution
+链接：https://leetcode-cn.com/problems/find-eventual-safe-states/solution/zhao-dao-zui-zhong-de-an-quan-zhuang-tai-yzfz/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+```python
+class Solution(object):
+    def eventualSafeNodes(self, graph):
+        n = len(graph)
+        color = [0] * n # 0 not visited, 1 in stack, 2 safe
+
+        def safe(x):
+            if color[x] > 0:
+                return color[x] == 2
+            
+            color[x] = 1
+            for y in graph[x]:
+                if not safe(y):
+                    return False
+            color[x] = 2
+            return True
+        
+        return [x for x in range(n) if safe(x)]
+```
