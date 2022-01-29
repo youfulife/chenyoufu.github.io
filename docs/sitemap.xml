@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://youfu.life/</loc>
+    <lastmod>2022-01-29T22:18:21+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/tags/n%E6%95%B0%E4%B9%8B%E5%92%8C/</loc>
+    <lastmod>2022-01-29T22:18:21+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/posts/nums-n-sum/</loc>
+    <lastmod>2022-01-29T22:18:21+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/posts/</loc>
+    <lastmod>2022-01-29T22:18:21+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/tags/</loc>
+    <lastmod>2022-01-29T22:18:21+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</loc>
+    <lastmod>2022-01-29T22:18:21+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2022-01-29T22:18:21+08:00</lastmod>
+  </url><url>
     <loc>https://youfu.life/posts/leetcode785/</loc>
     <lastmod>2022-01-27T09:35:11+08:00</lastmod>
   </url><url>
@@ -11,35 +32,23 @@
     <loc>https://youfu.life/tags/dfs/</loc>
     <lastmod>2022-01-27T09:35:11+08:00</lastmod>
   </url><url>
-    <loc>https://youfu.life/</loc>
-    <lastmod>2022-01-27T09:35:11+08:00</lastmod>
-  </url><url>
-    <loc>https://youfu.life/posts/</loc>
-    <lastmod>2022-01-27T09:35:11+08:00</lastmod>
-  </url><url>
-    <loc>https://youfu.life/tags/</loc>
-    <lastmod>2022-01-27T09:35:11+08:00</lastmod>
-  </url><url>
     <loc>https://youfu.life/tags/%E4%BA%94%E6%98%9F/</loc>
     <lastmod>2022-01-27T09:35:11+08:00</lastmod>
   </url><url>
     <loc>https://youfu.life/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</loc>
     <lastmod>2022-01-27T09:35:11+08:00</lastmod>
   </url><url>
-    <loc>https://youfu.life/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2022-01-27T09:35:11+08:00</lastmod>
-  </url><url>
     <loc>https://youfu.life/posts/leetcode743/</loc>
-    <lastmod>2022-01-23T21:36:42+08:00</lastmod>
+    <lastmod>2022-01-27T11:57:30+08:00</lastmod>
   </url><url>
     <loc>https://youfu.life/tags/dijstra/</loc>
-    <lastmod>2022-01-23T21:36:42+08:00</lastmod>
+    <lastmod>2022-01-27T11:57:30+08:00</lastmod>
   </url><url>
     <loc>https://youfu.life/tags/%E5%9B%BE/</loc>
-    <lastmod>2022-01-23T21:36:42+08:00</lastmod>
+    <lastmod>2022-01-27T11:57:30+08:00</lastmod>
   </url><url>
     <loc>https://youfu.life/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84/</loc>
-    <lastmod>2022-01-23T21:36:42+08:00</lastmod>
+    <lastmod>2022-01-27T11:57:30+08:00</lastmod>
   </url><url>
     <loc>https://youfu.life/posts/leetcode133/</loc>
     <lastmod>2022-01-16T12:34:04+08:00</lastmod>
@@ -52,9 +61,6 @@
   </url><url>
     <loc>https://youfu.life/posts/slidewindow/</loc>
     <lastmod>2021-12-12T21:21:28+08:00</lastmod>
-  </url><url>
-    <loc>https://youfu.life/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</loc>
-    <lastmod>2021-11-23T17:22:41+08:00</lastmod>
   </url><url>
     <loc>https://youfu.life/posts/double-point/</loc>
     <lastmod>2021-11-23T17:22:41+08:00</lastmod>

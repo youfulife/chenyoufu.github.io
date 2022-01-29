@@ -30,6 +30,12 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
+        # weight 矩阵
+        # dist 最短路径
+        # visited 已经确定的最短路径的点
+        # 初始化 距离 为MAX
+        # 利用贪心思想，更新dist距离
+        
         MAX = float('+inf')
 
         w = [[MAX] * n for _ in range(n)]
