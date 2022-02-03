@@ -81,3 +81,33 @@ class Solution(object):
 链接：https://leetcode-cn.com/problems/is-graph-bipartite/solution/xi-shuo-er-fen-tu-by-angela-x-mgxc/
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+```python
+class Solution(object):
+    def isBipartite(self, graph):
+        """
+        :type graph: List[List[int]]
+        :rtype: bool
+        """
+        n = len(graph)
+        visited = [-1] * n # -1, 0, 1
+
+        def dfs(i, c):
+            visited[i] = c
+            for j in graph[i]:
+                if visited[j] == -1:
+                    if not dfs(j, 1-c):
+                        return False
+                else:
+                    if visited[j] == c:
+                        return False
+            return True
+            
+
+        for i in range(n):
+            if visited[i] == -1:
+                if not dfs(i, 0):
+                    return False
+        
+        return True
+```

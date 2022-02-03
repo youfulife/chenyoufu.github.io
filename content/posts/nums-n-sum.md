@@ -85,6 +85,40 @@ class Solution(object):
         return ans
 ```
 
+```python
+class Solution(object):
+    def threeSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[List[int]]
+        """
+        n = len(nums)
+        nums.sort()
+        ans = []
+        target = 0
+        for i in range(n):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+            j = i+1
+            k = n-1
+            while j < k:
+                s = nums[i] + nums[j] + nums[k]
+                if s < target:
+                    j += 1
+                elif s > target:
+                    k -= 1
+                else:
+                    ans.append([nums[i], nums[j], nums[k]])
+                    
+                    while j < k and nums[j] == nums[j+1]:
+                        j += 1
+                    while j < k and nums[k] == nums[k-1]:
+                        k -= 1
+                    j += 1
+                    k -= 1
+        return ans
+```
+
 **4个数之和**
 
 给你一个由 n 个整数组成的数组 nums ，和一个目标值 target 。请你找出并返回满足下述全部条件且不重复的四元组 [nums[a], nums[b], nums[c], nums[d]] （若两个四元组元素一一对应，则认为两个四元组重复）：
@@ -216,5 +250,155 @@ class Solution(object):
             for y in nums4:
                 if -(x+y) in m:
                     ans += m[-x-y]            
+        return ans
+```
+
+**923. 三数之和的多种可能**
+
+给定一个整数数组 arr ，以及一个整数 target 作为目标值，返回满足 i < j < k 且 arr[i] + arr[j] + arr[k] == target 的元组 i, j, k 的数量。
+
+由于结果会非常大，请返回 109 + 7 的模。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/3sum-with-multiplicity
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+```python
+class Solution(object):
+    def threeSumMulti(self, arr, target):
+        """
+        :type arr: List[int]
+        :type target: int
+        :rtype: int
+        """
+
+        arr.sort()
+        n = len(arr)
+        res = []
+        for i in range(n):
+            if i> 0 and arr[i] == arr[i-1]:
+                continue
+            left = i+1
+            right = n-1
+            while left<right:
+
+                if left > i+1 and arr[left] == arr[left-1]:
+                    left += 1
+                    continue
+                if right<n-1 and arr[right] == arr[right+1]:
+                    right -= 1
+                    continue
+
+                if arr[i] + arr[left] + arr[right] == target:
+                    res.append([arr[i], arr[left], arr[right]])
+                    left += 1
+                    right -= 1
+                elif arr[i] + arr[left] + arr[right] < target:
+                    left += 1
+                else:
+                    right -= 1
+        ans = 0
+        m = {}
+        for x in arr:
+            m[x] = m.get(x, 0) + 1
+        for x, y, z in res:
+            if x == y and y != z:
+                ans += m[x] * (m[x] - 1) / 2 * m[z]
+            elif x != y and y == z:
+                ans += m[y] * (m[y] - 1) / 2 * m[x]
+            elif x==y and y==z:
+                ans += m[x] * (m[x] - 1) * (m[x]-2)/ 6
+            else:
+                ans += m[x] * m[y] * m[z]
+
+        return ans % (10 ** 9 + 7)
+```
+
+```python
+class Solution(object):
+    def threeSumMulti(self, arr, target):
+        """
+        :type arr: List[int]
+        :type target: int
+        :rtype: int
+        """
+
+        arr.sort()
+        n = len(arr)
+        ans = 0
+
+        for i in range(n):
+            left = i+1
+            right = n-1
+            while left<right:
+                if arr[i] + arr[left] + arr[right] == target:
+                    if arr[left] == arr[right]:
+                        ans += (right-left + 1) * (right-left)/2
+                        break                    
+                    x, y = 1, 1
+                    while left<right and arr[left] == arr[left+1]:
+                        x += 1
+                        left += 1
+                    while left<right and arr[right] == arr[right-1]:
+                        y += 1
+                        right -= 1
+                    ans += x * y
+                    left += 1
+                    right -= 1
+      
+                elif arr[i] + arr[left] + arr[right] < target:
+                    left += 1
+                else:
+                    right -= 1
+
+
+        return ans % (10 ** 9 + 7)
+```
+
+**259. 较小的三数之和**
+
+给定一个长度为 n 的整数数组和一个目标值 target，寻找能够使条件 nums[i] + nums[j] + nums[k] < target 成立的三元组  i, j, k 个数（0 <= i < j < k < n）。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/3sum-smaller
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+不需要去重复。
+
+```python
+class Solution(object):
+    def threeSumSmaller(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        n = len(nums)
+        nums.sort()
+        ans = 0
+        for i in range(n):
+            # if i > 0 and nums[i] == nums[i-1]:
+            #     continue
+            
+            j = i + 1
+            k = n - 1
+            while j<k:
+                # if j > i+1 and nums[j] == nums[j-1]:
+                #     j += 1
+                #     continue
+                # if k < n-1 and nums[k] == nums[k+1]:
+                #     k -= 1
+                #     continue
+                s = nums[i] + nums[j] + nums[k]
+                if s<target:
+                    ans += (k-j)
+                    # kk = k
+                    # while j<kk:
+                    #     ans.append([nums[i], nums[j], nums[kk]])
+                    #     kk -= 1
+                    j += 1
+                else:
+                    k -= 1
+        # print(ans)
         return ans
 ```
