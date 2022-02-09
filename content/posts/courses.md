@@ -11,6 +11,7 @@ categories: ["技术"]
 * [207. 课程表](https://leetcode-cn.com/problems/course-schedule/)
 * [210. 课程表 II](https://leetcode-cn.com/problems/course-schedule-ii/)
 * [1136. 平行课程](https://leetcode-cn.com/problems/parallel-courses/)
+* [269. 火星词典](https://leetcode-cn.com/problems/alien-dictionary/)
 
 **解题思路**
 
@@ -135,3 +136,62 @@ class Solution(object):
         return step if sum(d) == 0 else -1
 ```
 
+#### 269. 火星词典
+
+现有一种使用英语字母的火星语言，这门语言的字母顺序与英语顺序不同。
+
+给你一个字符串列表 words ，作为这门语言的词典，words 中的字符串已经 按这门新语言的字母顺序进行了排序 。
+
+请你根据该词典还原出此语言中已知的字母顺序，并 按字母递增顺序 排列。若不存在合法字母顺序，返回 "" 。若存在多种可能的合法字母顺序，返回其中 任意一种 顺序即可。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/alien-dictionary
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+```python
+class Solution(object):
+    def alienOrder(self, words):
+        """
+        :type words: List[str]
+        :rtype: str
+        """
+        g = {}
+        indegree = [0] * 26
+
+        for word in words:
+            for c in word:
+                g[c] = g.get(c, [])
+        
+        for i in range(len(words)-1):
+            x, y = words[i], words[i+1]
+            minlen = min(len(x), len(y))
+            # ["abc","ab"] 不合法顺序
+            if len(x) > len(y) and x[:len(y)] == y:
+                return ""
+            for j in range(minlen):
+                if x[j] == y[j]:
+                    continue
+                
+                if y[j] not in g[x[j]]:
+                    g[x[j]].append(y[j])
+                    indegree[ord(y[j]) - ord('a')] += 1
+
+                break
+        
+        # print(g, indegree)
+        ans = []
+        q = [i for i in range(26) if indegree[i] == 0 and chr(ord('a') + i) in g]
+        for i in q:
+            c = chr(ord('a') + i)
+            ans.append(c)
+            for v in g[c]:
+                j = ord(v) - ord('a')
+                indegree[j] -= 1
+                if indegree[j] == 0:
+                    q.append(j)
+        
+        if len(ans) < len(g):
+            return ""
+        
+        return ''.join(ans)
+```

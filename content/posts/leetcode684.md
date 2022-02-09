@@ -136,5 +136,4 @@ class Solution(object):
         return
 ```
 
-**BFS**
 
