@@ -54,6 +54,38 @@ class Solution(object):
         return mat
 ```
 
+另一种写法，更加简洁。
+
+```python
+class Solution(object):
+    def updateMatrix(self, mat):
+        """
+        :type mat: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        q = []
+        m = len(mat)
+        n = len(mat[0])
+        visited = [[0] * n for _ in range(m)]
+
+        for i in range(m):
+            for j in range(n):
+                if mat[i][j] == 0:
+                    q.append((i, j, 0))
+                    visited[i][j] = 1
+        
+        ret = [[0] * n for _ in range(m)]
+        
+        for x, y, z in q:
+            ret[x][y] = z
+            for dx, dy in [(0, -1), (0, 1), (1, 0), (-1, 0)]:
+                newx, newy = x + dx, y + dy
+                if 0<=newx<m and 0<=newy<n and visited[newx][newy] == 0:
+                    q.append((newx, newy, z + 1))
+                    visited[newx][newy] = 1
+        return ret
+```
+
 **994. 腐烂的橘子**
 
 在给定的网格中，每个单元格可以有以下三个值之一：
