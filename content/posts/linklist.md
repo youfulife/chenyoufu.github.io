@@ -33,8 +33,11 @@ categories: ["技术"]
 
 **题目**
 
+* [707. 设计链表](https://leetcode-cn.com/problems/design-linked-list)
+* [138. 复制带随机指针的链表](https://leetcode-cn.com/leetbook/read/linked-list/fw8v5/)
 
-**707. 设计链表**
+
+### 707. 设计链表
 
 设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：val 和 next。val 是当前节点的值，next 是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性 prev 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。
 
@@ -586,4 +589,97 @@ class Solution(object):
             cur.next = ListNode(c)
         
         return head.next
+```
+
+### 138. 复制带随机指针的链表
+
+给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。
+
+构造这个链表的 深拷贝。 深拷贝应该正好由 n 个 全新 节点组成，其中每个新节点的值都设为其对应的原节点的值。新节点的 next 指针和 random 指针也都应指向复制链表中的新节点，并使原链表和复制链表中的这些指针能够表示相同的链表状态。复制链表中的指针都不应指向原链表中的节点 。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/copy-list-with-random-pointer
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+```python
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, x, next=None, random=None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+"""
+
+class Solution(object):
+    def copyRandomList(self, head):
+        """
+        :type head: Node
+        :rtype: Node
+        """
+        if not head:
+            return None
+        src = head
+        dummy = Node(0)
+        dst = dummy
+        
+        m = {}
+        while src:
+            dst.next = Node(src.val)
+            dst = dst.next
+            m[src] = dst
+            src = src.next
+            
+        src = head
+        dst = dummy.next
+        while dst and src:
+            dst.random = m.get(src.random, None)
+            src = src.next
+            dst = dst.next
+
+        return dummy.next
+```
+
+### 430.扁平化多级双向链表
+
+你会得到一个双链表，其中包含的节点有一个下一个指针、一个前一个指针和一个额外的 子指针 。这个子指针可能指向一个单独的双向链表，也包含这些特殊的节点。这些子列表可以有一个或多个自己的子列表，以此类推，以生成如下面的示例所示的 多层数据结构 。
+
+作者：力扣 (LeetCode)
+链接：https://leetcode-cn.com/leetbook/read/linked-list/fw8v5/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+```python
+"""
+# Definition for a Node.
+class Node(object):
+    def __init__(self, val, prev, next, child):
+        self.val = val
+        self.prev = prev
+        self.next = next
+        self.child = child
+"""
+
+class Solution(object):
+    def flatten(self, head):
+        """
+        :type head: Node
+        :rtype: Node
+        """
+        cur = head
+        while cur:
+            next = cur.next
+            if cur.child:
+                h = self.flatten(cur.child)
+                
+                cur.child.prev = cur
+                cur.next = cur.child
+                while h and h.next:
+                    h = h.next
+                h.next = next
+                if next:
+                    next.prev = h
+            cur.child = None
+            cur = next
+        return head
 ```
