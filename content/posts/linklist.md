@@ -6,7 +6,7 @@ tags: ["算法", "链表"]
 categories: ["技术"]
 ---
 
-**总结**
+### 总结
 
 1. 在调用 next 字段之前，始终检查节点是否为空。
 
@@ -14,8 +14,9 @@ categories: ["技术"]
 
 2. 仔细定义循环的结束条件。
 
-
 运行几个示例，以确保你的结束条件不会导致无限循环。尤其是设置尾巴为None，否则容易形成环。
+
+很多时候需要while cur and cur.next 作为条件
 
 
 3. 你可以同时使用多个指针。
@@ -30,12 +31,24 @@ categories: ["技术"]
 
 你无法追溯单链表中的前一个结点。因此，您不仅要存储当前结点，还要存储前一个结点。这在双链表中是不同的，我们将在后面的章节中介绍。
 
+尤其是在删除节点的时候，需要dummy节点，最后返回dummy.next。
+
 
 **题目**
 
 * [707. 设计链表](https://leetcode-cn.com/problems/design-linked-list)
+* [141. 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
+* [142. 环形链表 II](https://leetcode-cn.com/problems/linked-list-cycle-ii)
+* [160. 相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists)
+* [19. 删除链表的倒数第 N 个结点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list)
+* [206. 反转链表](https://leetcode-cn.com/problems/reverse-linked-list)
+* [203. 移除链表元素](https://leetcode-cn.com/problems/remove-linked-list-elements)
+* [328. 奇偶链表](https://leetcode-cn.com/problems/odd-even-linked-list)
+* [234. 回文链表](https://leetcode-cn.com/problems/palindrome-linked-list)
+* [21. 合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
+* [2. 两数相加](https://leetcode-cn.com/problems/add-two-numbers)
 * [138. 复制带随机指针的链表](https://leetcode-cn.com/leetbook/read/linked-list/fw8v5/)
-
+* [430.扁平化多级双向链表](https://leetcode-cn.com/leetbook/read/linked-list/fw8v5/)
 
 ### 707. 设计链表
 
@@ -138,7 +151,7 @@ class MyLinkedList(object):
 # obj.deleteAtIndex(index)
 ```
 
-**141. 环形链表**
+### 141. 环形链表
 
 给定一个链表，判断链表中是否有环。
 
@@ -167,7 +180,7 @@ class Solution(object):
         return False
 ```
 
-**142. 环形链表 II**
+### 142. 环形链表 II
 
 给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
 
@@ -205,7 +218,7 @@ class Solution(object):
         return None
 ```
 
-**160. 相交链表**
+### 160. 相交链表
 
 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。
 
@@ -240,7 +253,7 @@ class Solution(object):
         return x
 ```
 
-**19. 删除链表的倒数第 N 个结点**
+### 19. 删除链表的倒数第 N 个结点
 
 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
 
@@ -275,7 +288,7 @@ class Solution(object):
         return dummy.next
 ```
 
-**206. 反转链表**
+### 206. 反转链表
 
 给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
 
@@ -326,7 +339,7 @@ class Solution(object):
         return newhead
 ```
 
-**203. 移除链表元素**
+### 203. 移除链表元素
 
 给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
 
@@ -353,7 +366,7 @@ class Solution(object):
         return dummy.next
 ```
 
-**328. 奇偶链表**
+### 328. 奇偶链表
 
 给定单链表的头节点 head ，将所有索引为奇数的节点和索引为偶数的节点分别组合在一起，然后返回重新排序的列表。
 
@@ -388,7 +401,7 @@ class Solution(object):
         return head
 ```
 
-**234. 回文链表**
+### 234. 回文链表
 
 给你一个单链表的头节点 head ，请你判断该链表是否为回文链表。如果是，返回 true ；否则，返回 false 。
 
@@ -403,6 +416,26 @@ class Solution(object):
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/palindrome-linked-list
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+```python
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def isPalindrome(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        arr = []
+        cur = head
+        while cur:
+            arr.append(cur.val)
+            cur = cur.next
+        return arr == arr[::-1]
+```
 
 ```python
 # Definition for singly-linked list.
@@ -444,7 +477,7 @@ class Solution(object):
         return True
 ```
 
-**21. 合并两个有序链表**
+### 21. 合并两个有序链表
 
 将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
 
@@ -504,7 +537,7 @@ class Solution(object):
             return list1
 ```
 
-**2. 两数相加**
+### 2. 两数相加
 
 给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。
 
