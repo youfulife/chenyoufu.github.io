@@ -8,7 +8,7 @@ categories: ["技术"]
 
 **题目**
 
-**两数之和**
+### 两数之和
 
 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
 
@@ -43,7 +43,7 @@ class Solution(object):
             m[x] = i
 ```
 
-**三数之和**
+### 三数之和
 
 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
 
@@ -119,7 +119,7 @@ class Solution(object):
         return ans
 ```
 
-**4个数之和**
+### 4个数之和
 
 给你一个由 n 个整数组成的数组 nums ，和一个目标值 target 。请你找出并返回满足下述全部条件且不重复的四元组 [nums[a], nums[b], nums[c], nums[d]] （若两个四元组元素一一对应，则认为两个四元组重复）：
 
@@ -179,7 +179,7 @@ class Solution(object):
         return ans
 ```
 
-**最接近的三数之和**
+### 最接近的三数之和
 
 给你一个长度为 n 的整数数组 nums 和 一个目标值 target。请你从 nums 中选出三个整数，使它们的和与 target 最接近。
 
@@ -217,7 +217,7 @@ class Solution(object):
         return ans
 ```
 
-**四数相加**
+#### 四数相加
 
 给你四个整数数组 nums1、nums2、nums3 和 nums4 ，数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：
 
@@ -253,7 +253,7 @@ class Solution(object):
         return ans
 ```
 
-**923. 三数之和的多种可能**
+### 923. 三数之和的多种可能
 
 给定一个整数数组 arr ，以及一个整数 target 作为目标值，返回满足 i < j < k 且 arr[i] + arr[j] + arr[k] == target 的元组 i, j, k 的数量。
 
@@ -355,7 +355,7 @@ class Solution(object):
         return ans % (10 ** 9 + 7)
 ```
 
-**259. 较小的三数之和**
+### 259. 较小的三数之和
 
 给定一个长度为 n 的整数数组和一个目标值 target，寻找能够使条件 nums[i] + nums[j] + nums[k] < target 成立的三元组  i, j, k 个数（0 <= i < j < k < n）。
 
