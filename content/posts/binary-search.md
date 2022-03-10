@@ -16,6 +16,14 @@ categories: ["技术"]
 * 向右查找：left = mid+1
 
 
+二分的本质是「二段性」而非「单调性」，而经过本题，我们进一步发现「二段性」还能继续细分，不仅仅只有满足 0101 特性（满足/不满足）的「二段性」可以使用二分，满足 1?1? 特性（一定满足/不一定满足）也可以二分。
+
+作者：AC_OIer
+链接：https://leetcode-cn.com/problems/find-peak-element/solution/gong-shui-san-xie-noxiang-xin-ke-xue-xi-qva7v/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
 ### 经典题目
 
 * [704. 二分查找](https://leetcode-cn.com/problems/binary-search/)
@@ -23,6 +31,9 @@ categories: ["技术"]
 * [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)
 * [278. 第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/)
 * [153. 寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+* [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+* [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/)
+* [658. 找到 K 个最接近的元素](https://leetcode-cn.com/problems/find-k-closest-elements/)
 
 
 ### 704. 二分查找
@@ -186,4 +197,149 @@ class Solution(object):
             else:
                 right = mid
         return nums[left]
+```
+
+### 34. 在排序数组中查找元素的第一个和最后一个位置
+
+给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。
+
+如果数组中不存在目标值 target，返回 [-1, -1]。
+
+进阶：
+
+你可以设计并实现时间复杂度为 O(log n) 的算法解决此问题吗？
+
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+**解题思路**
+
+
+```python
+class Solution(object):
+    def searchRange(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        def leftBound(nums, target):
+            left = 0
+            right = len(nums) - 1
+            ans = -1
+            while left <= right:
+                mid = left + (right-left)/2
+                if nums[mid] < target:
+                    left = mid + 1
+                elif nums[mid] > target:
+                    right = mid - 1
+                else:
+                    ans = mid
+                    # leftBound和rightBound的唯一的不同点就是这一句，其余的都一摸一样。
+                    right = mid - 1
+            return ans
+        
+        def rightBound(nums, target):
+            left = 0
+            right = len(nums) - 1
+            ans = -1
+            while left <= right:
+                mid = left + (right-left)/2
+                if nums[mid] < target:
+                    left = mid + 1
+                elif nums[mid] > target:
+                    right = mid - 1
+                else:
+                    ans = mid
+                    # 
+                    left = mid + 1
+            return ans
+        return [leftBound(nums, target), rightBound(nums, target)]
+```
+
+### 162. 寻找峰值
+
+峰值元素是指其值严格大于左右相邻值的元素。
+
+给你一个整数数组 nums，找到峰值元素并返回其索引。数组可能包含多个峰值，在这种情况下，返回 任何一个峰值 所在位置即可。
+
+你可以假设 nums[-1] = nums[n] = -∞ 。
+
+你必须实现时间复杂度为 O(log n) 的算法来解决此问题。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/find-peak-element
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+```python
+class Solution(object):
+    def findPeakElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        left = 0
+        right = len(nums)-1
+        while left < right:
+            mid = left + (right-left) / 2
+            if nums[mid] > nums[mid+1]:
+                right = mid
+            else:
+                left = mid + 1
+        return left
+```
+
+### 658. 找到 K 个最接近的元素
+
+给定一个 排序好 的数组 arr ，两个整数 k 和 x ，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。
+
+整数 a 比整数 b 更接近 x 需要满足：
+
+|a - x| < |b - x| 或者
+|a - x| == |b - x| 且 a < b
+ 
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/find-k-closest-elements
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+**解题思路**
+
+双指针对撞
+
+```python
+class Solution(object):
+    def findClosestElements(self, arr, k, x):
+        left = 0
+        right = len(arr) - 1
+        while right - left + 1 > k:
+            if x - arr[left] <= arr[right] - x:
+                right -= 1
+            else:
+                left += 1
+        return arr[left: left + k]
+```
+
+二分, 寻找左边界
+
+```python
+class Solution(object):
+    def findClosestElements(self, arr, k, x):
+        """
+        :type arr: List[int]
+        :type k: int
+        :type x: int
+        :rtype: List[int]
+        """
+        left = 0
+        right = len(arr) - k
+        while left < right:
+            mid = left + (right-left)/2
+            if x - arr[mid] <= arr[mid + k] - x:
+                right = mid
+            else:
+                left = mid + 1
+        return arr[left: left + k]
 ```

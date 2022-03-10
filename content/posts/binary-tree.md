@@ -16,6 +16,52 @@ categories: ["技术"]
 ### 经典题目
 
 
+### 二叉树非递归遍历统一模版，颜色标记法
+
+```python
+class Solution(object):
+    def inorderTraversal(self, root):
+        if not root:
+            return []
+        ans = []
+        
+        stack = [(root, 0)]
+        while stack:
+            root, color = stack.pop()
+            if color == 1:
+                ans.append(root.val)
+            else:
+                # 中序
+                if root.right:
+                    stack.append((root.right, 0))
+                stack.append((root, 1))
+                if root.left:
+                    stack.append((root.left, 0))
+                # 先序
+                # if root.right:
+                #     stack.append((root.right, 0))
+                # if root.left:
+                #     stack.append((root.left, 0))
+                # stack.append((root, 1))
+
+                # 后序
+                # stack.append((root, 1))
+                # if root.right:
+                #     stack.append((root.right, 0))
+                # if root.left:
+                #     stack.append((root.left, 0))
+        return ans
+```
+
+用两种颜色，表示节点是不是需要被处理还是只是经过，不同的顺序只需要按照定义调整这三行的顺序即可，和递归的写法类似。
+
+```python
+stack.append((root.right, 0))
+stack.append((root, 1))
+stack.append((root.left, 0))
+```
+
+
 * [199. 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
 
 
