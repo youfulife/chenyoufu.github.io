@@ -31,10 +31,11 @@ categories: ["技术"]
 * [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)
 * [278. 第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/)
 * [153. 寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)
+* [154. 寻找旋转排序数组中的最小值 II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/)
 * [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 * [162. 寻找峰值](https://leetcode-cn.com/problems/find-peak-element/)
 * [658. 找到 K 个最接近的元素](https://leetcode-cn.com/problems/find-k-closest-elements/)
-
+* [50. Pow(x, n)](https://leetcode-cn.com/problems/powx-n/)
 
 ### 704. 二分查找
 
@@ -199,6 +200,44 @@ class Solution(object):
         return nums[left]
 ```
 
+
+### 154. 寻找旋转排序数组中的最小值 II
+
+给你一个可能存在 重复 元素值的数组 nums ，它原来是一个升序排列的数组，并按上述情形进行了多次旋转。请你找出并返回数组中的 最小元素 。
+
+**遍历**
+
+```python
+class Solution(object):
+    def findMin(self, nums):
+        ans = nums[0]
+        for i in range(len(nums)):
+            if i > 0 and nums[i] < nums[i-1]:
+                ans = nums[i]
+                break
+        return ans
+```
+
+**二分**
+
+```python
+class Solution(object):
+    def findMin(self, nums):
+        left = 0
+        right = len(nums) - 1
+        while left < right:
+            mid = left + (right-left)/2
+
+            if nums[mid] < nums[right]:
+                right = mid
+            elif nums[mid] > nums[right]:
+                left = mid + 1
+            elif nums[mid] == nums[right]:
+                right -= 1
+
+        return nums[left]
+```
+
 ### 34. 在排序数组中查找元素的第一个和最后一个位置
 
 给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。
@@ -342,4 +381,59 @@ class Solution(object):
             else:
                 left = mid + 1
         return arr[left: left + k]
+```
+
+### 50. Pow(x, n)
+
+实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn ）。
+
+提示：
+
+* -100.0 < x < 100.0
+* -231 <= n <= 231-1
+* -104 <= xn <= 104
+
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/powx-n
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+**二分递归**
+
+```python
+class Solution(object):
+    def myPow(self, x, n):
+        def help(x, n):
+            if n == 0:
+                return 1
+            v = help(x, n/2)
+            return v * v if n % 2==0 else v * v * x
+        
+        ans = help(x, abs(n))
+        if n < 0:
+            ans = 1.0 / ans
+        return ans
+```
+
+**二进制迭代**
+
+https://leetcode-cn.com/problems/powx-n/solution/50-powx-n-kuai-su-mi-qing-xi-tu-jie-by-jyd/
+
+```python
+class Solution(object):
+    def myPow(self, x, n):
+        if n == 0:
+            return 1
+        
+        # 这个提前处理比较巧妙
+        if n < 0:
+            x, n = 1.0/x, -n
+        
+        res = 1
+        while n>0:
+            if n & 0x1:
+                res *= x
+            x *= x
+            n >>= 1
+        return res
 ```
