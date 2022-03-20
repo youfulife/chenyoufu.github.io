@@ -79,3 +79,61 @@ func insertionSortList(head *ListNode) *ListNode {
 }
 
 ```
+
+----
+
+```python
+class Solution(object):
+    # 设置虚拟头结点的意义在于，使得所有插入情况的操作具有了一致性，即使头结点变动，也能轻松获取到头结点
+    # 明确出步骤： 先找它 - 临时保存它 - 删掉它 - 给它找位置 - 插入它
+    def insertionSortList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        dummy = ListNode()
+        dummy.next = head
+
+        p = head
+        # p.next 是需要删除的点
+        while p and p.next:
+            # 递增不需要处理
+            if p.val <= p.next.val:
+                p = p.next
+                continue
+            # 临时保存后删除
+            tmp = p.next
+            p.next = p.next.next
+            # 找到插入点
+            q = dummy
+            while q.next and tmp.val > q.next.val:
+                q = q.next
+            # 插入
+            tmp.next = q.next
+            q.next = tmp
+        return dummy.next
+```
+
+```python
+class Solution(object):
+    def insertionSortList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        dummy = ListNode()
+        # 这里不能指定 Next = head, 相当于dummy是一个新的链表
+        # dummy.next = head 
+
+        p = head
+        while p:
+            q = dummy
+            while q.next and p.val > q.next.val:
+                q = q.next
+
+            tmp = p.next
+            p.next = q.next
+            q.next = p
+            p = tmp
+        return dummy.next
+```

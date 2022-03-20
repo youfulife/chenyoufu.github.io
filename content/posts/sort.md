@@ -320,26 +320,6 @@ def merge(nums, left, right):
 def quickSort(nums):
   partition(nums, 0, len(nums))
 
-def partition(nums, left, right):
-  if left >= right:
-    return
-  
-  pivot = nums[left]
-  i = left + 1
-  j = left + 1
-  # [i, j)
-  while i < right:
-    if nums[i] < pivot:
-      nums[i], nums[j] = nums[j], nums[i]
-      j += 1
-    i += 1
-
-  nums[j-1], nums[left] = nums[left], nums[j-1]
-  # 前闭后开区间，所以右边界是j-1
-  partition(nums, left, j-1)
-  partition(nums, j, right)
-  return
-
 def partition2(nums, left, right):
   if left >= right:
     return
@@ -414,11 +394,14 @@ class Solution(object):
         nums[left], nums[x] = nums[x], nums[left]
         
         pivot = nums[left]
+        # i 如果等于left+1那么会出错
         i = left
         j = right
         while i < j:
+            # 要先右再左，反过来会出错
             while i < j and  nums[j] > pivot:
                 j -= 1
+            # = 需要放在左边，放上面会出错
             while i < j and nums[i] <= pivot:
                 i += 1
             nums[i],nums[j] = nums[j], nums[i]
@@ -435,5 +418,41 @@ class Solution(object):
         :rtype: List[int]
         """
         self.partition(nums, 0, len(nums)-1)
+        return nums
+```
+
+-----
+
+2022.03.20
+
+注意对比和上面一种写法的异同点。
+
+```python
+class Solution(object):
+    def sortArray(self, nums):
+        def partition(nums, start, end):
+            if start >= end:
+                return
+            k = random.randint(start, end)
+            nums[start], nums[k] = nums[k], nums[start]
+            
+            pivot = start
+            left = start + 1
+            right = end
+            while left < right:
+                while left < right and nums[left] <= nums[pivot]:
+                    left += 1
+                while left < right and nums[right] > nums[pivot]:
+                    right -= 1
+                
+                nums[left], nums[right] = nums[right], nums[left]
+            # 因为先走的左，所以当left == right的时候，nums[left] <= nums[pivot]不会判断，需要外面再判断一下
+            if nums[left] > nums[pivot]:
+                left -= 1
+            nums[left], nums[pivot] = nums[pivot], nums[left]
+            partition(nums, start, left-1)
+            partition(nums, left+1, end)
+        
+        partition(nums, 0, len(nums)-1)
         return nums
 ```

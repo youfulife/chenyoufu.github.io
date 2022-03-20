@@ -28,23 +28,6 @@ categories: ["技术"]
 
 **解题思路**
 
-从大到小排序，找到第k个元素。
-
-```go
-func findKthLargest(nums []int, k int) int {
-
-    for i:= 0; i < k; i++ {
-        for j := i+1; j < len(nums); j++ {
-            if nums[j] > nums[i] {
-                nums[i], nums[j] = nums[j], nums[i]
-            }
-        }
-    }
-
-    return nums[k-1]
-}
-```
-
 **基于快速排序**
 
 ```go
@@ -90,28 +73,6 @@ func quickSort(nums []int, left, right, k int) int {
 }
 ```
 
-**基于堆排序**
-
-https://github.com/python/cpython/blob/main/Lib/heapq.py
-
-```python
-class Solution(object):
-    def findKthLargest(self, nums, k):
-        if k > len(nums):
-            return -1
-        
-        l = []
-        for i in range(k):
-            heappush(l, nums[i])
-        
-        for i in range(k, len(nums)):
-            if nums[i] > l[0]:
-                heappop(l)
-                heappush(l, nums[i])
-        
-        return l[0]
-```
-
 ----
 
 2021.11.27
@@ -148,4 +109,38 @@ class Solution(object):
             else:
                 return partition(left, i-1)
         return partition(0, len(nums) - 1)        
+```
+
+----
+
+2022.03.20
+
+堆排序
+
+```python
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        def heapify(arr, i, size):
+            l = i * 2 + 1
+            r = l + 1
+            mini = i
+            if l < size and arr[l] < arr[mini]:
+                mini = l
+            if r < size and arr[r] < arr[mini]:
+                mini = r
+            if mini != i:
+                arr[i], arr[mini] = arr[mini], arr[i]
+                heapify(arr, mini, size)
+
+        def minHeap(arr):
+            for i in range(k/2-1, -1, -1):
+                heapify(arr, i, k)
+        
+        minHeap(nums)
+        for i in range(k, len(nums)):
+            if nums[i] > nums[0]:
+                nums[0], nums[i] = nums[i], nums[0]
+                minHeap(nums)
+            
+        return nums[0]
 ```
