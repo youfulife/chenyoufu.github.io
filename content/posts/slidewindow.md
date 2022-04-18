@@ -11,6 +11,7 @@ categories: ["技术"]
 [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/)
 [424. 替换后的最长重复字符](https://leetcode-cn.com/problems/longest-repeating-character-replacement/)
 [1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards)
+[1658. 将 x 减到 0 的最小操作数](https://leetcode-cn.com/problems/minimum-operations-to-reduce-x-to-zero)
 
 
 ##  固定长度的窗口
@@ -251,4 +252,53 @@ class Solution(object):
                 left += 1
                 m[d] -= 1
         return right-left
+```
+
+### 1658. 将 x 减到 0 的最小操作数
+
+**题目**
+给你一个整数数组 nums 和一个整数 x 。每一次操作时，你应当移除数组 nums 最左边或最右边的元素，然后从 x 中减去该元素的值。请注意，需要 修改 数组以供接下来的操作使用。
+
+如果可以将 x 恰好 减到 0 ，返回 最小操作数 ；否则，返回 -1 。
+
+提示：
+
+* 1 <= nums.length <= 105
+* 1 <= nums[i] <= 104
+* 1 <= x <= 109
+
+链接：https://leetcode-cn.com/problems/minimum-operations-to-reduce-x-to-zero
+
+**解题思路** 
+
+和最大点数的那个题目类似，可以换个角度来做题。
+
+* 最短的连续子序列和为x，要从头或者尾巴开始
+* 转化为求和为 sum(nums)-x 的最长连续子序列
+* 用数组长度减去最长连续子序列，剩下的就是和为x的最短连续子序列
+
+```python
+class Solution(object):
+    def minOperations(self, nums, x):
+        s = sum(nums) - x
+        left = 0
+        right = 0
+        # 不能设置为0, 如果sum(nums) == x就会通不过，除非提前判断这种情况。
+        # if s == 0:
+        #    return len(nums)
+        maxl = -1
+        cur = 0
+        while right < len(nums):
+            c = nums[right]
+            right += 1
+            cur += c
+
+            while left<right and cur > s:
+                d = nums[left]
+                left += 1
+                cur -= d
+            
+            if cur == s:
+                maxl = max(maxl, right-left)
+        return -1 if maxl == -1 else len(nums) - maxl
 ```
