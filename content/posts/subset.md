@@ -6,6 +6,14 @@ tags: ["算法", "回溯", "DFS", "排列组合"]
 categories: ["技术"]
 ---
 
+2022.06.10 三刷
+
+针对重复值得情况，这个文章讲的不错
+
+https://algorithm.yanceyleo.com/leetcode/medium/47-permute
+
+这次基本上可以自己完全独立的做出来了这一系列排练组合的题目。
+
 
 2021.12.15 时隔3个月，二刷
 

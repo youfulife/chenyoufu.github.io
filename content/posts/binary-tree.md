@@ -6,52 +6,121 @@ tags: ["算法", "树"]
 categories: ["技术"]
 ---
 
-### 总结
+## 基础
 
-* 树的遍历，递归 + 非递归，前中后层
-* 树的构建，序列化
-* 树的各种题型，深度，路径和，对称，反转，公共祖先，右视图
+* 二叉树的遍历，递归 + 非递归，前中后层
+* 二叉树的构建，序列化
 * 二叉搜索树
+* 优先级队列，堆
+* 最小生成树
 
 ### 经典题目
 
+[94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)
+[144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)
+[145. 二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)
+[102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)
+[105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+[106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+[297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/)
+[449. 序列化和反序列化二叉搜索树](https://leetcode.cn/problems/serialize-and-deserialize-bst/)
 
-### 二叉树非递归遍历统一模版，颜色标记法
+### 二叉树的遍历
+
+给你二叉树的根节点 root ，返回它节点值的 前序，中序，后序 遍历。
+
+**解题思路**
+
+递归， 前中后代码一样，只是结果返回的位置变化一下。
 
 ```python
 class Solution(object):
-    def inorderTraversal(self, root):
-        if not root:
-            return []
-        ans = []
-        
-        stack = [(root, 0)]
-        while stack:
-            root, color = stack.pop()
-            if color == 1:
-                ans.append(root.val)
-            else:
-                # 中序
-                if root.right:
-                    stack.append((root.right, 0))
-                stack.append((root, 1))
-                if root.left:
-                    stack.append((root.left, 0))
-                # 先序
-                # if root.right:
-                #     stack.append((root.right, 0))
-                # if root.left:
-                #     stack.append((root.left, 0))
-                # stack.append((root, 1))
+    def preorderTraversal(self, root):
+        def dfs(root, ans):
+            if not root:
+                return
 
-                # 后序
-                # stack.append((root, 1))
-                # if root.right:
-                #     stack.append((root.right, 0))
-                # if root.left:
-                #     stack.append((root.left, 0))
+            # 前序
+            ans.append(root.val)
+
+            dfs(root.left, ans)
+
+            # 中序
+            # ans.append(root.val)
+
+            dfs(root.right, ans)
+
+            # 后序
+            # ans.append(root.val)
+            return
+        ans = []
+        dfs(root, ans)
         return ans
 ```
+
+非递归
+
+非递归有两种方法，一种是通常的方法，三种遍历代码不同，还有一种是基于颜色标记法，三种代码相同。
+
+前序遍历，栈
+
+```python
+class Solution(object):
+    def preorderTraversal(self, root):
+        if not root:
+            return []
+
+        ans = []
+        stack = [root]
+        while stack:
+            x = stack.pop()
+            ans.append(x.val)
+            if x.right:
+                stack.append(x.right)
+            if x.left:
+                stack.append(x.left)
+        return ans
+```
+
+中序遍历
+
+
+后序遍历
+
+思路
+
+* 先序遍历顺序：根节点-左孩子-右孩子
+* 后序遍历顺序：左孩子-右孩子-根节点
+* 后序遍历倒过来：根节点-右孩子-左孩子
+
+第一步，将二叉树按照先序非递归算法进行遍历，注意在入栈的时候左右孩子入栈的顺序，先左后右。
+
+第二步，将遍历得到的结果进行倒置。 
+
+这个思路实际上还是很巧妙的，值得学习。
+
+```python
+class Solution(object):
+    def postorderTraversal(self, root):
+        if not root:
+           return []
+        
+        ans = []
+        stack = [root]
+        while stack:
+            node = stack.pop()
+            ans.append(node.val)
+            if node.left:
+                stack.append(node.left)
+            if node.right:
+                stack.append(node.right)
+        return ans[::-1]
+```
+
+
+染色法，前中后序通用遍历模版。
+
+https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/thinkings/binary-tree-traversal
 
 用两种颜色，表示节点是不是需要被处理还是只是经过，不同的顺序只需要按照定义调整这三行的顺序即可，和递归的写法类似。
 
@@ -61,8 +130,159 @@ stack.append((root, 1))
 stack.append((root.left, 0))
 ```
 
+```python
+class Solution(object):
+    def postorderTraversal(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if not root:
+            return []
+        red, green = 0, 1
+        stack = [(root, red)]
+        ans = []
+        while stack:
+            
+            x, color = stack.pop()
+            if color == red:
+                # 后序
+                stack.append((x, green))
 
-* [199. 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
+                if x.right:
+                    stack.append((x.right, red))
+
+                # 中序
+                # stack.append((x, green))
+
+                if x.left:
+                    stack.append((x.left, red))
+
+                # 前序
+                # stack.append((x, green))
+            else:
+                ans.append(x.val)
+        return ans
+```
+
+
+### 102. 二叉树的层序遍历
+
+给你二叉树的根节点 root ，返回其节点值的 层序遍历 。 （即逐层地，从左到右访问所有节点）。
+
+**解题思路**
+
+非递归
+
+
+
+```python
+class Solution(object):
+    def levelOrder(self, root):
+        if not root:
+            return []
+        q = collections.deque([root])
+        ans = []
+        while q:
+            level = []
+            for _ in range(len(q)):
+                n = q.popleft()
+                level.append(n.val)
+                if n.left:
+                    q.append(n.left)
+                if n.right:
+                    q.append(n.right)
+            ans.append(level)
+        return ans
+```
+
+递归
+
+1. Use a variable to track level in the tree and use simple Pre-Order traversal
+2. Add sub-lists to result as we move down the levels
+3. Time Complexity: O(N)
+4. Space Complexity: O(N) + O(h) for stack space
+
+```python
+class Solution(object):
+    def levelOrder(self, root):
+        if not root:
+            return []
+        def dfs(root, level, ans):
+            if len(ans) > level:
+                ans[level].append(root.val)
+            else:
+                ans.append([root.val])
+            if root.left:
+                dfs(root.left, level+1, ans)
+            if root.right:
+                dfs(root.right, level+1, ans)
+        
+        ans = []
+        dfs(root, 0, ans)
+        return ans
+```
+
+
+### 二叉树的构建
+
+1. 前序和后序其实是一样的，前序 根左右，变成 根右左，倒序 左右根，就是后序，所以前序能做的后序都可以做。
+2. 前序和后序是不能还原一颗二叉树的，比如，只有一个孩子的节点，无法判断是左孩子还是右孩子。
+
+基于前序和中序
+
+```python
+class Solution(object):
+    def buildTree(self, preorder, inorder):
+        """
+        :type preorder: List[int]
+        :type inorder: List[int]
+        :rtype: TreeNode
+        """
+        if len(preorder) == 0:
+            return None
+
+        root = TreeNode(preorder[0])
+
+        mid = 0
+        for i in range(len(inorder)):
+            if inorder[i] == preorder[0]:
+                mid = i
+                break
+        root.left = self.buildTree(preorder[1:mid + 1], inorder[:mid])
+        root.right = self.buildTree(preorder[mid + 1:], inorder[mid + 1:])
+
+        return root
+```
+
+基于后序和中序
+
+```python
+def buildTree(self, inorder, postorder):
+        if len(postorder) == 0:
+            return None
+
+        root = TreeNode(postorder[-1])
+
+        mid = 0
+        for i in range(len(inorder)):
+            if inorder[i] == postorder[-1]:
+                mid = i
+                break
+
+        root.left = self.buildTree(inorder[:mid], postorder[:mid])
+        root.right = self.buildTree(inorder[mid+1:], postorder[mid:-1])
+        return root
+```
+
+
+## 扩展应用
+
+* 树的各种题型，深度，路径和，对称，反转，公共祖先，右视图
+
+### 经典题目
+
+[199. 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
 
 
 ### 199. 二叉树的右视图
@@ -125,5 +345,3 @@ class Solution(object):
         dfs(root, 0)
         return ans
 ```
-
-
