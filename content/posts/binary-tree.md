@@ -276,6 +276,103 @@ def buildTree(self, inorder, postorder):
 ```
 
 
+### 二叉树序列化
+
+先序
+
+```python
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Codec:
+    
+    def serialize(self, root):
+        """Encodes a tree to a single string.
+        
+        :type root: TreeNode
+        :rtype: str
+        """
+        if not root:
+            return '#'
+        
+        return str(root.val) + ',' + self.serialize(root.left) + ',' + self.serialize(root.right)
+
+    def deserialize(self, data):
+        """Decodes your encoded data to tree.
+        
+        :type data: str
+        :rtype: TreeNode
+        """
+        def helper(data):
+            # print(data)
+            x = data.pop(0)
+            if x == '#':
+                return None
+            root = TreeNode(int(x))
+            root.left = helper(data)
+            # print('---')
+            root.right = helper(data)
+            # print('ret')
+            return root
+        return helper(data.split(','))
+```
+
+层序
+
+每一个非空节点都会对应两个子节点，那么反序列化的思路也是用队列进行层级遍历，同时用索引 i 记录对应子节点的位置
+
+```python
+class Codec:
+
+    def serialize(self, root):
+        ans = []
+        q = [root]
+        for x in q:
+            if not x:
+                ans.append('#')
+            else:
+                ans.append(str(x.val))
+                q.append(x.left)
+                q.append(x.right)
+        return ','.join(ans)
+
+    def deserialize(self, data):
+        if len(data) == 0 or data[0] == '#':
+            return None
+        arr = data.split(',')
+        root = TreeNode(int(arr[0]))
+        q = [root]
+        i = 0
+        # x是root, i是root对应的下标, i+1是left, i+2是right
+        for x in q:            
+            if arr[i+1] != '#':
+                x.left = TreeNode(int(arr[i+1]))
+                q.append(x.left)
+            
+            if arr[i+2] != '#':
+                x.right = TreeNode(int(arr[i+2]))
+                q.append(x.right)
+            i += 2
+        return root
+```
+
+
+参考
+
+https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/solution/zhongx-by-pedantic-elioniub-csrz/
+
+https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/solution/shou-hui-tu-jie-gei-chu-dfshe-bfsliang-chong-jie-f/
+
+
+https://www.cnblogs.com/labuladong/p/13975069.html
+
+### 二叉搜索树序列化
+
+
 ## 扩展应用
 
 * 树的各种题型，深度，路径和，对称，反转，公共祖先，右视图
