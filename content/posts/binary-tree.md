@@ -24,6 +24,7 @@ categories: ["技术"]
 [106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/)
 [449. 序列化和反序列化二叉搜索树](https://leetcode.cn/problems/serialize-and-deserialize-bst/)
+[1008. 前序遍历构造二叉搜索树](https://leetcode.cn/problems/construct-binary-search-tree-from-preorder-traversal/)
 
 ### 二叉树的遍历
 
@@ -369,6 +370,56 @@ https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/solution/shou
 
 
 https://www.cnblogs.com/labuladong/p/13975069.html
+
+
+### 二叉搜索树构建
+
+这个题目非常经典，有多种不同的解法。
+
+思路一：根据二叉搜索树和前序遍历的特性，找到左子树和右子树，然后递归处理。
+
+```python
+def bstFromPreorder(self, preorder):
+        """
+        :type preorder: List[int]
+        :rtype: TreeNode
+        """
+        if len(preorder) == 0:
+            return None
+
+        root = TreeNode(preorder[0])
+
+        # 二分查找左右子树的边界，其实就是查找比target的数的左边界。
+        target = preorder[0]
+        left = 1
+        right = len(preorder)-1
+        ans = len(preorder)
+        while left <= right:
+            mid = int(left + (right-left)/2)
+            if preorder[mid] < target:
+                left = mid+1
+            else:
+                ans = mid
+                right = mid-1
+        right = ans
+        # 线性查找
+        # for i in range(1, len(preorder)):
+        #     if preorder[i] > preorder[0]:
+        #         right = i
+        #         break
+        root.left = self.bstFromPreorder(preorder[1:right])
+        root.right = self.bstFromPreorder(preorder[right:])
+        return root
+```
+
+思路二：
+
+数组排序后正好就是二叉搜索树的中序遍历，然后结合前序遍历，转变为普通的根据前序+中序还原二叉树
+
+思路三：
+
+todo
+
 
 ### 二叉搜索树序列化
 
