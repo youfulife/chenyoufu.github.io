@@ -1,6 +1,6 @@
 ---
 title: "二叉树系列"
-date: 2022-02-19T16:56:59+08:00
+date: 2022-06-25T16:56:59+08:00
 draft: false
 tags: ["算法", "树"]
 categories: ["技术"]
@@ -16,15 +16,16 @@ categories: ["技术"]
 
 ### 经典题目
 
-[94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)
-[144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)
-[145. 二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)
-[102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)
-[105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
-[106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
-[297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/)
-[449. 序列化和反序列化二叉搜索树](https://leetcode.cn/problems/serialize-and-deserialize-bst/)
-[1008. 前序遍历构造二叉搜索树](https://leetcode.cn/problems/construct-binary-search-tree-from-preorder-traversal/)
+* [94. 二叉树的中序遍历](https://leetcode.cn/problems/binary-tree-inorder-traversal/)
+* [144. 二叉树的前序遍历](https://leetcode.cn/problems/binary-tree-preorder-traversal/)
+* [145. 二叉树的后序遍历](https://leetcode.cn/problems/binary-tree-postorder-traversal/)
+* [102. 二叉树的层序遍历](https://leetcode.cn/problems/binary-tree-level-order-traversal/)
+* [105. 从前序与中序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
+* [106. 从中序与后序遍历序列构造二叉树](https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+* [297. 二叉树的序列化与反序列化](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/)
+* [449. 序列化和反序列化二叉搜索树](https://leetcode.cn/problems/serialize-and-deserialize-bst/)
+* [1008. 前序遍历构造二叉搜索树](https://leetcode.cn/problems/construct-binary-search-tree-from-preorder-traversal/)
+* [98. 验证二叉搜索树](https://leetcode.cn/problems/validate-binary-search-tree/)
 
 ### 二叉树的遍历
 
@@ -424,14 +425,67 @@ todo
 ### 二叉搜索树序列化
 
 
+### 98. 验证二叉搜索树
+
+给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。
+
+思路一，边界法
+
+除了跟父节点对比，还要跟祖先对比
+
+```python
+class Solution(object):
+    def isValidBST(self, root):
+        def helper(root, low, high):
+
+            if not root:
+                return True
+            
+            if root.val <= low or root.val >= high:
+                return  False
+            
+            return helper(root.left, low, root.val) and helper(root.right, root.val, high)
+        
+        return helper(root, float('-inf'), float('+inf'))
+```
+
+思路二，中序遍历
+
+记录上一个节点的，在中序的过程中判断是不是严格递增，不需要占用一个空间先把遍历结果存下来然后在根据数组的值判断。
+
+```python
+class Solution(object):
+    pre = None
+    def isValidBST(self, root):
+        if not root:
+            return True
+        
+        if not self.isValidBST(root.left):
+            return False
+        
+        if self.pre and self.pre.val >= root.val:
+            return False
+        self.pre = root
+
+        if not self.isValidBST(root.right):
+            return False
+        
+        return True
+```
+
+
+
+
 ## 扩展应用
 
 * 树的各种题型，深度，路径和，对称，反转，公共祖先，右视图
 
 ### 经典题目
 
-[199. 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
-
+* [199. 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
+* [101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/)
+* [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)
+* [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)
 
 ### 199. 二叉树的右视图
 
@@ -492,4 +546,149 @@ class Solution(object):
             
         dfs(root, 0)
         return ans
+```
+
+### 101. 对称二叉树
+
+给你一个二叉树的根节点 root ， 检查它是否轴对称。
+
+思路一，递归
+
+```python
+class Solution(object):
+    def isSymmetric(self, root):
+        if not root:
+            return True
+        
+        def hepler(left, right):
+            if not left or not right:
+                return left == right
+            
+            return left.val == right.val and hepler(left.right, right.left) and hepler(left.left, right.right)
+        
+        return hepler(root.left, root.right)
+```
+
+思路二，迭代
+
+```python
+class Solution(object):
+    def isSymmetric(self, root):
+        q = [(root, root)]
+        for x, y in q:
+            if not x and not y:
+                continue
+
+            if not x or not y:
+                return False
+                
+            if x.val != y.val:
+                return False
+            
+            q.append((x.left, y.right))
+            q.append((x.right, y.left))
+        return True
+```
+
+### 104. 二叉树的最大深度
+
+给定一个二叉树，找出其最大深度。二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
+
+巧妙的递归
+
+```python
+class Solution(object):
+    def maxDepth(self, root):
+        if not root:
+            return 0
+        
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+```
+
+BFS
+
+```python
+class Solution(object):
+    def maxDepth(self, root):
+        if not root:
+            return 0
+        q = deque([root])
+        depth = 0
+        while q:
+            for _ in range(len(q)):
+                node = q.popleft()
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
+            depth += 1
+        return depth
+```
+
+DFS
+
+```python
+class Solution(object):
+    def maxDepth(self, root):
+        if not root:
+            return 0
+        stack = [(root, 1)]
+        ret = 0
+        while stack:
+            node, depth = stack.pop()
+            ret = max(depth, ret)
+            if node.left:
+                stack.append((node.left, depth+1))
+            if node.right:
+                stack.append((node.right, depth+1))
+
+        return ret
+```
+
+
+### 226. 翻转二叉树
+
+给你一棵二叉树的根节点 root ，翻转这棵二叉树，并返回其根节点。
+
+自顶向下
+
+```python
+class Solution(object):
+    def invertTree(self, root):
+        if not root:
+            return None
+        
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        return root
+```
+
+自底向上
+
+```python
+class Solution(object):
+    def invertTree(self, root):
+        if not root:
+            return root
+        root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
+        return root
+```
+
+迭代，队列
+
+```python
+class Solution(object):
+    def invertTree(self, root):
+        if not root:
+            return None
+        
+        q = [root]
+        for x in q:
+            x.left, x.right = x.right, x.left
+            if x.left:
+                q.append(x.left)
+            if x.right:
+                q.append(x.right)
+        return root
 ```
