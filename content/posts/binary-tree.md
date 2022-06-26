@@ -486,6 +486,11 @@ class Solution(object):
 * [101. 对称二叉树](https://leetcode.cn/problems/symmetric-tree/)
 * [104. 二叉树的最大深度](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)
 * [226. 翻转二叉树](https://leetcode.cn/problems/invert-binary-tree/)
+* [543. 二叉树的直径](https://leetcode.cn/problems/diameter-of-binary-tree/)
+* [617. 合并二叉树](https://leetcode.cn/problems/merge-two-binary-trees/)
+* [114. 二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)
+* [236. 二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)
+* [437. 路径总和 III](https://leetcode.cn/problems/path-sum-iii/)
 
 ### 199. 二叉树的右视图
 
@@ -691,4 +696,218 @@ class Solution(object):
             if x.right:
                 q.append(x.right)
         return root
+```
+
+### 543. 二叉树的直径
+
+给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。
+
+```python
+class Solution(object):
+    def diameterOfBinaryTree(self, root):
+        self.ans = 0
+        def depth(root):
+            if not root:
+                return 0
+
+            left = depth(root.left)
+            right = depth(root.right)
+            self.ans = max(self.ans, left + right)
+            return 1 + max(left, right)
+        depth(root)
+        return self.ans
+```
+
+一篇文章解决所有二叉树路径问题（问题分析+分类模板+题目剖析）
+
+https://leetcode-cn.com/problems/diameter-of-binary-tree/solution/yi-pian-wen-zhang-jie-jue-suo-you-er-cha-6g00/
+
+### 617. 合并二叉树
+
+你需要将这两棵树合并成一棵新二叉树。合并的规则是：如果两个节点重叠，那么将这两个节点的值相加作为合并后节点的新值；否则，不为 null 的节点将直接作为新二叉树的节点。
+
+```python
+class Solution(object):
+    def mergeTrees(self, root1, root2):
+        """
+        :type root1: TreeNode
+        :type root2: TreeNode
+        :rtype: TreeNode
+        """
+        if not root1 or not root2:
+            return root2 or root1
+        
+        root = TreeNode(root1.val + root2.val)
+        root.left = self.mergeTrees(root1.left, root2.left)
+        root.right = self.mergeTrees(root1.right, root2.right)
+        
+        return root
+```
+
+### 114. 二叉树展开为链表
+
+给你二叉树的根结点 root ，请你将它展开为一个单链表：
+
+展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。
+展开后的单链表应该与二叉树 先序遍历 顺序相同。
+
+思路一，递归
+
+```python
+class Solution(object):
+    def flatten(self, root):
+        """
+        :type root: TreeNode
+        :rtype: None Do not return anything, modify root in-place instead.
+        """
+        if not root:
+            return None
+        
+        left = root.left
+        right = root.right
+        self.flatten(root.left)
+        self.flatten(root.right)
+
+        root.left = None
+        root.right = left
+        
+        while root.right:
+            root = root.right
+        # root.left = None
+        root.right = right
+        
+        return
+```
+
+思路二，迭代
+
+```python
+class Solution(object):
+    def flatten(self, root):
+        while root:
+            if not root:
+                return
+
+            if not root.left:
+                root = root.right
+            else:
+                p = root.left
+                while p.right:
+                    p = p.right
+                p.right = root.right
+                root.right = root.left
+                root.left = None
+                root = root.right
+                
+        return
+```
+
+### 236 二叉树的最近公共祖先
+
+
+这个题目好难理解。
+
+
+https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/solution/c-jing-dian-di-gui-si-lu-fei-chang-hao-li-jie-shi-/
+
+https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/solution/236-er-cha-shu-de-zui-jin-gong-gong-zu-xian-hou-xu/
+
+
+思路一， 根据p, q在root的两侧还是同一侧，进行判断，然后递归处理。
+
+后序遍历，一层一层向上传递东西，在根结点汇总。
+
+超时
+
+```python
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        """
+        :type root: TreeNode
+        :type p: TreeNode
+        :type q: TreeNode
+        :rtype: TreeNode
+        """
+                
+        if not root:
+            return None
+
+        def isDescendant(root, target):
+            if not root:
+                return False
+
+            if root == target:
+                return True
+            
+            return isDescendant(root.left, target) or isDescendant(root.right, target)
+
+        if root == p or root == q:
+            return root
+
+        if isDescendant(root.left, p) and isDescendant(root.right, q):
+            return root
+        
+        if isDescendant(root.left, q) and isDescendant(root.right, p):
+            return root
+        
+        if isDescendant(root.left, p) and isDescendant(root.left, q):
+            return self.lowestCommonAncestor(root.left, p, q)
+        
+        if isDescendant(root.right, p) and isDescendant(root.right, q):
+            return self.lowestCommonAncestor(root.right, p, q)
+```
+
+通过
+
+```python
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        if not root:
+            return None
+        if root == p or root == q:
+            return root
+        
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+
+        if left and right:
+            return root
+        if left:
+            return left
+        if right:
+            return right
+        
+        return None
+```
+
+### 437. 路径总和 III
+
+给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。
+
+```python
+class Solution(object):
+    def pathSum(self, root, targetSum):
+        if not root:
+            return 0
+
+        def dfs(root, target):
+            if not root:
+                return 0
+            ans = 0
+            if target == root.val:
+                ans += 1
+                
+            ans += dfs(root.left, target-root.val)
+            ans += dfs(root.right, target-root.val)
+            return ans
+        
+        def helper(root, target):
+            if not root:
+                return 0
+            ans = dfs(root, target)
+            ans += helper(root.left, target)
+            ans += helper(root.right, target)
+            return ans
+        
+        return helper(root, targetSum)
 ```
