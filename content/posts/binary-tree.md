@@ -490,6 +490,7 @@ class Solution(object):
 * [617. 合并二叉树](https://leetcode.cn/problems/merge-two-binary-trees/)
 * [114. 二叉树展开为链表](https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/)
 * [236. 二叉树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)
+* [235. 二叉搜索树的最近公共祖先](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 * [437. 路径总和 III](https://leetcode.cn/problems/path-sum-iii/)
 
 ### 199. 二叉树的右视图
@@ -879,6 +880,23 @@ class Solution(object):
         
         return None
 ```
+
+
+### 235. 二叉搜索树的最近公共祖先
+
+```python
+class Solution(object):
+    def lowestCommonAncestor(self, root, p, q):
+        # <=0 可以包括p或者q等于root的情况，以及 p,q 分别在两侧的情况        
+        if (p.val - root.val) * (q.val - root.val) <= 0:
+            return root
+        
+        if p.val < root.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        else:
+            return self.lowestCommonAncestor(root.right, p, q)
+```
+
 
 ### 437. 路径总和 III
 
