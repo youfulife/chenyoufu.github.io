@@ -2,16 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://youfu.life/tags/chatgpt/</loc>
+    <lastmod>2023-03-30T14:40:15+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/devops/</loc>
+    <lastmod>2023-03-30T14:40:15+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/tags/devops/</loc>
+    <lastmod>2023-03-30T14:40:15+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/tags/k8s/</loc>
+    <lastmod>2023-03-30T14:40:15+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/devops/k8s-learning-with-chatgpt/</loc>
+    <lastmod>2023-03-30T14:40:15+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/tags/</loc>
+    <lastmod>2023-03-30T14:40:15+08:00</lastmod>
+  </url><url>
+    <loc>https://youfu.life/</loc>
+    <lastmod>2023-03-30T14:40:15+08:00</lastmod>
+  </url><url>
     <loc>https://youfu.life/posts/</loc>
     <lastmod>2022-07-04T21:37:20+08:00</lastmod>
   </url><url>
-    <loc>https://youfu.life/tags/</loc>
-    <lastmod>2022-07-04T21:37:20+08:00</lastmod>
-  </url><url>
     <loc>https://youfu.life/posts/binary-tree/</loc>
-    <lastmod>2022-07-04T21:37:20+08:00</lastmod>
-  </url><url>
-    <loc>https://youfu.life/</loc>
     <lastmod>2022-07-04T21:37:20+08:00</lastmod>
   </url><url>
     <loc>https://youfu.life/tags/%E6%A0%91/</loc>
